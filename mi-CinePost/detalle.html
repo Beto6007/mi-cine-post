@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle - Harry Potter y la Piedra Filosofal</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID&autoLogAppEvents=1" 
+            nonce="aBcDeF"></script>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="index.html" class="logo">MiCineBlog</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="release-notes.html">Release Notes</a></li> 
+                        <li><a href="autores.html">Autores</a></li> 
+                        <li><a href="contacto.html">Contacto</a></li> 
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="drama">Drama</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="admin_user">admin_user</option>
+                    <option value="jane_doe">jane_doe</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="index.html?letter=all" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+                
+                <img src="hp1-poster.jpg" alt="Poster Harry Potter 1" class="detail-poster">
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <audio controls>
+                        <source src="audio/resumen-hp1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+
+                <div class="trailer-section">
+                    <h3>Tráiler</h3>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/PAo-oR-c1-U" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="detail-info-col">
+                
+                <span class="original-title">Harry Potter and the Sorcerer's Stone</span>
+                <h1>Harry Potter y la Piedra Filosofal</h1>
+
+                <div class="detail-meta">
+                    Subido por 
+                    <a href="index.html?author=admin_user" class="author-tooltip-trigger" ...>
+                        <strong>admin_user</strong>
+                        </a>
+                    el 
+                    <a href="index.html?date=2024-10-28" class="date-link" ...>
+                        28 de octubre de 2024
+                    </a>
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>2001</dd>
+
+                        <dt>Director:</dt>
+                        <dd>Chris Columbus</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>Warner Bros. Pictures</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Daniel Radcliffe, Rupert Grint, Emma Watson, y más.</dd>
+                        
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="#" title="Max"><img src="logo-max.png" alt="Max"></a>
+                            <a href="#" title="Prime Video"><img src="logo-prime.png" alt="Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+                
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p>Harry Potter se entera en su undécimo cumpleaños que es un mago...</p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="hp1-escena1.jpg" alt="Escena 1" class="carousel-item">
+                            <img src="hp1-escena2.jpg" alt="Escena 2" class="carousel-item">
+                            <img src="hp1-escena3.jpg" alt="Escena 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list">
+                        <li>Nominada a 3 Oscars (Mejor BSO, Diseño de Vestuario, Dirección de Arte).</li>
+                        <li>Ganadora del BAFTA a "Mejor Película Británica" (Premio del Público).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check">
+                        <li><strong>Magia Visual Práctica:</strong> El uso extensivo de efectos prácticos y sets reales le da al mundo mágico un peso y textura que el CGI puro rara vez logra.</li>
+                        <li><strong>Casting Perfecto:</strong> La elección del trío protagonista y de actores de renombre (Alan Rickman, Maggie Smith) solidificó la franquicia.</li>
+                        <li><strong>Banda Sonora Icónica:</strong> La música de John Williams se convirtió instantáneamente en sinónimo de magia y aventura.</li>
+                    </ul>
+                </div>
+
+                <div class="star-rating" data-movie-id="hp_piedra_filosofal">
+                    </div>
+
+                <div class="comments-section">
+                    </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>
