@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const letter = String.fromCharCode(i);
             const link = document.createElement('a');
             // Enlaza al index con el parámetro de letra
-            link.href = `index.html?letter=${letter.toLowerCase()}`; 
+            link.href = `/index.html?letter=${letter.toLowerCase()}`; 
             link.dataset.letter = letter;
             link.textContent = letter;
             azNav.appendChild(link);
@@ -248,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const postDate = link.dataset.date; 
 
                 // Lógica de "un solo filtro a la vez"
-                // Solo un filtro puede ser "activo" (no 'all' o no vacío)
                 let show = true; // Mostrar por defecto
                 
                 if (searchTerm !== '') {
@@ -333,8 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateFromURL = urlParams.get('date');
             const authorFromURL = urlParams.get('author');
             const letterFromURL = urlParams.get('letter');
+            const genreFromURL = urlParams.get('genre'); // ¡NUEVO!
             
-            // Prioridad: Letra > Autor > Fecha
+            // Prioridad: Letra > Autor > Género > Fecha
             if (letterFromURL) {
                 resetAllFilters(azNav.querySelector(`[data-letter="${letterFromURL.toUpperCase()}"]`));
                 window.selectedLetter = letterFromURL.toLowerCase();
@@ -348,6 +348,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 resetAllFilters(authorFilter);
                 authorFilter.value = authorFromURL;
                 
+            } else if (genreFromURL) { // ¡NUEVO!
+                resetAllFilters(genreFilter);
+                genreFilter.value = genreFromURL;
+
             } else if (dateFromURL) {
                 resetAllFilters(dateFilterInput);
                 calendarInstance.setDate(dateFromURL, false); // false para no disparar evento
@@ -415,17 +419,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const headerFilters = document.querySelector('.header-filters');
         if (headerFilters) {
             
+            // ¡¡¡CORREGIDO!!! Ahora usa rutas raíz (ej. /index.html)
             function redirectToIndex(paramName, paramValue) {
-                if(paramValue === 'all') { 
-                   window.location.href = `index.html`;
+                if(paramValue === 'all' || paramValue === '') { 
+                   window.location.href = `/index.html`;
                    return;
                 }
-                window.location.href = `index.html?${paramName}=${paramValue}`;
+                // Codifica el valor para que funcionen los espacios y acentos
+                const encodedValue = encodeURIComponent(paramValue);
+                window.location.href = `/index.html?${paramName}=${encodedValue}`;
             }
             
             headerFilters.querySelector('#search-bar').addEventListener('keypress', (e) => {
                 if (e.key === 'Enter' && e.target.value.trim() !== '') {
-                   redirectToIndex('search', e.target.value);
+                   // (La búsqueda desde otra página no está activada,
+                   // pero puedes añadirla con: redirectToIndex('search', e.target.value))
                 }
             });
             headerFilters.querySelector('#genre-filter').addEventListener('change', (e) => {

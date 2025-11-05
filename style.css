@@ -273,8 +273,8 @@ h1, h2, h3 {
 /* --- 5. Cuadrícula de Películas (Página Principal) --- */
 #movie-list {
     display: grid;
-    /* Tarjetas más pequeñas (150px) y centradas */
-    grid-template-columns: repeat(auto-fit, 150px);
+    /* CAMBIO: Tarjetas más grandes (180px) y centradas */
+    grid-template-columns: repeat(auto-fit, 180px);
     gap: 20px;
     justify-content: center; 
     
@@ -300,7 +300,7 @@ h1, h2, h3 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    width: 150px; 
+    width: 180px; /* CAMBIO: Ancho fijo */
 }
 .movie-card:hover {
     transform: translateY(-8px);
@@ -315,17 +315,17 @@ h1, h2, h3 {
 }
 
 .movie-card-content {
-    padding: 12px; /* Más pequeño */
+    padding: 15px; /* CAMBIO: Padding normal */
 }
 
 /* --- CORRECCIÓN DE DEFORMACIÓN DE TARJETAS --- */
 .movie-card-content h3 {
-    font-size: 0.9rem;
+    font-size: 1rem; /* CAMBIO: Fuente más grande */
     margin-bottom: 5px; 
-    line-height: 1.2em;
+    line-height: 1.3em; /* CAMBIO: Más espacio de línea */
     
     /* 1. Forzamos la altura a 2 líneas */
-    height: 2.4em; /* (line-height * 2) */
+    height: 2.6em; /* (line-height * 2) */
     
     /* 2. Ocultamos cualquier texto extra */
     overflow: hidden;
@@ -340,7 +340,7 @@ h1, h2, h3 {
 }
 
 .movie-card-meta {
-    font-size: 0.75rem; /* Más pequeño */
+    font-size: 0.85rem; /* CAMBIO: Fuente más grande */
     color: var(--text-light);
     white-space: nowrap;
     overflow: hidden;
@@ -377,9 +377,7 @@ h1, h2, h3 {
 }
 
 
-/* ================================================== */
-/* --- 7. ESTILOS PARA DETALLE.HTML (¡NUEVO DISEÑO!) --- */
-/* ================================================== */
+/* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
     margin: 30px auto;
@@ -493,6 +491,16 @@ audio {
     margin: 0;
     color: var(--text-light);
 }
+/* ¡NUEVO! Estilo para el enlace de género */
+.data-sheet dd a.data-sheet-link {
+    color: var(--text-light);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+.data-sheet dd a.data-sheet-link:hover {
+    color: var(--primary-color);
+}
+
 .streaming-logos-inline img {
     width: 30px;
     height: 30px;
