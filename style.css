@@ -5,7 +5,7 @@
     --light-bg: #f4f4f9;       
     --card-bg: #ffffff;
     
-    /* ¡CAMBIO! De vuelta al púrpura oscuro */
+    /* ¡CAMBIO! Fondo púrpura oscuro */
     --card-bg-dark: #2c1a4a;
     
     --text-dark: #333333;       
@@ -24,10 +24,17 @@ body {
     background-color: var(--light-bg);
     color: var(--text-dark);
 }
-/* Agregamos padding-top para dejar espacio al header fijo */
+/* ¡CAMBIO! Padding-top ahora incluye el espacio de 30px */
 body {
-    padding-top: 160px; 
+    /* 160px (header) + 30px (gap) = 190px */
+    padding-top: 190px; 
 }
+/* ¡NUEVO! Padding más corto para páginas sin filtros */
+body.page-simple-header {
+    /* 80px (simple header) + 30px (gap) = 110px */
+    padding-top: 110px; 
+}
+
 
 a {
     text-decoration: none;
@@ -194,19 +201,26 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    /* ¡CAMBIO! Animación de pulso */
-    animation: fab-pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    /* ¡CAMBIO! Animación de pulso y giro */
+    animation: fab-burst-spin 3s infinite ease-in-out;
 }
 
 /* ¡NUEVA! Keyframes para la animación del botón */
-@keyframes fab-pulse {
-  0%, 100% {
-    transform: scale(1);
+@keyframes fab-burst-spin {
+  /* Inicio: Pausa de 1.5s (1.5 / 3 = 50%) */
+  0%, 50% {
+    transform: scale(1) rotate(0deg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px var(--primary-color-shadow);
+  /* Giro y Expansión Rápida (1s) */
+  83.3% { /* (1.5s + 1s) / 3s = 83.3% */
+    transform: scale(1.25) rotate(720deg);
+    box-shadow: 0 8px 25px var(--primary-color-shadow);
+  }
+  /* Asentamiento (0.5s) */
+  100% { /* (2.5s + 0.5s) / 3s = 100% */
+    transform: scale(1) rotate(720deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -283,9 +297,7 @@ h1, h2, h3 {
 }
 
 
-/* ================================================== */
-/* --- 5. Cuadrícula de Películas (¡TARJETAS HERMOSAS!) --- */
-/* ================================================== */
+/* --- 5. Cuadrícula de Películas (Página Principal) --- */
 #movie-list {
     display: grid;
     /* Tarjetas más grandes (200px) y centradas */
@@ -294,7 +306,8 @@ h1, h2, h3 {
     justify-content: center; 
     
     max-width: 1200px;
-    margin: 30px auto; 
+    /* ¡CAMBIO! Espacio superior quitado (ahora lo controla el body padding) */
+    margin: 0 auto 30px auto; 
     padding: 0 20px;
 }
 
@@ -375,8 +388,6 @@ h1, h2, h3 {
 
 .movie-card-content {
     padding: 15px; 
-    /* ¡CAMBIO! Altura mínima para que no se deforme */
-    min-height: 4.5em; 
     box-sizing: border-box;
 }
 
@@ -417,6 +428,7 @@ h1, h2, h3 {
 .movie-card:hover .movie-card-content h3 span {
     -webkit-line-clamp: 1; /* Permite que sea una sola línea */
     white-space: nowrap;
+    width: auto; /* Permite que el span calcule su ancho real */
     padding-left: 100%; /* Inicia fuera de la pantalla a la derecha */
     transform: translateX(-100%);
     /* ¡CAMBIO! Velocidad aumentada (5s) */
@@ -450,7 +462,8 @@ h1, h2, h3 {
     color: #aaa;
     padding: 30px 20px;
     text-align: center;
-    margin-top: 40px;
+    /* ¡CAMBIO! margin-top quitado */
+    margin-top: 0;
 }
 /* Estilo para el contador del footer */
 .main-footer .visit-counter {
@@ -477,7 +490,8 @@ h1, h2, h3 {
 /* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
-    margin: 30px auto;
+    /* ¡CAMBIO! margin-top quitado */
+    margin: 0 auto 30px auto; 
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -918,18 +932,38 @@ audio {
 .form-container,
 .author-list {
     max-width: 900px; /* Ancho estándar para contenido */
-    margin: 30px auto;
+    /* ¡CAMBIO! Espacio superior quitado */
+    margin: 0 auto 30px auto;
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     line-height: 1.7;
 }
+
 .content-page h1,
 .form-container h1,
 .author-list h1 {
     margin-bottom: 25px;
 }
+
+/* ¡NUEVO! Estilo para cajas de contenido en detalle */
+.content-box {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 0;
+}
+.content-box p, .content-box ul {
+    margin: 0; /* Quita márgenes por defecto */
+}
+.content-box p {
+    text-align: justify;
+}
+.content-box ul {
+    text-align: left;
+}
+
 
 /* Estilos para Release Notes */
 .release-note {
