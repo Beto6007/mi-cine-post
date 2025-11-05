@@ -194,6 +194,7 @@
     color: var(--text-on-dark);
 }
 
+
 /* --- 8. ESTILOS PARA TARJETA BLOQUEADA --- */
 .movie-card-link.is-locked {
     cursor: not-allowed;

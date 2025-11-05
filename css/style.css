@@ -5,7 +5,7 @@
     --light-bg: #f4f4f9;       
     --card-bg: #ffffff;
     
-    /* ¡NUEVO! Púrpura oscuro para tarjetas */
+    /* ¡CAMBIO! Fondo púrpura oscuro */
     --card-bg-dark: #2c1a4a;
     
     --text-dark: #333333;       
@@ -23,13 +23,16 @@ body {
     margin: 0;
     background-color: var(--light-bg);
     color: var(--text-dark);
-    /* ¡CAMBIO! Padding-top ahora incluye el espacio de 30px */
+}
+/* ¡CAMBIO! Padding-top ahora incluye el espacio de 30px */
+body {
     /* 160px (header) + 30px (gap) = 190px */
     padding-top: 190px; 
 }
 /* ¡NUEVO! Padding más corto para páginas sin filtros */
 body.page-simple-header {
-    /* 60px (simple header) + 30px (gap) = 90px */
+    /* 60px (header-top) + 20px (padding) + 10px (padding) = 90px */
+    /* Ajustado a 90px para un espacio visual de 30px */
     padding-top: 90px; 
 }
 
@@ -256,6 +259,7 @@ h1, h2, h3 {
 .filter-controls {
     display: none; /* Ya no se usa, movido al header */
 }
+
 
 /* --- 6. Footer --- */
 .main-footer {

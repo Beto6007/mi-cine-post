@@ -19,7 +19,6 @@
     margin-bottom: 25px;
 }
 
-
 /* Estilos para Release Notes */
 .release-note {
     border-bottom: 1px solid var(--border-color);
@@ -39,7 +38,7 @@
 
 /* Estilos para Formulario de Contacto (¡MÁS PEQUEÑO!) */
 .form-container {
-    max-width: 600px; /* CAMBIO AQUÍ */
+    max-width: 600px; 
 }
 .form-group {
     margin-bottom: 20px;
@@ -69,7 +68,7 @@
 
 /* Estilos para Página de Autores (¡MÁS PEQUEÑO!) */
 .author-list {
-    max-width: 800px; /* CAMBIO AQUÍ */
+    max-width: 800px; 
 }
 .author-card {
     display: flex;
@@ -92,8 +91,8 @@
     margin-bottom: 0;
 }
 .author-photo {
-    width: 100px; /* CAMBIO AQUÍ */
-    height: 100px; /* CAMBIO AQUÍ */
+    width: 100px; 
+    height: 100px; 
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
