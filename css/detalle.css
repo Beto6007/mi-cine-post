@@ -1,0 +1,376 @@
+/* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
+.movie-detail-container {
+    max-width: 1000px; /* Un poco más ancho para el grid */
+    /* ¡CAMBIO! margin-top quitado */
+    margin: 0 auto 30px auto; 
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedor Grid de 2 Columnas */
+.detail-grid-container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Columna fija para media, flexible para info */
+    gap: 30px;
+}
+
+/* Columna Izquierda (Media) */
+.detail-media-col {
+    position: relative;
+}
+.detail-poster {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px; 
+}
+.audio-player-section {
+    margin: 0; 
+}
+.audio-player-section p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0;
+}
+audio {
+    width: 100%;
+}
+/* Contenedor responsivo de Video/Trailer */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 0; 
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Columna Derecha (Información) */
+.detail-info-col .original-title {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-light);
+    display: block; 
+    margin-bottom: 20px; 
+}
+.detail-info-col h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 5px; 
+}
+.detail-meta {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-style: italic;
+    line-height: 1.6; 
+}
+/* Estilo para el contador de página */
+.visit-counter-page {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.detail-meta strong {
+    color: var(--text-dark);
+    font-style: normal;
+}
+/* ¡CAMBIO! Se quitan los puntos */
+.detail-meta .date-link,
+.detail-meta .author-tooltip-trigger strong {
+    text-decoration: none;
+    font-weight: 600;
+}
+.detail-meta .author-tooltip-trigger strong {
+    color: var(--primary-color);
+}
+.detail-meta .date-link:hover,
+.detail-meta .author-tooltip-trigger:hover strong {
+    color: var(--secondary-color);
+}
+/* Ficha Técnica */
+.data-sheet {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+.data-sheet dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 120px 1fr; /* Label | Value */
+    gap: 10px;
+}
+.data-sheet dt {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.data-sheet dd {
+    margin: 0;
+    color: var(--text-light);
+}
+/* ¡NUEVO! Estilo para el enlace de género */
+.data-sheet dd a.data-sheet-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+.data-sheet dd a.data-sheet-link:hover {
+    color: var(--primary-color);
+}
+
+.streaming-logos-inline img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+
+/* Secciones de Información */
+.summary,
+.carousel-section,
+.awards-section,
+.characteristics-section,
+.trailer-section { 
+    margin-bottom: 30px;
+}
+.summary h2,
+.carousel-section h2,
+.awards-section h2,
+.characteristics-section h2,
+.trailer-section h2, 
+.audio-player-section h3 { 
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.summary {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+/* ¡CAMBIO! Párrafo justificado y sin margen superior */
+.summary p {
+    text-align: justify;
+    margin-top: 0;
+}
+
+/* Listas con Iconos (Premios, Características) */
+.icon-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0; /* ¡CAMBIO! */
+    text-align: left; /* Asegura que no se justifique */
+}
+.icon-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.icon-list li::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+}
+.awards-section .icon-list li::before {
+    content: "\f091"; /* fa-trophy */
+}
+.characteristics-section .icon-list li::before {
+    content: "\f00c"; /* fa-check */
+    color: green;
+}
+
+
+/* Responsive para la página de detalles */
+@media (max-width: 800px) {
+    .detail-grid-container {
+        grid-template-columns: 1fr; /* Apila las columnas */
+    }
+    .detail-media-col {
+        /* Opcional: Centrar el póster en móvil */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Estilos para Tarjeta Flotante de Autor (Clickeable) */
+.author-tooltip-trigger {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+/* ¡CAMBIO! Tarjeta flotante (solo foto) */
+.author-tooltip-card {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; /* Se ajusta a la imagen */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    pointer-events: none;
+}
+.author-tooltip-trigger:hover .author-tooltip-card {
+    display: block;
+    opacity: 1;
+    bottom: 135%;
+}
+.author-tooltip-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 3px solid var(--primary-color); /* Énfasis púrpura */
+    box-shadow: 0 4px 15px var(--primary-color-shadow);
+}
+.author-tooltip-card .tooltip-name {
+    display: none; /* Ocultamos el nombre como pediste */
+}
+/* Fin de Estilos de Autor */
+
+
+/* Carrusel (en pág. de detalles) */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    width: 100%; 
+    max-height: 450px; /* Límite de altura */
+}
+/* ¡CAMBIO! Botones del carrusel con estilo anterior + énfasis */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Transparencia púrpura */
+    background-color: rgba(106, 17, 203, 0.5); 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px; /* Cuadrado redondeado */
+    width: auto;
+    height: auto;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s, background-color 0.3s;
+}
+.carousel:hover .carousel-control {
+    opacity: 1; /* Totalmente visible al pasar el mouse */
+}
+.carousel-control:hover {
+    background-color: rgba(106, 17, 203, 0.8); /* Más oscuro al pasar */
+}
+.carousel-control.prev {
+    left: 15px;
+}
+.carousel-control.next {
+    right: 15px;
+}
+
+/* Ranking de Estrellas (ACTUALIZADO) */
+.star-rating {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 0 25px 0; /* ¡CAMBIO! Espacio consistente */
+}
+.star-rating h3 {
+    margin-bottom: 15px;
+}
+.star-rating .stars {
+    font-size: 2rem;
+    color: var(--star-color);
+}
+.star-rating .stars i {
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.star-rating .stars i:hover {
+    transform: scale(1.15);
+}
+/* Estilo para cuando ya votó */
+.star-rating.voted .stars i {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.star-rating .stars i.fa-solid {
+    font-weight: 900;
+}
+.star-rating .rating-display {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: 10px;
+    font-weight: 500;
+}
+.star-rating .saved-msg {
+    display: block;
+    margin-top: 5px;
+    color: var(--primary-color);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Comentarios */
+.comments-section {
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+.fb-comments, .fb-comments span, .fb-comments iframe[style] {
+    width: 100% !important;
+}
+
+/* ¡NUEVO! Estilo para cajas de contenido en detalle */
+.content-box {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 0;
+}
+.content-box p, .content-box ul {
+    margin: 0; /* Quita márgenes por defecto */
+}
+.content-box p {
+    text-align: justify;
+}
+.content-box ul {
+    text-align: left;
+}
