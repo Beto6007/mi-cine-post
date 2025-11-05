@@ -8,6 +8,7 @@
     --text-light: #777777;      
     --border-color: #e0e0e0;
     --star-color: #f39c12;      /* Color de estrella */
+    --primary-color-shadow: rgba(106, 17, 203, 0.4); /* Sombra para hover */
 }
 
 /* --- Estilos Globales --- */
@@ -19,7 +20,6 @@ body {
 }
 /* Agregamos padding-top para dejar espacio al header fijo */
 body {
-    /* Este valor debe ser ~ la altura de tu header (115px + 43px = 158px). Lo redondeo. */
     padding-top: 160px; 
 }
 
@@ -54,7 +54,7 @@ h1, h2, h3 {
     margin-right: 8px;
 }
 
-/* --- 1. Header y Navegación (ACTUALIZADO) --- */
+/* --- 1. Header y Navegación --- */
 .main-header {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -85,7 +85,7 @@ h1, h2, h3 {
     font-size: 1.8rem;
     font-weight: 700;
     color: white;
-    margin-right: 20px; /* Espacio para que no se pegue a los filtros */
+    margin-right: 20px; 
 }
 
 .main-nav ul {
@@ -144,7 +144,7 @@ h1, h2, h3 {
 }
 
 
-/* --- 2. Filtro A-Z (ACTUALIZADO) --- */
+/* --- 2. Filtro A-Z --- */
 .az-filter {
     display: flex;
     flex-wrap: wrap;
@@ -173,7 +173,7 @@ h1, h2, h3 {
 }
 
 
-/* --- 3. (NUEVO) Widget de Ruleta Flotante y Modal --- */
+/* --- 3. Widget de Ruleta Flotante y Modal --- */
 .roulette-fab {
     position: fixed;
     bottom: 20px;
@@ -188,11 +188,22 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    /* ¡CAMBIO! Animación de pulso */
+    animation: fab-pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
-.roulette-fab:hover {
+
+/* ¡NUEVA! Keyframes para la animación del botón */
+@keyframes fab-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  50% {
     transform: scale(1.1);
+    box-shadow: 0 8px 20px var(--primary-color-shadow);
+  }
 }
+
 
 /* Overlay del Modal */
 .roulette-modal-overlay {
@@ -206,8 +217,6 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Oculto por defecto */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -229,8 +238,6 @@ h1, h2, h3 {
     padding: 20px;
     padding-top: 40px; 
     text-align: center;
-    
-    /* Animación de entrada */
     transform: scale(0.8);
     transition: transform 0.3s ease;
 }
@@ -273,9 +280,9 @@ h1, h2, h3 {
 /* --- 5. Cuadrícula de Películas (Página Principal) --- */
 #movie-list {
     display: grid;
-    /* CAMBIO: Tarjetas más grandes (180px) y centradas */
+    /* Tarjetas más grandes (180px) y centradas */
     grid-template-columns: repeat(auto-fit, 180px);
-    gap: 20px;
+    gap: 25px; /* Más espacio */
     justify-content: center; 
     
     max-width: 1200px;
@@ -296,15 +303,17 @@ h1, h2, h3 {
 .movie-card {
     background-color: var(--card-bg);
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* CAMBIO: Sombra suave por defecto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    /* CAMBIO: Transición más suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    width: 180px; /* CAMBIO: Ancho fijo */
+    width: 180px; /* Ancho fijo */
 }
 .movie-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* CAMBIO: Efecto de hover más pronunciado */
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 30px -5px var(--primary-color-shadow);
 }
 
 .movie-poster {
@@ -312,17 +321,45 @@ h1, h2, h3 {
     aspect-ratio: 2 / 3; 
     object-fit: cover;
     display: block;
+    border-radius: 12px 12px 0 0; /* Redondea solo esquinas superiores */
+    position: relative;
+    overflow: hidden; /* Necesario para el overlay */
+}
+/* ¡NUEVO! Overlay gradiente en el póster */
+.movie-poster::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+/* ¡NUEVO! Etiqueta de Género */
+.card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .movie-card-content {
-    padding: 15px; /* CAMBIO: Padding normal */
+    padding: 15px; /* Padding normal */
 }
 
 /* --- CORRECCIÓN DE DEFORMACIÓN DE TARJETAS --- */
 .movie-card-content h3 {
-    font-size: 1rem; /* CAMBIO: Fuente más grande */
+    font-size: 1rem; /* Fuente más grande */
     margin-bottom: 5px; 
-    line-height: 1.3em; /* CAMBIO: Más espacio de línea */
+    line-height: 1.3em; /* Más espacio de línea */
     
     /* 1. Forzamos la altura a 2 líneas */
     height: 2.6em; /* (line-height * 2) */
@@ -340,7 +377,7 @@ h1, h2, h3 {
 }
 
 .movie-card-meta {
-    font-size: 0.85rem; /* CAMBIO: Fuente más grande */
+    font-size: 0.85rem; /* Fuente más grande */
     color: var(--text-light);
     white-space: nowrap;
     overflow: hidden;
@@ -359,6 +396,10 @@ h1, h2, h3 {
     padding: 30px 20px;
     text-align: center;
     margin-top: 40px;
+}
+/* ¡NUEVO! Estilo para el contador del footer */
+.main-footer .visit-counter {
+    margin-bottom: 15px;
 }
 .social-links {
     margin-top: 15px;
@@ -402,10 +443,10 @@ h1, h2, h3 {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px; /* ¡CAMBIO! Espacio consistente */
+    margin-bottom: 25px; 
 }
 .audio-player-section {
-    margin-bottom: 25px;
+    margin: 0; 
 }
 .audio-player-section p {
     font-size: 0.9rem;
@@ -422,7 +463,7 @@ audio {
     height: 0;
     overflow: hidden;
     border-radius: 8px;
-    margin-top: 0; /* ¡CAMBIO! Asegura espaciado consistente */
+    margin-top: 0; 
 }
 .video-container iframe {
     position: absolute;
@@ -437,21 +478,27 @@ audio {
     font-size: 1rem;
     font-style: italic;
     color: var(--text-light);
-    display: block; /* ¡CAMBIO! Reemplaza el <br> */
-    margin-bottom: 20px; /* ¡CAMBIO! Reemplaza el <br> */
+    display: block; 
+    margin-bottom: 20px; 
 }
 .detail-info-col h1 {
     font-size: 2.5rem;
     color: var(--text-dark);
     margin-top: 0;
-    margin-bottom: 5px; /* ¡CAMBIO! Espacio ajustado */
+    margin-bottom: 5px; 
 }
 .detail-meta {
     font-size: 1.1rem;
     color: var(--text-light);
     margin-bottom: 25px;
     font-style: italic;
+    line-height: 1.6; 
 }
+/* ¡NUEVO! Estilo para el contador de página */
+.visit-counter-page {
+    margin-top: 10px;
+}
+
 .detail-meta strong {
     color: var(--text-dark);
     font-style: normal;
@@ -508,15 +555,15 @@ audio {
 .carousel-section,
 .awards-section,
 .characteristics-section,
-.trailer-section { /* ¡CAMBIO! Añadido .trailer-section */
+.trailer-section { 
     margin-bottom: 30px;
 }
 .summary h2,
 .carousel-section h2,
 .awards-section h2,
 .characteristics-section h2,
-.trailer-section h2, /* ¡CAMBIO! Añadido .trailer-section h2 */
-.audio-player-section h3 { /* ¡CAMBIO! Añadido .audio-player-section h3 */
+.trailer-section h2, 
+.audio-player-section h3 { 
     border-bottom: 2px solid var(--primary-color);
     display: inline-block;
     padding-bottom: 5px;
@@ -595,7 +642,8 @@ audio {
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    width: 180px;
+    /* ¡CAMBIO! Más ancho para el nombre */
+    width: 200px;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 10px;
@@ -625,6 +673,8 @@ audio {
     font-weight: 600;
     color: var(--text-dark);
     font-style: normal;
+    /* ¡CAMBIO! Para nombres largos */
+    word-wrap: break-word;
 }
 /* Fin de Estilos de Autor */
 
@@ -635,7 +685,7 @@ audio {
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
-    margin-top: 0; /* ¡CAMBIO! */
+    margin-top: 0;
     margin-bottom: 25px;
 }
 .carousel-inner {
@@ -645,28 +695,40 @@ audio {
 .carousel-item {
     min-width: 100%;
     box-sizing: border-box;
-    /* ¡CAMBIO! Corrigiendo la deformación */
     object-fit: cover;
     width: 100%; 
-    max-height: 450px; /* Límite de altura para que no se estire */
+    max-height: 450px; /* Límite de altura */
 }
+/* ¡CAMBIO! Botones del carrusel con color de tema */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--primary-color); /* Color de tema */
     color: white;
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco */
     padding: 10px 15px;
     font-size: 1.5rem;
     cursor: pointer;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.3s;
+    border-radius: 50%; /* Círculos */
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    opacity: 0.7; /* Ligeramente transparente */
+    transition: opacity 0.3s, background-color 0.3s;
 }
-.carousel:hover .carousel-control { opacity: 1; }
-.carousel-control.prev { left: 10px; }
-.carousel-control.next { right: 10px; }
+.carousel:hover .carousel-control {
+    opacity: 1; /* Totalmente visible al pasar el mouse */
+}
+.carousel-control:hover {
+    background-color: var(--secondary-color); /* Color de hover */
+}
+.carousel-control.prev {
+    left: 15px;
+}
+.carousel-control.next {
+    right: 15px;
+}
 
 /* Ranking de Estrellas (ACTUALIZADO) */
 .star-rating {
