@@ -404,16 +404,8 @@ h1, h2, h3 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 25px;
 }
-.audio-player-section,
-.trailer-section {
+.audio-player-section {
     margin-bottom: 25px;
-}
-.audio-player-section h3,
-.trailer-section h3 {
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 5px;
-    display: inline-block;
 }
 .audio-player-section p {
     font-size: 0.9rem;
@@ -512,13 +504,16 @@ audio {
 .summary,
 .carousel-section,
 .awards-section,
-.characteristics-section {
+.characteristics-section,
+.trailer-section { /* ¡CAMBIO! Añadido .trailer-section */
     margin-bottom: 30px;
 }
 .summary h2,
 .carousel-section h2,
 .awards-section h2,
-.characteristics-section h2 {
+.characteristics-section h2,
+.trailer-section h2, /* ¡CAMBIO! Añadido .trailer-section h2 */
+.audio-player-section h3 { /* ¡CAMBIO! Añadido .audio-player-section h3 */
     border-bottom: 2px solid var(--primary-color);
     display: inline-block;
     padding-bottom: 5px;

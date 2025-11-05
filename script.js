@@ -236,9 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- 3b. Función de Filtrado PRINCIPAL (Global) ---
         window.filterAndSearchMovies = function() {
+            // ¡Decodifica los valores de los filtros por si vienen de la URL!
             const searchTerm = searchBar.value.toLowerCase();
-            const selectedGenre = genreFilter.value;
-            const selectedAuthor = authorFilter.value;
+            const selectedGenre = decodeURIComponent(genreFilter.value);
+            const selectedAuthor = decodeURIComponent(authorFilter.value);
             const selectedDate = dateFilterInput.value; 
 
             allMovieLinks.forEach(link => {
@@ -329,10 +330,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- 3d. Lógica de Carga de Parámetros URL (ACTUALIZADA) ---
         function checkURLForParams() {
             const urlParams = new URLSearchParams(window.location.search);
+            // Decodifica los parámetros de la URL (para nombres con espacios o acentos)
             const dateFromURL = urlParams.get('date');
-            const authorFromURL = urlParams.get('author');
+            const authorFromURL = decodeURIComponent(urlParams.get('author') || '');
             const letterFromURL = urlParams.get('letter');
-            const genreFromURL = urlParams.get('genre'); // ¡NUEVO!
+            const genreFromURL = decodeURIComponent(urlParams.get('genre') || '');
             
             // Prioridad: Letra > Autor > Género > Fecha
             if (letterFromURL) {
@@ -348,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 resetAllFilters(authorFilter);
                 authorFilter.value = authorFromURL;
                 
-            } else if (genreFromURL) { // ¡NUEVO!
+            } else if (genreFromURL) { 
                 resetAllFilters(genreFilter);
                 genreFilter.value = genreFromURL;
 
@@ -422,18 +424,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // ¡¡¡CORREGIDO!!! Ahora usa rutas raíz (ej. /index.html)
             function redirectToIndex(paramName, paramValue) {
                 if(paramValue === 'all' || paramValue === '') { 
-                   window.location.href = `/index.html`;
+                   window.location.href = `/index.html`; // Ruta raíz
                    return;
                 }
                 // Codifica el valor para que funcionen los espacios y acentos
                 const encodedValue = encodeURIComponent(paramValue);
-                window.location.href = `/index.html?${paramName}=${encodedValue}`;
+                window.location.href = `/index.html?${paramName}=${encodedValue}`; // Ruta raíz
             }
             
             headerFilters.querySelector('#search-bar').addEventListener('keypress', (e) => {
                 if (e.key === 'Enter' && e.target.value.trim() !== '') {
-                   // (La búsqueda desde otra página no está activada,
-                   // pero puedes añadirla con: redirectToIndex('search', e.target.value))
+                   redirectToIndex('search', e.target.value);
                 }
             });
             headerFilters.querySelector('#genre-filter').addEventListener('change', (e) => {
