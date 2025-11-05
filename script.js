@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateFromURL = urlParams.get('date');
             const authorFromURL = decodeURIComponent(urlParams.get('author') || '');
             const letterFromURL = urlParams.get('letter');
-            const genreFromURL = decodeURIComponent(urlParams.get('genre') || '');
+            const genreFromURL = decodeURIComponent(urlParams.get('genre') || ''); // ¡NUEVO!
             
             // Prioridad: Letra > Autor > Género > Fecha
             if (letterFromURL) {
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 resetAllFilters(authorFilter);
                 authorFilter.value = authorFromURL;
                 
-            } else if (genreFromURL) { 
+            } else if (genreFromURL) { // ¡NUEVO!
                 resetAllFilters(genreFilter);
                 genreFilter.value = genreFromURL;
 
