@@ -3,12 +3,18 @@
     --primary-color: #6a11cb; /* Morado bonito */
     --secondary-color: #2575fc; /* Azul para gradiente */
     --light-bg: #f4f4f9;       
-    --card-bg: #ffffff;         
+    --card-bg: #ffffff;
+    
+    /* ¡CAMBIO! De vuelta al púrpura oscuro */
+    --card-bg-dark: #2c1a4a;
+    
     --text-dark: #333333;       
     --text-light: #777777;      
+    --text-on-dark: #f5f5f5;   /* Texto claro para tarjetas */
     --border-color: #e0e0e0;
     --star-color: #f39c12;      /* Color de estrella */
-    --primary-color-shadow: rgba(106, 17, 203, 0.4); /* Sombra para hover */
+    --primary-color-shadow: rgba(106, 17, 203, 0.4); /* Sombra Púrpura */
+    --secondary-color-shadow: rgba(37, 117, 252, 0.4); /* Sombra Azul */
 }
 
 /* --- Estilos Globales --- */
@@ -277,11 +283,13 @@ h1, h2, h3 {
 }
 
 
-/* --- 5. Cuadrícula de Películas (Página Principal) --- */
+/* ================================================== */
+/* --- 5. Cuadrícula de Películas (¡TARJETAS HERMOSAS!) --- */
+/* ================================================== */
 #movie-list {
     display: grid;
-    /* Tarjetas más grandes (180px) y centradas */
-    grid-template-columns: repeat(auto-fit, 180px);
+    /* Tarjetas más grandes (200px) y centradas */
+    grid-template-columns: repeat(auto-fit, 200px);
     gap: 25px; /* Más espacio */
     justify-content: center; 
     
@@ -301,19 +309,32 @@ h1, h2, h3 {
 }
 
 .movie-card {
-    background-color: var(--card-bg);
+    /* ¡CAMBIO! Fondo púrpura oscuro */
+    background-color: var(--card-bg-dark); 
     border-radius: 12px;
-    /* CAMBIO: Sombra suave por defecto */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-    /* CAMBIO: Transición más suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* ¡CAMBIO! Transición más suave */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     position: relative;
-    width: 180px; /* Ancho fijo */
+    width: 200px; /* Ancho fijo */
+    animation: card-float 5s ease-in-out infinite;
 }
+/* Animación de salto aleatoria */
+.movie-card-link:nth-child(2n) .movie-card { animation-delay: -2.5s; }
+.movie-card-link:nth-child(3n) .movie-card { animation-delay: -1s; }
+.movie-card-link:nth-child(5n) .movie-card { animation-delay: -4s; }
+
+@keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* ¡CAMBIO! Efecto de hover corregido */
 .movie-card:hover {
-    /* CAMBIO: Efecto de hover más pronunciado */
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 30px -5px var(--primary-color-shadow);
+    animation: none; /* Detiene la animación de salto */
+    transform: scale(1.05); /* Aplica solo la expansión */
+    /* Sombra Púrpura (más fuerte) */
+    box-shadow: 0 15px 40px -5px var(--primary-color-shadow);
 }
 
 .movie-poster {
@@ -325,7 +346,7 @@ h1, h2, h3 {
     position: relative;
     overflow: hidden; /* Necesario para el overlay */
 }
-/* ¡NUEVO! Overlay gradiente en el póster */
+/* Overlay gradiente en el póster */
 .movie-poster::after {
     content: '';
     position: absolute;
@@ -333,10 +354,11 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 50%;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+    /* ¡CAMBIO! Gradiente púrpura oscuro */
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(44, 26, 74, 0.9) 100%);
 }
 
-/* ¡NUEVO! Etiqueta de Género */
+/* Etiqueta de Género */
 .card-badge {
     position: absolute;
     top: 10px;
@@ -352,32 +374,65 @@ h1, h2, h3 {
 }
 
 .movie-card-content {
-    padding: 15px; /* Padding normal */
+    padding: 15px; 
+    /* ¡CAMBIO! Altura mínima para que no se deforme */
+    min-height: 4.5em; 
+    box-sizing: border-box;
 }
 
-/* --- CORRECCIÓN DE DEFORMACIÓN DE TARJETAS --- */
+/* --- Título de Tarjeta con Animación Marquee --- */
 .movie-card-content h3 {
-    font-size: 1rem; /* Fuente más grande */
+    font-size: 1rem; 
     margin-bottom: 5px; 
-    line-height: 1.3em; /* Más espacio de línea */
+    line-height: 1.3em; 
     
-    /* 1. Forzamos la altura a 2 líneas */
+    /* 1. Contenedor de 2 líneas */
     height: 2.6em; /* (line-height * 2) */
     
-    /* 2. Ocultamos cualquier texto extra */
+    /* 2. Oculta todo lo que se desborde */
     overflow: hidden;
-    
-    /* 3. Añadimos "..." para navegadores WebKit (Chrome, Safari) */
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Límite de 2 líneas */
-    -webkit-box-orient: vertical;
-    
-    /* 4. Fallback genérico de "..." */
-    text-overflow: ellipsis;
+    white-space: normal;
+    color: var(--text-on-dark);
 }
 
+/* 3. El span interno que contiene el texto */
+.movie-card-content h3 span {
+    /* Por defecto, se corta a 2 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    
+    /* Propiedades para la animación */
+    display: inline-block; /* Necesario para transform */
+    transform: translateX(0);
+    /* ¡CAMBIO! Animación más rápida (5s) */
+    transition: transform 5s linear; 
+}
+
+/* 4. Animación al pasar el ratón */
+/* ¡CAMBIO! La animación ya no cambia la altura del h3 */
+.movie-card:hover .movie-card-content h3 span {
+    -webkit-line-clamp: 1; /* Permite que sea una sola línea */
+    white-space: nowrap;
+    padding-left: 100%; /* Inicia fuera de la pantalla a la derecha */
+    transform: translateX(-100%);
+    /* ¡CAMBIO! Velocidad aumentada (5s) */
+    transition: transform 5s linear; 
+    animation: marquee 5s linear infinite;
+}
+
+/* ¡CAMBIO! Velocidad aumentada (5s) */
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
 .movie-card-meta {
-    font-size: 0.85rem; /* Fuente más grande */
+    font-size: 0.85rem; 
     color: var(--text-light);
     white-space: nowrap;
     overflow: hidden;
@@ -385,7 +440,7 @@ h1, h2, h3 {
 }
 .movie-card-meta .author {
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--text-on-dark);
 }
 
 
@@ -397,9 +452,10 @@ h1, h2, h3 {
     text-align: center;
     margin-top: 40px;
 }
-/* ¡NUEVO! Estilo para el contador del footer */
+/* Estilo para el contador del footer */
 .main-footer .visit-counter {
     margin-bottom: 15px;
+    opacity: 0.7; /* Menos prominente */
 }
 .social-links {
     margin-top: 15px;
@@ -494,22 +550,27 @@ audio {
     font-style: italic;
     line-height: 1.6; 
 }
-/* ¡NUEVO! Estilo para el contador de página */
+/* Estilo para el contador de página */
 .visit-counter-page {
     margin-top: 10px;
+    opacity: 0.8;
 }
 
 .detail-meta strong {
     color: var(--text-dark);
     font-style: normal;
 }
-.detail-meta .date-link {
-    color: var(--primary-color);
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    font-weight: 500;
+/* ¡CAMBIO! Se quitan los puntos */
+.detail-meta .date-link,
+.detail-meta .author-tooltip-trigger strong {
+    text-decoration: none;
+    font-weight: 600;
 }
-.detail-meta .date-link:hover {
+.detail-meta .author-tooltip-trigger strong {
+    color: var(--primary-color);
+}
+.detail-meta .date-link:hover,
+.detail-meta .author-tooltip-trigger:hover strong {
     color: var(--secondary-color);
 }
 /* Ficha Técnica */
@@ -536,8 +597,8 @@ audio {
 /* ¡NUEVO! Estilo para el enlace de género */
 .data-sheet dd a.data-sheet-link {
     color: var(--text-light);
-    text-decoration: underline;
-    text-decoration-style: dotted;
+    text-decoration: none;
+    font-weight: 500;
 }
 .data-sheet dd a.data-sheet-link:hover {
     color: var(--primary-color);
@@ -584,6 +645,7 @@ audio {
     list-style: none;
     padding-left: 0;
     margin-top: 0; /* ¡CAMBIO! */
+    text-align: left; /* Asegura que no se justifique */
 }
 .icon-list li {
     position: relative;
@@ -627,29 +689,19 @@ audio {
     display: inline-block;
     cursor: help;
 }
-.author-tooltip-trigger strong {
-    color: var(--primary-color);
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    font-style: normal;
-}
-.author-tooltip-trigger:hover strong {
-    color: var(--secondary-color);
-}
+/* ¡CAMBIO! Tarjeta flotante (solo foto) */
 .author-tooltip-card {
     display: none;
     position: absolute;
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    /* ¡CAMBIO! Más ancho para el nombre */
-    width: 200px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
+    width: auto; /* Se ajusta a la imagen */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    
     z-index: 10;
     opacity: 0;
     transition: opacity 0.3s ease, bottom 0.3s ease;
@@ -666,15 +718,11 @@ audio {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 8px;
-    border: 2px solid var(--primary-color);
+    border: 3px solid var(--primary-color); /* Énfasis púrpura */
+    box-shadow: 0 4px 15px var(--primary-color-shadow);
 }
 .author-tooltip-card .tooltip-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    font-style: normal;
-    /* ¡CAMBIO! Para nombres largos */
-    word-wrap: break-word;
+    display: none; /* Ocultamos el nombre como pediste */
 }
 /* Fin de Estilos de Autor */
 
@@ -699,29 +747,29 @@ audio {
     width: 100%; 
     max-height: 450px; /* Límite de altura */
 }
-/* ¡CAMBIO! Botones del carrusel con color de tema */
+/* ¡CAMBIO! Botones del carrusel con estilo anterior + énfasis */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--primary-color); /* Color de tema */
+    /* Transparencia púrpura */
+    background-color: rgba(106, 17, 203, 0.5); 
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco */
+    border: none;
     padding: 10px 15px;
     font-size: 1.5rem;
     cursor: pointer;
-    border-radius: 50%; /* Círculos */
-    width: 50px;
-    height: 50px;
-    box-sizing: border-box;
-    opacity: 0.7; /* Ligeramente transparente */
+    border-radius: 8px; /* Cuadrado redondeado */
+    width: auto;
+    height: auto;
+    opacity: 0; /* Oculto por defecto */
     transition: opacity 0.3s, background-color 0.3s;
 }
 .carousel:hover .carousel-control {
     opacity: 1; /* Totalmente visible al pasar el mouse */
 }
 .carousel-control:hover {
-    background-color: var(--secondary-color); /* Color de hover */
+    background-color: rgba(106, 17, 203, 0.8); /* Más oscuro al pasar */
 }
 .carousel-control.prev {
     left: 15px;
@@ -789,6 +837,12 @@ audio {
 /* --- 8. ESTILOS PARA TARJETA BLOQUEADA --- */
 .movie-card-link.is-locked {
     cursor: not-allowed;
+}
+.is-locked .movie-card {
+    /* Mantenemos el fondo oscuro pero lo atenuamos */
+    background-color: var(--card-bg-dark);
+    opacity: 0.7;
+    animation: none; /* Quitamos la animación de salto */
 }
 .is-locked .movie-poster {
     filter: grayscale(80%) brightness(0.6);
