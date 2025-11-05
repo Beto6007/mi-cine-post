@@ -16,25 +16,27 @@
     <script async defer crossorigin="anonymous" 
             src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID&autoLogAppEvents=1" 
             nonce="aBcDeF"></script>
-    <header class="main-header">
+      <header class="main-header">
+        
         <div class="header-content">
             <div class="header-top">
-                <a href="index.html" class="logo">MiCineBlog</a>
+                <a href="index.html" class="logo">CinePost</a>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="/index.html">Inicio</a></li>
-                        <li><a href="/release-notes.html">Release Notes</a></li> 
-                        <li><a href="/autores.html">Autores</a></li> 
-                        <li><a href="/contacto.html">Contacto</a></li> 
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="release-notes.html">Release Notes</a></li>
+                        <li><a href="autores.html">Autores</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
+            
             <div class="header-filters">
                 <input type="search" id="search-bar" placeholder="Buscar por título...">
                 <select id="genre-filter">
                     <option value="all">Género</option>
-                    <option value="Fantasia">Fantasía</option>
-                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                    <option value="fantasía">Fantasía</option>
+                    <option value="ciencia ficción">Ciencia Ficción</option>
                 </select>
                 <select id="author-filter">
                     <option value="all">Autor</option>
@@ -44,11 +46,11 @@
                 <input type="text" id="date-filter" placeholder="Fecha...">
             </div>
         </div>
+        
         <nav class="az-filter" id="az-filter-nav">
-            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
-        </nav>
+            <a href="#" data-letter="all" class="active">#</a>
+            </nav>
     </header>
-
     <main class="movie-detail-container">
 
         <div class="detail-grid-container">
