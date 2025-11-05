@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle - Harry Potter y la Piedra Filosofal</title>
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" 
-            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID&autoLogAppEvents=1" 
-            nonce="aBcDeF"></script>
-      
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID&autoLogAppEvents=1"
+        nonce="aBcDeF"></script>
+
     <header class="main-header">
-        
+
         <div class="header-content">
             <div class="header-top">
                 <a href="/index.html" class="logo">CinePost</a>
@@ -31,7 +33,7 @@
                     </ul>
                 </nav>
             </div>
-            
+
             <div class="header-filters">
                 <input type="search" id="search-bar" placeholder="Buscar por título...">
                 <select id="genre-filter">
@@ -47,7 +49,7 @@
                 <input type="text" id="date-filter" placeholder="Fecha...">
             </div>
         </div>
-        
+
         <nav class="az-filter" id="az-filter-nav">
             <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
         </nav>
@@ -58,8 +60,9 @@
         <div class="detail-grid-container">
 
             <aside class="detail-media-col">
-                
-                <img src="/hp3-poster.jpg" alt="Poster Harry Potter 3" class="detail-poster">
+
+                <img src="https://m.media-amazon.com/images/I/51np0IOalxL._AC_UF894,1000_QL80_.jpg"
+                    alt="Poster Harry Potter 3" class="detail-poster">
 
                 <div class="star-rating" data-movie-id="hp_prisionero_azkaban">
                     <h3>¡Califica esta película!</h3>
@@ -73,6 +76,7 @@
                     <span id="star-avg-display" class="rating-display"></span>
                     <span id="rating-saved-msg" class="saved-msg"></span>
                 </div>
+
                 <div class="audio-player-section">
                     <h3>Resumen en Audio</h3>
                     <p>Escucha la reseña completa (solo voz).</p>
@@ -82,28 +86,28 @@
                     </audio>
                 </div>
 
-                </aside>
+            </aside>
 
             <section class="detail-info-col">
-                
-                <span class="original-title">Harry Potter and the Prisoner of Azkaban</span>
+
                 <h1>Harry Potter y el Prisionero de Azkaban</h1>
+                <span class="original-title">Harry Potter and the Prisoner of Azkaban</span>
 
                 <div class="detail-meta">
-                    Subido por 
-                    <a href="/index.html?author=Alberto%20Mart%C3%ADnez%20Cruz" class="author-tooltip-trigger" 
-                       title="Ver todos los posts de Alberto Martínez Cruz"
-                       data-fullname="Alberto Martínez Cruz" 
-                       data-photo="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGQ5yG7GOQAvB6OmkIU5xCHyhhfgRI_F_HKGF-BEj8X8aIeSyXxgYffRDdh9f5nALCces-JNBIm8oKlx1O9zdXJ&_nc_ohc=B6E1HnBqBDYQ7kNvwGXFand&_nc_oc=AdliIbbMJPsFUZPGP0FUzklWBqOfP7O0UHpoYml5_5JNZxwjqDKWY5imtW8-Rw-Mt-FWoTk7XKAcQ-CNQH29KB94&_nc_zt=23&_nc_ht=scontent.fpbc2-6.fna&_nc_gid=k0jhyLPtPAUzQnYmv_7DBg&oh=00_AfgV_ZfyY8yZbW9_UsR1yb_bVVHlu1xs70UcX12B6WvyJA&oe=691043A1"> 
+                    Subido por
+                    <a href="/index.html?author=Alberto%20Mart%C3%ADnez%20Cruz" class="author-tooltip-trigger"
+                        title="Ver todos los posts de Alberto Martínez Cruz" data-fullname="Alberto Martínez Cruz"
+                        data-photo="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGQ5yG7GOQAvB6OmkIU5xCHyhhfgRI_F_HKGF-BEj8X8aIeSyXxgYffRDdh9f5nALCces-JNBIm8oKlx1O9zdXJ&_nc_ohc=B6E1HnBqBDYQ7kNvwGXFand&_nc_oc=AdliIbbMJPsFUZPGP0FUzklWBqOfP7O0UHpoYml5_5JNZxwjqDKWY5imtW8-Rw-Mt-FWoTk7XKAcQ-CNQH29KB94&_nc_zt=23&_nc_ht=scontent.fpbc2-6.fna&_nc_gid=k0jhyLPtPAUzQnYmv_7DBg&oh=00_AfgV_ZfyY8yZbW9_UsR1yb_bVVHlu1xs70UcX12B6WvyJA&oe=691043A1">
                         <strong>Alberto Martínez Cruz</strong>
                         <div class="author-tooltip-card">
-                            <img src="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGQ5yG7GOQAvB6OmkIU5xCHyhhfgRI_F_HKGF-BEj8X8aIeSyXxgYffRDdh9f5nALCces-JNBIm8oKlx1O9zdXJ&_nc_ohc=B6E1HnBqBDYQ7kNvwGXFand&_nc_oc=AdliIbbMJPsFUZPGP0FUzklWBqOfP7O0UHpoYml5_5JNZxwjqDKWY5imtW8-Rw-Mt-FWoTk7XKAcQ-CNQH29KB94&_nc_zt=23&_nc_ht=scontent.fpbc2-6.fna&_nc_gid=k0jhyLPtPAUzQnYmv_7DBg&oh=00_AfgV_ZfyY8yZbW9_UsR1yb_bVVHlu1xs70UcX12B6WvyJA&oe=691043A1" alt="Foto de Alberto Martínez Cruz">
+                            <img src="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGQ5yG7GOQAvB6OmkIU5xCHyhhfgRI_F_HKGF-BEj8X8aIeSyXxgYffRDdh9f5nALCces-JNBIm8oKlx1O9zdXJ&_nc_ohc=B6E1HnBqBDYQ7kNvwGXFand&_nc_oc=AdliIbbMJPsFUZPGP0FUzklWBqOfP7O0UHpoYml5_5JNZxwjqDKWY5imtW8-Rw-Mt-FWoTk7XKAcQ-CNQH29KB94&_nc_zt=23&_nc_ht=scontent.fpbc2-6.fna&_nc_gid=k0jhyLPtPAUzQnYmv_7DBg&oh=00_AfgV_ZfyY8yZbW9_UsR1yb_bVVHlu1xs70UcX12B6WvyJA&oe=691043A1"
+                                alt="Foto de Alberto Martínez Cruz">
                             <span class="tooltip-name">Alberto Martínez Cruz</span>
                         </div>
                     </a>
-                    el 
-                    <a href="/index.html?date=2025-02-01" class="date-link" title="Ver todos de esta fecha">
-                        01 de febrero de 2025
+                    el
+                    <a href="/index.html?date=2025-11-08" class="date-link" title="Ver todos de esta fecha">
+                        08 de noviembre de 2025
                     </a>
                 </div>
 
@@ -125,39 +129,44 @@
 
                         <dt>Elenco:</dt>
                         <dd>Daniel Radcliffe, Rupert Grint, Emma Watson, y más.</dd>
-                        
+
                         <dt>Ver en:</dt>
                         <dd class="streaming-logos-inline">
-                            <a href="#" title="Max"><img src="/logo-max.png" alt="Max"></a>
-                            <a href="#" title="Prime Video"><img src="/logo-prime.png" alt="Prime Video"></a>
+                            <a href="#" title="Max"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968611.png"
+                                    alt="Max"></a>
+                            <a href="#" title="Prime Video"><img
+                                    src="https://cdn-icons-png.flaticon.com/128/15527/15527760.png"
+                                    alt="Prime Video"></a>
                         </dd>
                     </dl>
                 </div>
-                
+
                 <div class="trailer-section">
-                    <h2>Tráiler</h2> <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/PAo-oR-c1-U" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/cUtaBkW1MKo?si=gjtlI5fBXjNETRXI"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
                     </div>
                 </div>
 
                 <div class="summary">
                     <h2>Resumen</h2>
-                    <p>Es el tercer año de Harry en Hogwarts y...</p>
+                    <p>Harry inicia su tercer año en Hogwarts, donde se entera de que el peligroso criminal Sirius Black ha escapado de la prisión de Azkaban y se cree que busca matarlo. Junto a sus amigos Ron y Hermione, Harry descubre que Sirius Black está más relacionado con el pasado de sus padres de lo que se pensaba. La historia también introduce a los dementores, criaturas que se alimentan de la felicidad, y al profesor Lupin, quien enseña a Harry a defenderse de ellos usando un hechizo Patronus. Al final, se revela que Sirius Black es inocente y Peter Pettigrew, el verdadero traidor, es la rata de Ron. </p>
                 </div>
 
                 <div class="carousel-section">
                     <h2>Escenas Destacadas</h2>
                     <div class="carousel">
                         <div class="carousel-inner">
-                            <img src="/hp3-escena1.jpg" alt="Escena 1" class="carousel-item">
-                            <img src="/hp3-escena2.jpg" alt="Escena 2" class="carousel-item">
-                            <img src="/hp3-escena3.jpg" alt="Escena 3" class="carousel-item">
+                            <img src="https://www.toledoblade.com/image/2004/06/04/1140x_a10-7_cTC/Movie-review-Harry-Potter-and-the-Prisoner-of-Azkaban.jpg"
+                                alt="Escena 1" class="carousel-item">
+                            <img src="https://colinsreview.com/wp-content/uploads/2024/03/Harry-Potter-and-the-Prisoner-of-Azkaban.jpg"
+                                alt="Escena 2" class="carousel-item">
+                            <img src="https://cineuniversitariodeluruguay.org.uy/wp-content/uploads/HarryPotteryelprisionerodeAzkaban_45212-9n9mbL.tmp_.jpg"
+                                alt="Escena 3" class="carousel-item">
                         </div>
                         <button class="carousel-control prev">&lt;</button>
                         <button class="carousel-control next">&gt;</button>
@@ -175,18 +184,19 @@
                 <div class="characteristics-section">
                     <h2>3 Características Clave</h2>
                     <ul class="icon-list check">
-                        <li><strong>Tono Oscuro y Maduro:</strong> Alfonso Cuarón introdujo una estética más sombría y cinematográfica que marcó el resto de la saga.</li>
-                        <li><strong>Viajes en el Tiempo:</strong> Presenta una de las mecánicas de viaje en el tiempo mejor ejecutadas y autocontenidas del cine.</li>
-                        <li><strong>Desarrollo de Personajes:</strong> El trío principal muestra una profundidad emocional mucho mayor, lidiando con el miedo y la adolescencia.</li>
+                        <li><strong>Tono Oscuro y Maduro:</strong> Alfonso Cuarón introdujo una estética más sombría y
+                            cinematográfica que marcó el resto de la saga.</li>
+                        <li><strong>Viajes en el Tiempo:</strong> Presenta una de las mecánicas de viaje en el tiempo
+                            mejor ejecutadas y autocontenidas del cine.</li>
+                        <li><strong>Desarrollo de Personajes:</strong> El trío principal muestra una profundidad
+                            emocional mucho mayor, lidiando con el miedo y la adolescencia.</li>
                     </ul>
                 </div>
 
                 <div class="comments-section">
                     <h2>Comentarios</h2>
-                    <div class="fb-comments" 
-                         data-href="https://mi-cine-post.vercel.app/pages/detalle.html" 
-                         data-width="100%" 
-                         data-numposts="5">
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/detalle.html"
+                        data-width="100%" data-numposts="5">
                     </div>
                 </div>
 
@@ -195,7 +205,7 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2025 MiCineBlog. Todos los derechos reservados.</p>
+        <p>&copy; 2025 CinePost. Todos los derechos reservados.</p>
         <div class="social-links">
             <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
@@ -203,8 +213,9 @@
             <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="/script.js"></script>
 </body>
+
 </html>
