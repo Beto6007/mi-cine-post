@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle - Harry Potter y la Piedra Filosofal</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID_REAL&autoLogAppEvents=1"
+        nonce="aBcDeF"></script>
+
+    <header class="main-header">
+
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo">CinePost</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasía">Fantasía</option>
+                    <option value="ciencia ficción">Ciencia Ficción</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="Alberto Martínez Cruz">Alberto Martínez Cruz</option>
+                    <option value="4lb One">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="https://m.media-amazon.com/images/I/91uddP3RA5L._AC_UF894,1000_QL80_.jpg"
+                    alt="Poster Harry Potter 3" class="detail-poster">
+
+                <div class="star-rating" data-movie-id="hp_prisionero_azkaban">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <audio controls>
+                        <source src="/audio/resumen-hp1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Star Wars: Nueva Esperanza (1977)</h1>
+                <span class="original-title">Star Wars: Nueva Esperanza (1977)</span>
+
+                <div class="detail-meta">
+                    Subido por
+                    <a href="/index.html?author=amc" class="author-tooltip-trigger"
+                        title="Ver todos los posts de Alberto Martínez Cruz" data-fullname="Alberto Martínez Cruz"
+                        data-photo="https">
+                        <strong>Alberto Martínez Cruz</strong>
+                        <div class="author-tooltip-card">
+                            <img src="https://scontent.fpaz4-1.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGQ5yG7GOQAvB6OmkIU5xCHyhhfgRI_F_HKGF-BEj8X8aIeSyXxgYffRDdh9f5nALCces-JNBIm8oKlx1O9zdXJ&_nc_ohc=B6E1HnBqBDYQ7kNvwHRESo3&_nc_oc=AdlGobs2lycbi_y_HkRoGwhPpt5zLoer4sJ0FC2_oNyYQ1HdHuCGc6zpqeWTHz6UvvI&_nc_zt=23&_nc_ht=scontent.fpaz4-1.fna&_nc_gid=KkSBxpsbqTfbP07LQPuVFg&oh=00_Afg9E5sPPRkfUCL5POWN2AK7BJ2lL_dKWEr9iJv8BOHYsg&oe=69119521"
+                                alt="Foto de Alberto Martínez Cruz">
+                        </div>
+                    </a>
+                    el
+                    <a href="/index.html?date=2025-11-09" class="date-link" title="Ver todos de esta fecha">
+                        09 de noviembre de 2025
+                    </a>
+                    <div class="visit-counter-page">
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmi-cine-post.vercel.app%2Fpages%2Fdetalle.html&countColor=%236a11cb"/>
+                    </div>
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>1977</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=ficcion" class="data-sheet-link">Ciencia Ficción</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Alfonso Cuarón</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>Warner Bros. Pictures</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Daniel Radcliffe, Rupert Grint, Emma Watson, y más.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="#" title="Max"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968611.png"
+                                    alt="Max"></a>
+                            <a href="#" title="Prime Video"><img
+                                    src="https://cdn-icons-png.flaticon.com/128/15527/15527760.png"
+                                    alt="Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/cUtaBkW1MKo?si=gjtlI5fBXjNETRXI"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">Harry inicia su tercer año en Hogwarts, donde se entera de que el peligroso criminal Sirius Black ha escapado de la prisión de Azkaban y se cree que busca matarlo. Junto a sus amigos Ron y Hermione, Harry descubre que Sirius Black está más relacionado con el pasado de sus padres de lo que se pensaba. La historia también introduce a los dementores, criaturas que se alimentan de la felicidad, y al profesor Lupin, quien enseña a Harry a defenderse de ellos usando un hechizo Patronus. Al final, se revela que Sirius Black es inocente y Peter Pettigrew, el verdadero traidor, es la rata de Ron. </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://d21ehp1kf1k9m9.cloudfront.net/wp-content/uploads/2019/07/24113313/prisoner03.jpg"
+                                alt="Escena 1" class="carousel-item">
+                            <img src="https://www.toledoblade.com/image/2004/06/04/1140x_a10-7_cTC/Movie-review-Harry-Potter-and-the-Prisoner-of-Azkaban.jpg"
+                                alt="Escena 2" class="carousel-item">
+                            <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2020/01/POA-featured-image.jpg"
+                                alt="Escena 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Nominada a 2 Oscars (Mejores Efectos Visuales, Mejor BSO).</li>
+                        <li>Ganadora del BAFTA a "Mejor Película Británica" (Premio del Público).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>Tono Oscuro y Maduro:</strong> Alfonso Cuarón introdujo una estética más sombría y
+                            cinematográfica que marcó el resto de la saga.</li>
+                        <li><strong>Viajes en el Tiempo:</strong> Presenta una de las mecánicas de viaje en el tiempo
+                            mejor ejecutadas y autocontenidas del cine.</li>
+<li><strong>Desarrollo de Personajes:</strong> El trío principal muestra una profundidad
+                            emocional mucho mayor, lidiando con el miedo y la adolescencia.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" 
+                         data-href="https://TU-SITIO-WEB.COM/detalle-harry-potter-3.html" 
+                         data-width="100%" 
+                         data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
