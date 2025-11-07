@@ -46,8 +46,9 @@
     
     max-width: 1200px;
     
-    /* ¡¡¡ESTA ES LA CORRECCIÓN!!! 
-      Cambiamos el margen superior de 0 a 30px.
+    /* ¡¡¡LA CORRECCIÓN MÁGICA!!! 
+      El padding-top del body (150px) ya empuja.
+      Nosotros solo añadimos el espacio gris SIMÉTRICO.
     */
     margin: 30px auto 30px auto; 
     

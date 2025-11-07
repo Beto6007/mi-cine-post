@@ -2,8 +2,9 @@
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
     
-    /* ¡¡¡ESTA ES LA CORRECCIÓN!!! 
-      Cambiamos el margen superior de 0 a 30px.
+    /* ¡¡¡LA CORRECCIÓN MÁGICA!!! 
+      El padding-top del body (150px) ya empuja.
+      Nosotros solo añadimos el espacio gris SIMÉTRICO.
     */
     margin: 30px auto 30px auto; 
     

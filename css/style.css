@@ -24,12 +24,13 @@ body {
     background-color: var(--light-bg);
     color: var(--text-dark);
 }
-/* Padding-top ajustado para el header */
+/* ¡¡¡LA CORRECCIÓN MÁGICA!!! */
+/* El padding es EXACTAMENTE la altura del header */
 body {
-    padding-top: 160px; 
+    padding-top: 150px; /* Altura REAL del header con filtros */
 }
 body.page-simple-header {
-    padding-top: 60px; 
+    padding-top: 60px; /* Altura REAL del header simple */
 }
 
 
@@ -353,8 +354,8 @@ h1, h2, h3 {
     .content-page,
     .form-container,
     .author-list {
-        /* ESTA ES LA CORRECCIÓN DE ESPACIADO PARA TABLET */
-        margin-top: 20px;
+        /* El margin-top ahora lo controla el body padding */
+        margin-top: 20px; /* Reducimos el gap en tablet */
         margin-bottom: 20px;
         padding: 20px;
     }
@@ -405,15 +406,14 @@ h1, h2, h3 {
     }
 
     /* --- AJUSTES DE ALTURA DEL BODY (¡IMPORTANTE!) --- */
-    /* Padding-top estático reducido */
+    /* El padding del body se ajusta a la altura del header en móvil */
     body {
-        /* (header-top: 60px) + (az-filter: 38px) = ~100px. */
-        padding-top: 110px; 
+        padding-top: 110px; /* Altura del header + A-Z en móvil */
     }
     body.page-simple-header {
-        /* Solo la altura del header-top */
-        padding-top: 80px; 
+        padding-top: 80px; /* Altura del header simple en móvil */
     }
+
 
     /* --- Filtro A-Z más pequeño --- */
     .az-filter a {
@@ -423,10 +423,6 @@ h1, h2, h3 {
 
     /* --- Tarjetas de Index (2 columnas) --- */
     #movie-list {
-        /* ESTA ES LA CORRECCIÓN DE ESPACIADO PARA MÓVIL (en tablet ya está) */
-        margin-top: 20px;
-        margin-bottom: 20px;
-        
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         padding: 15px;
