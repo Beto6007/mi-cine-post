@@ -4,10 +4,7 @@
     --secondary-color: #2575fc; /* Azul para gradiente */
     --light-bg: #f4f4f9;       
     --card-bg: #ffffff;
-    
-    /* ¡CAMBIO! Fondo púrpura oscuro */
     --card-bg-dark: #2c1a4a;
-    
     --text-dark: #333333;       
     --text-light: #777777;      
     --text-on-dark: #f5f5f5;   /* Texto claro para tarjetas */
@@ -26,11 +23,13 @@ body {
 }
 /* ¡¡¡LA CORRECCIÓN MÁGICA!!! */
 /* El padding es EXACTAMENTE la altura del header */
+/* 110px (header-content) + 40px (az-filter) = 150px */
 body {
-    padding-top: 150px; /* Altura REAL del header con filtros */
+    padding-top: 150px; 
 }
+/* 60px (header-content simple) */
 body.page-simple-header {
-    padding-top: 60px; /* Altura REAL del header simple */
+    padding-top: 60px; 
 }
 
 
@@ -354,8 +353,8 @@ h1, h2, h3 {
     .content-page,
     .form-container,
     .author-list {
-        /* El margin-top ahora lo controla el body padding */
-        margin-top: 20px; /* Reducimos el gap en tablet */
+        /* El margin-top ahora es más pequeño para tablet */
+        margin-top: 20px;
         margin-bottom: 20px;
         padding: 20px;
     }
@@ -407,11 +406,20 @@ h1, h2, h3 {
 
     /* --- AJUSTES DE ALTURA DEL BODY (¡IMPORTANTE!) --- */
     /* El padding del body se ajusta a la altura del header en móvil */
+    /* (header-top: 60px) + (az-filter: 38px) = ~100px */
     body {
-        padding-top: 110px; /* Altura del header + A-Z en móvil */
+        /* Reducimos un poco el padding para que no se vea tan grande */
+        padding-top: 100px;
     }
+    /* (header-top: 60px) */
     body.page-simple-header {
-        padding-top: 80px; /* Altura del header simple en móvil */
+        padding-top: 60px;
+    }
+    
+    /* Corregimos la altura del header simple en móvil si el menú está abierto */
+    body.page-simple-header .main-header.menu-is-open {
+        /* Damos espacio para los links que se apilan */
+        padding-bottom: 15px;
     }
 
 
