@@ -4,8 +4,12 @@
 .form-container,
 .author-list {
     max-width: 900px; /* Ancho estándar para contenido */
-    /* ¡CAMBIO! Espacio superior quitado */
-    margin: 0 auto 30px auto;
+    
+    /* ¡¡¡ESTA ES LA CORRECCIÓN!!! 
+      Cambiamos el margen superior de 0 a 30px.
+    */
+    margin: 30px auto 30px auto;
+    
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;

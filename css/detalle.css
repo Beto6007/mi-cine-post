@@ -1,8 +1,12 @@
 /* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
-    /* ¡CAMBIO! margin-top quitado */
-    margin: 0 auto 30px auto; 
+    
+    /* ¡¡¡ESTA ES LA CORRECCIÓN!!! 
+      Cambiamos el margen superior de 0 a 30px.
+    */
+    margin: 30px auto 30px auto; 
+    
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;

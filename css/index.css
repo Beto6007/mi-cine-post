@@ -45,8 +45,12 @@
     justify-content: center; 
     
     max-width: 1200px;
-    /* ¡CAMBIO! Espacio superior quitado (ahora lo controla el body padding) */
-    margin: 0 auto 30px auto; 
+    
+    /* ¡¡¡ESTA ES LA CORRECCIÓN!!! 
+      Cambiamos el margen superior de 0 a 30px.
+    */
+    margin: 30px auto 30px auto; 
+    
     padding: 0 20px;
 }
 
