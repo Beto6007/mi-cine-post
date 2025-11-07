@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Detalle - [Nombre de la Película]</title>
+    <title>Detalle - Star Wars: Episodio IV - Una Nueva Esperanza</title>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="/css/style.css">
@@ -20,11 +18,10 @@
 <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID&autoLogAppEvents=1"
-        nonce="aBcDeF"></script>
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
 
-            <header class="main-header">
-        
+    <header class="main-header">
         <div class="header-content">
             <div class="header-top">
                 <a href="/index.html" class="logo">CinePost</a>
@@ -44,31 +41,29 @@
                     <option value="all">Género</option>
                     <option value="fantasia">Fantasía</option>
                     <option value="ficcion">Ciencia Ficción</option>
-                </select>
+                    </select>
                 <select id="author-filter">
                     <option value="all">Autor</option>
                     <option value="amc">Alberto Martínez Cruz</option>
                     <option value="one">4lb One</option>
-                </select>
+                    </select>
                 <input type="text" id="date-filter" placeholder="Fecha...">
             </div>
         </div>
         
         <nav class="az-filter" id="az-filter-nav">
             <a href="#" data-letter="all" class="active">#</a>
-        </nav>
+            </nav>
     </header>
 
     <main class="movie-detail-container">
-
         <div class="detail-grid-container">
-
             <aside class="detail-media-col">
 
-                <img src="/ruta/a/poster-de-pelicula.jpg"
-                    alt="Poster de [Nombre de la Película]" class="detail-poster">
+                <img src="https://m.media-amazon.com/images/I/91uddP3RA5L._AC_UF894,1000_QL80_.jpg"
+                    alt="Poster de Star Wars: Episodio IV - Una Nueva Esperanza" class="detail-poster">
 
-                <div class="star-rating" data-movie-id="ID_UNICO_DE_PELICULA">
+                <div class="star-rating" data-movie-id="01">
                     <h3>¡Califica esta película!</h3>
                     <div class="stars" id="stars-container">
                         <i class="fa-regular fa-star" data-value="1"></i>
@@ -85,7 +80,7 @@
                     <h3>Resumen en Audio</h3>
                     <p>Escucha la reseña completa (solo voz).</p>
                     <audio controls>
-                        <source src="/audio/resumen-pelicula.mp3" type="audio/mpeg">
+                        <source src="[URL_DEL_AUDIO.mp3]" type="audio/mpeg">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </div>
@@ -94,53 +89,53 @@
 
             <section class="detail-info-col">
 
-                <h1>[Nombre de la Película]</h1>
-                <span class="original-title">[Nombre Original de la Película]</span>
+                <h1>Star Wars: Episodio IV - Una Nueva Esperanza</h1>
+                <span class="original-title">Star Wars</span>
 
                 <div class="detail-meta">
                     Subido por
-                    <a href="/index.html?author=Alberto%20Mart%C3%ADnez%20Cruz" class="author-tooltip-trigger"
+                    <a href="/index.html?author=amc" class="author-tooltip-trigger"
                         title="Ver todos los posts de Alberto Martínez Cruz" data-fullname="Alberto Martínez Cruz"
-                        data-photo="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532... (url de foto)">
-                        <strong>Alberto Martínez Cruz</strong>
+                        data-photo="">
+                        <strong>Alberto Martinez Cruz</strong>
                         <div class="author-tooltip-card">
-                            <img src="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532... (url de foto)"
+                            <img src="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGQ5yG7GOQAvB6OmkIU5xCHyhhfgRI_F_HKGF-BEj8X8aIeSyXxgYffRDdh9f5nALCces-JNBIm8oKlx1O9zdXJ&_nc_ohc=B6E1HnBqBDYQ7kNvwHd_-zh&_nc_oc=AdmR69xA45dJ27U4VU_mCrZKkwsgTellyEXGRbpOrFHZ79hI-xaMJ0Nu_uDsmTOYnyRS7xEu9gQ216QanFIXUfJB&_nc_zt=23&_nc_ht=scontent.fpbc2-6.fna&_nc_gid=spfjOWJPgd7eSk_Kw80rIw&oh=00_Afg-BwuC-vgy-001ylahOhuYxmZoI2fiB2dqyoxVE1PjQw&oe=69135721"
                                 alt="Foto de Alberto Martínez Cruz">
                         </div>
                     </a>
                     el
                     <a href="/index.html?date=2025-11-08" class="date-link" title="Ver todos de esta fecha">
-                        08 de noviembre de 2025
+                        08 de 11 de 2025
                     </a>
                     
                     <div class="visit-counter-page">
-                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmi-cine-post.vercel.app%2Fpages%2FNUEVA-PAGINA.html&countColor=%236a11cb"/>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fhttps://mi-cine-post.vercel.app/%2Fpages%2Fstar-wars.html&countColor=%236a11cb"/>
                     </div>
                 </div>
 
                 <div class="data-sheet">
                     <dl>
                         <dt>Año:</dt>
-                        <dd>[AAAA]</dd>
+                        <dd>1977</dd>
 
                         <dt>Género:</dt>
                         <dd>
-                            <a href="/index.html?genre=GENERO_CODIFICADO" class="data-sheet-link">[Nombre del Género]</a>
+                            <a href="/index.html?genre=ficcion" class="data-sheet-link">Ciencia Ficción</a>
                         </dd>
 
                         <dt>Director:</dt>
-                        <dd>[Nombre del Director]</dd>
+                        <dd>George Lucas</dd>
 
                         <dt>Distribuidora:</dt>
-                        <dd>[Nombre Distribuidora]</dd>
+                        <dd>20th Century Fox</dd>
 
                         <dt>Elenco:</dt>
-                        <dd>[Actor 1, Actriz 2, y más.]</dd>
+                        <dd>Mark Hamill, Harrison Ford, Carrie Fisher, Alec Guinness, Peter Cushing.</dd>
 
                         <dt>Ver en:</dt>
                         <dd class="streaming-logos-inline">
-                            <a href="#" title="Max"><img src="https.../logo-max.png" alt="Max"></a>
-                            <a href="#" title="Prime Video"><img src="https.../logo-prime.png" alt="Prime Video"></a>
+                            <a href="https://www.disneyplus.com/es-mx/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b?distributionPartner=google" target="_blank" title="Disney Plus"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Disney_plus_icon.png/2033px-Disney_plus_icon.png" alt="Disney Plus"></a>
+                            <a href="https://www.primevideo.com/-/es/detail/Star-Wars-Una-Nueva-Esperanza-Episodio-IV/0IVBFREFMV5OQBL8ISSC1DLU35" target="_blank" title="Prime Video"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQznHCnSv_mOWPc1g0dc6Ev2rYKuL6hHYe4LQ&s" alt="Prime Video"></a>
                         </dd>
                     </dl>
                 </div>
@@ -148,18 +143,14 @@
                 <div class="trailer-section">
                     <h2>Tráiler</h2>
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/vZ734NWnAHA?si=-OT8p0u5hjY0hGua" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <div class="summary">
                     <h2>Resumen</h2>
                     <p class="content-box">
-                        [Escribe aquí tu resumen completo y justificado de la película...]
+                        En una galaxia muy, muy lejana, la guerra civil galáctica ha estallado. La Alianza Rebelde lucha valientemente contra el tiránico Imperio Galáctico. Durante una batalla, la Princesa Leia Organa es capturada por el temible Darth Vader, pero no sin antes enviar un mensaje de auxilio a través del droide R2-D2. El mensaje llega a Luke Skywalker, un joven granjero del desértico planeta Tatooine, quien se une al sabio ermitaño Obi-Wan Kenobi. Juntos, reclutan al arrogante contrabandista Han Solo y a su leal copiloto Wookiee, Chewbacca, para embarcarse en una peligrosa misión: rescatar a la princesa y entregar los planos secretos de la Estrella de la Muerte, el arma definitiva del Imperio, a la base rebelde.
                     </p>
                 </div>
 
@@ -167,10 +158,10 @@
                     <h2>Escenas Destacadas</h2>
                     <div class="carousel">
                         <div class="carousel-inner">
-                            <img src="/ruta/a/escena1.jpg" alt="Escena 1" class="carousel-item">
-                            <img src="/ruta/a/escena2.jpg" alt="Escena 2" class="carousel-item">
-                            <img src="/ruta/a/escena3.jpg" alt="Escena 3" class="carousel-item">
-                        </div>
+                            <img src="https://elcairocinepublico.gob.ar/wp-content/uploads/2018/07/IV-5-.jpeg" alt="Random 1" class="carousel-item">
+                            <img src="https://play-lh.googleusercontent.com/proxy/cUAjPVJwQhMnagGUuZUpTauv4D3Qj7kMe5TLl4mbWyOaF9YzBYmqqbL-e8J3Xj6YU2NJhQJghCNXWLPSzR-GkWpbYQA4Hy6WiIAprIYkbZWBpA=s3840-w3840-h2160" alt="Random 2" class="carousel-item">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNbNSxWln5bzQqlbuJuNjbOzODXdDWjROF5lkyIvDWTJkMYFrXy5TnCGbVQTQXY0i87BViTGfkrHdoOFsD9puOg7YyY6nUethHigGkbsRZyVk3MMUZRHDtZvfVfEjy_riZF8Y3MRIG3PFF/s1600/vaderhoth.png" alt="Random 3" class="carousel-item">
+                            </div>
                         <button class="carousel-control prev">&lt;</button>
                         <button class="carousel-control next">&gt;</button>
                     </div>
@@ -179,23 +170,24 @@
                 <div class="awards-section">
                     <h2>Premios Destacados</h2>
                     <ul class="icon-list content-box">
-                        <li>[Premio o nominación 1]</li>
-                        <li>[Premio o nominación 2]</li>
+                        <li>Ganadora de 6 Premios Oscar (Mejor Banda Sonora Original, Edición, Sonido, Efectos Visuales, y más).</li>
+                        <li>Premio Oscar Especial por logros en efectos de sonido (Ben Burtt).</li>
+                        <li>Ganadora del Globo de Oro a la Mejor Banda Sonora (John Williams).</li>
                     </ul>
                 </div>
 
                 <div class="characteristics-section">
                     <h2>3 Características Clave</h2>
                     <ul class="icon-list check content-box">
-                        <li><strong>Característica 1:</strong> [Descripción...]</li>
-                        <li><strong>Característica 2:</strong> [Descripción...]</li>
-                        <li><strong>Característica 3:</strong> [Descripción...]</li>
+                        <li><strong>Revolución de Efectos Visuales:</strong> Definió el estándar moderno para los efectos especiales, creando un universo visualmente creíble y espectacular con innovadoras maquetas y combates espaciales.</li>
+                        <li><strong>Mitología (La Fuerza):</strong> Introdujo el concepto de "La Fuerza", los Jedi y los Sith, creando una mitología moderna y profunda que trasciende la pantalla.</li>
+                        <li><strong>El Viaje del Héroe:</strong> Utiliza la estructura narrativa clásica del "viaje del héroe" (Luke Skywalker) de una manera que resonó con audiencias globales, combinando arquetipos de fantasía con la estética de la ciencia ficción.</li>
                     </ul>
                 </div>
 
                 <div class="comments-section">
                     <h2>Comentarios</h2>
-                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/NUEVA-PAGINA.html"
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app//pages/star.wars.html"
                         data-width="100%" data-numposts="5">
                     </div>
                 </div>
@@ -207,10 +199,10 @@
     <footer class="main-footer">
         <p>&copy; 2025 CinePost. Todos los derechos reservados.</p>
         <div class="social-links">
-            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="[URL_FACEBOOK]" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="[URL_INSTAGRAM]" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="[URL_X_TWITTER]" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007/mi-cine-post" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
     </footer>
 
