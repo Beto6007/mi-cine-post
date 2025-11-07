@@ -365,15 +365,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // --- 3e. Inicialización de todo en Index.html ---
         
-        // 1. Activar tarjeta bloqueada
+        // 1. Ordenar Alfabéticamente
+        const sortedLinks = Array.from(allMovieLinks).sort((a, b) => {
+            return a.dataset.title.localeCompare(b.dataset.title);
+        });
+        movieListContainer.innerHTML = ''; 
+        sortedLinks.forEach(link => movieListContainer.appendChild(link));
+        allMovieLinks = document.querySelectorAll('.movie-card-link'); 
+        
+        // 2. Activar tarjeta bloqueada
         document.querySelectorAll('.movie-card-link.is-locked').forEach(link => {
             link.addEventListener('click', (e) => e.preventDefault());
         });
         
-        // 2. Activar Ruleta
+        // 3. Activar Ruleta
         setupRoulette();
         
-        // 3. Activar Filtros Normales (ahora con reset)
+        // 4. Activar Filtros Normales (ahora con reset)
         searchBar.addEventListener('input', () => {
             resetAllFilters(searchBar);
             window.filterAndSearchMovies();
@@ -387,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.filterAndSearchMovies();
         });
 
-        // 4. Activar Calendario (Flatpickr)
+        // 5. Activar Calendario (Flatpickr)
         calendarInstance = flatpickr(dateFilterInput, {
             dateFormat: "Y-m-d",
             onChange: function(selectedDates, dateStr, instance) {
@@ -402,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // 5. Revisar URL para filtros
+        // 6. Revisar URL para filtros
         checkURLForParams();
     }
     

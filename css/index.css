@@ -45,13 +45,8 @@
     justify-content: center; 
     
     max-width: 1200px;
-    
-    /* ¡¡¡LA CORRECCIÓN MÁGICA!!! 
-      El padding-top del body (150px) ya empuja.
-      Nosotros solo añadimos el espacio gris SIMÉTRICO.
-    */
-    margin: 30px auto 30px auto; 
-    
+    /* ¡CAMBIO! Espacio superior quitado (ahora lo controla el body padding) */
+    margin: 0 auto 30px auto; 
     padding: 0 20px;
 }
 
@@ -246,4 +241,4 @@
 .lock-message .fa-lock {
     margin-right: 8px;
     font-size: 0.9rem;
-}   
+}

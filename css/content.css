@@ -4,13 +4,8 @@
 .form-container,
 .author-list {
     max-width: 900px; /* Ancho estándar para contenido */
-    
-    /* ¡¡¡LA CORRECCIÓN MÁGICA!!! 
-      El padding-top del body (60px) ya empuja.
-      Nosotros solo añadimos el espacio gris SIMÉTRICO.
-    */
-    margin: 30px auto 30px auto;
-    
+    /* ¡CAMBIO! Espacio superior quitado */
+    margin: 0 auto 30px auto;
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -86,7 +81,6 @@
     text-align: center;
 }
 @media (min-width: 600px) {
-    /* Mantenemos esta media query porque es de layout, no de responsive */
     .author-card {
         flex-direction: row;
         text-align: left;

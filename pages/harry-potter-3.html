@@ -4,68 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Detalle Harry Potter y el Prisionero de Azkaban</title>
+    <title>Detalle - Harry Potter y la Piedra Filosofal</title>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-<link rel="stylesheet" href="/css/style.css?v=12">
-<link rel="stylesheet" href="/css/detalle.css?v=12">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
 </head>
 
 <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID_REAL&autoLogAppEvents=1"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=TU_APP_ID&autoLogAppEvents=1"
         nonce="aBcDeF"></script>
 
-<header class="main-header">
-    
-    <div class="header-content">
-        <div class="header-top">
-            <a href="/index.html" class="logo">CinePost</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/index.html" class="active">Inicio</a></li>
-                    <li><a href="/release-notes.html">Release Notes</a></li>
-                    <li><a href="/autores.html">Autores</a></li>
-                    <li><a href="/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+    <header class="main-header">
+
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo">CinePost</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasía">Fantasía</option>
+                    <option value="ciencia ficción">Ciencia Ficción</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="Alberto Martínez Cruz">Alberto Martínez Cruz</option>
+                    <option value="4lb One">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
         </div>
-        
-        <div class="header-filters">
-            <input type="search" id="search-bar" placeholder="Buscar por título...">
-            <select id="genre-filter">
-                <option value="all">Género</option>
-                <option value="fantasia">Fantasía</option>
-                <option value="ficcion">Ciencia Ficción</option>
-            </select>
-            <select id="author-filter">
-                <option value="all">Autor</option>
-                <option value="amc">Alberto Martínez Cruz</option>
-                <option value="4lb">4lb One</option>
-            </select>
-            <input type="text" id="date-filter" placeholder="Fecha...">
-        </div>
-    </div>
-    
-    <nav class="az-filter" id="az-filter-nav">
-        <a href="#" data-letter="all" class="active">#</a>
-    </nav>
-</header>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
 
     <main class="movie-detail-container">
+
         <div class="detail-grid-container">
 
             <aside class="detail-media-col">
 
-                <img src="https://i.pinimg.com/736x/b8/61/59/b861593b15e6143c6763ae673a6513e0.jpg"
-                    alt="Poster de [NOMBRE PELÍCULA]" class="detail-poster">
+                <img src="https"
+                    alt="Poster Harry Potter 3" class="detail-poster">
 
-                <div class="star-rating" data-movie-id="[ID_UNICO_PARA_ESTRELLAS]">
+                <div class="star-rating" data-movie-id="hp_prisionero_azkaban">
                     <h3>¡Califica esta película!</h3>
                     <div class="stars" id="stars-container">
                         <i class="fa-regular fa-star" data-value="1"></i>
@@ -77,11 +79,12 @@
                     <span id="star-avg-display" class="rating-display"></span>
                     <span id="rating-saved-msg" class="saved-msg"></span>
                 </div>
+
                 <div class="audio-player-section">
                     <h3>Resumen en Audio</h3>
                     <p>Escucha la reseña completa (solo voz).</p>
                     <audio controls>
-                        <source src="[LINK_A_TU_AUDIO.mp3]" type="audio/mpeg">
+                        <source src="/audio/resumen-hp1.mp3" type="audio/mpeg">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </div>
@@ -90,56 +93,55 @@
 
             <section class="detail-info-col">
 
-                <h1>[NOMBRE DE LA PELÍCULA]</h1>
-                <span class="original-title">[Título Original si es diferente]</span>
+                <h1>Harry Potter y el Prisionero de Azkaban</h1>
+                <span class="original-title">Harry Potter and the Prisoner of Azkaban</span>
 
                 <div class="detail-meta">
                     Subido por
-                    <a href="/index.html?author=[VALOR_AUTOR_FILTRO]" class="author-tooltip-trigger"
-                        title="Ver todos los posts de [NOMBRE COMPLETO AUTOR]" data-fullname="[NOMBRE COMPLETO AUTOR]"
-                        data-photo="[LINK_FOTO_AUTOR]">
-                        <strong>[NOMBRE COMPLETO AUTOR]</strong>
+                    <a href="/index.html?author=Alberto%20Mart%C3%ADnez%20Cruz" class="author-tooltip-trigger"
+                        title="Ver todos los posts de Alberto Martínez Cruz" data-fullname="Alberto Martínez Cruz"
+                        data-photo="https">
+                        <strong>Alberto Martínez Cruz</strong>
                         <div class="author-tooltip-card">
-                            <img src="[LINK_FOTO_AUTOR]"
-                                alt="Foto de [NOMBRE COMPLETO AUTOR]">
+                            <img src="https"
+                                alt="Foto de Alberto Martínez Cruz">
                         </div>
                     </a>
                     el
-                    <a href="/index.html?date=[FECHA_YYYY-MM-DD]" class="date-link" title="Ver todos de esta fecha">
-                        [FECHA_TEXTO_BONITO (ej. 09 de noviembre de 2025)]
+                    <a href="/index.html?date=2025-11-08" class="date-link" title="Ver todos de esta fecha">
+                        08 de noviembre de 2025
                     </a>
-                    
                     <div class="visit-counter-page">
-                        <img src="https://api.visitorbadge.io/api/visitors?path=[URL_COMPLETA_DE_ESTA_PAGINA]&countColor=%236a11cb"/>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmi-cine-post.vercel.app%2Fpages%2Fdetalle.html&countColor=%236a11cb"/>
                     </div>
-                    </div>
+                </div>
 
                 <div class="data-sheet">
                     <dl>
                         <dt>Año:</dt>
-                        <dd>[AÑO]</dd>
+                        <dd>2004</dd>
 
                         <dt>Género:</dt>
                         <dd>
-                            <a href="/index.html?genre=[VALOR_GENERO_FILTRO]" class="data-sheet-link">[NOMBRE GÉNERO]</a>
+                            <a href="/index.html?genre=fantas%C3%ADa" class="data-sheet-link">Fantasía</a>
                         </dd>
 
                         <dt>Director:</dt>
-                        <dd>[NOMBRE DIRECTOR]</dd>
+                        <dd>Alfonso Cuarón</dd>
 
                         <dt>Distribuidora:</dt>
-                        <dd>[NOMBRE DISTRIBUIDORA]</dd>
+                        <dd>Warner Bros. Pictures</dd>
 
                         <dt>Elenco:</dt>
-                        <dd>[LISTA DE ACTORES]</dd>
+                        <dd>Daniel Radcliffe, Rupert Grint, Emma Watson, y más.</dd>
 
                         <dt>Ver en:</dt>
                         <dd class="streaming-logos-inline">
-                            <a href="#" title="[Streaming 1]"><img src="[LINK_LOGO_STREAMING_1]"
-                                    alt="[Streaming 1]"></a>
-                            <a href="#" title="[Streaming 2]"><img
-                                    src="[LINK_LOGO_STREAMING_2]"
-                                    alt="[Streaming 2]"></a>
+                            <a href="#" title="Max"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968611.png"
+                                    alt="Max"></a>
+                            <a href="#" title="Prime Video"><img
+                                    src="https://cdn-icons-png.flaticon.com/128/15527/15527760.png"
+                                    alt="Prime Video"></a>
                         </dd>
                     </dl>
                 </div>
@@ -147,7 +149,7 @@
                 <div class="trailer-section">
                     <h2>Tráiler</h2>
                     <div class="video-container">
-                        <iframe src="[LINK_EMBED_YOUTUBE]"
+                        <iframe src="https://www.youtube.com/embed/cUtaBkW1MKo?si=gjtlI5fBXjNETRXI"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -157,17 +159,20 @@
 
                 <div class="summary">
                     <h2>Resumen</h2>
-                    <p class="content-box">[AQUÍ VA EL TEXTO DEL RESUMEN COMPLETO...]</p>
+                    <p class="content-box">Harry inicia su tercer año en Hogwarts, donde se entera de que el peligroso criminal Sirius Black ha escapado de la prisión de Azkaban y se cree que busca matarlo. Junto a sus amigos Ron y Hermione, Harry descubre que Sirius Black está más relacionado con el pasado de sus padres de lo que se pensaba. La historia también introduce a los dementores, criaturas que se alimentan de la felicidad, y al profesor Lupin, quien enseña a Harry a defenderse de ellos usando un hechizo Patronus. Al final, se revela que Sirius Black es inocente y Peter Pettigrew, el verdadero traidor, es la rata de Ron. </p>
                 </div>
 
                 <div class="carousel-section">
                     <h2>Escenas Destacadas</h2>
                     <div class="carousel">
                         <div class="carousel-inner">
-                            <img src="[LINK_ESCENA_1.jpg]" alt="Escena 1" class="carousel-item">
-                            <img src="[LINK_ESCENA_2.jpg]" alt="Escena 2" class="carousel-item">
-                            <img src="[LINK_ESCENA_3.jpg]" alt="Escena 3" class="carousel-item">
-                            </div>
+                            <img src="https"
+                                alt="Escena 1" class="carousel-item">
+                            <img src="https"
+                                alt="Escena 2" class="carousel-item">
+                            <img src="https"
+                                alt="Escena 3" class="carousel-item">
+                        </div>
                         <button class="carousel-control prev">&lt;</button>
                         <button class="carousel-control next">&gt;</button>
                     </div>
@@ -176,29 +181,31 @@
                 <div class="awards-section">
                     <h2>Premios Destacados</h2>
                     <ul class="icon-list content-box">
-                        <li>[Premio o nominación 1]</li>
-                        <li>[Premio o nominación 2]</li>
+                        <li>Nominada a 2 Oscars (Mejores Efectos Visuales, Mejor BSO).</li>
+                        <li>Ganadora del BAFTA a "Mejor Película Británica" (Premio del Público).</li>
                     </ul>
                 </div>
 
                 <div class="characteristics-section">
                     <h2>3 Características Clave</h2>
                     <ul class="icon-list check content-box">
-                        <li><strong>[Característica 1]:</strong> [Descripción...]</li>
-                        <li><strong>[Característica 2]:</strong> [Descripción...]</li>
-                        <li><strong>[Característica 3]:</strong> [Descripción...]</li>
+                        <li><strong>Tono Oscuro y Maduro:</strong> Alfonso Cuarón introdujo una estética más sombría y
+                            cinematográfica que marcó el resto de la saga.</li>
+                        <li><strong>Viajes en el Tiempo:</strong> Presenta una de las mecánicas de viaje en el tiempo
+                            mejor ejecutadas y autocontenidas del cine.</li>
+                        <li><strong>Desarrollo de Personajes:</strong> El trío principal muestra una profundidad
+                            emocional mucho mayor, lidiando con el miedo y la adolescencia.</li>
                     </ul>
                 </div>
 
                 <div class="comments-section">
                     <h2>Comentarios</h2>
-                    <div class="fb-comments" 
-                         data-href="[URL_COMPLETA_DE_ESTA_PAGINA]" 
-                         data-width="100%" 
-                         data-numposts="5">
+                    <div class="fb-comments" data-href="https"
+                        data-width="100%" data-numposts="5">
                     </div>
                 </div>
-                </section>
+
+            </section>
         </div>
     </main>
 

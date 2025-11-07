@@ -1,13 +1,8 @@
 /* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
-    
-    /* ¡¡¡LA CORRECCIÓN MÁGICA!!! 
-      El padding-top del body (150px) ya empuja.
-      Nosotros solo añadimos el espacio gris SIMÉTRICO.
-    */
-    margin: 30px auto 30px auto; 
-    
+    /* ¡CAMBIO! margin-top quitado */
+    margin: 0 auto 30px auto; 
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -202,16 +197,14 @@ audio {
 
 /* Responsive para la página de detalles */
 @media (max-width: 800px) {
-    /* ¡BORRAMOS ESTA REGLA! Ya no queremos que se apile en móvil */
-    /*
     .detail-grid-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Apila las columnas */
     }
     .detail-media-col {
+        /* Opcional: Centrar el póster en móvil */
         max-width: 300px;
         margin: 0 auto;
     }
-    */
 }
 
 

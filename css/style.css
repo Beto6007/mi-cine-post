@@ -4,7 +4,10 @@
     --secondary-color: #2575fc; /* Azul para gradiente */
     --light-bg: #f4f4f9;       
     --card-bg: #ffffff;
+    
+    /* ¡CAMBIO! Fondo púrpura oscuro */
     --card-bg-dark: #2c1a4a;
+    
     --text-dark: #333333;       
     --text-light: #777777;      
     --text-on-dark: #f5f5f5;   /* Texto claro para tarjetas */
@@ -21,15 +24,16 @@ body {
     background-color: var(--light-bg);
     color: var(--text-dark);
 }
-/* ¡¡¡LA CORRECCIÓN MÁGICA!!! */
-/* El padding es EXACTAMENTE la altura del header en ESCRITORIO */
-/* 110px (header-content) + 40px (az-filter) = 150px */
+/* ¡CAMBIO! Padding-top ahora incluye el espacio de 30px */
 body {
-    padding-top: 150px; 
+    /* 160px (header) + 30px (gap) = 190px */
+    padding-top: 190px; 
 }
-/* 60px (header-content simple) */
+/* ¡NUEVO! Padding más corto para páginas sin filtros */
 body.page-simple-header {
-    padding-top: 60px; 
+    /* 60px (header-top) + 20px (padding) + 10px (padding) = 90px */
+    /* Ajustado a 90px para un espacio visual de 30px */
+    padding-top: 90px; 
 }
 
 
@@ -64,16 +68,12 @@ h1, h2, h3 {
     margin-right: 8px;
 }
 
-/* --- 1. Header y NavegACIÓN --- */
+/* --- 1. Header y Navegación --- */
 .main-header {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    
-    /* ¡¡¡CORRECCIÓN IMPORTANTE!!! */
-    /* Fijo en ESCRITORIO */
-    position: fixed; 
-    
+    position: fixed; /* Header Fijo */
     top: 0;
     left: 0;
     width: 100%;
@@ -267,6 +267,7 @@ h1, h2, h3 {
     color: #aaa;
     padding: 30px 20px;
     text-align: center;
+    /* ¡CAMBIO! margin-top quitado */
     margin-top: 0;
 }
 /* Estilo para el contador del footer */
@@ -317,18 +318,3 @@ h1, h2, h3 {
 .flatpickr-months .flatpickr-next-month:hover svg {
     fill: var(--secondary-color);
 }
-
-
-/* --- 11. ADAPTACIONES RESPONSIVE --- */
-
-/* ¡Quitamos todo el CSS del menú de hamburguesa! */
-#mobile-menu-toggle {
-    display: none;
-}
-.mobile-menu-content {
-    display: block; 
-}
-
-/* ¡YA NO NECESITAMOS MEDIA QUERIES! */
-/* Al forzar la vista de escritorio, el sitio se verá igual en todas partes. */
-/* Las media queries ya no son necesarias y solo causaban problemas. */
