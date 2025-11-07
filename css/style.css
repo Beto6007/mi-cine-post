@@ -5,7 +5,7 @@
     --light-bg: #f4f4f9;       
     --card-bg: #ffffff;
     
-    /* ¡CAMBIO! Fondo púrpura oscuro */
+    /* ¡NUEVO! Púrpura oscuro para tarjetas */
     --card-bg-dark: #2c1a4a;
     
     --text-dark: #333333;       
@@ -27,12 +27,11 @@ body {
 /* ¡CAMBIO! Padding-top ahora incluye el espacio de 30px */
 body {
     /* 160px (header) + 30px (gap) = 190px */
-    padding-top: 190px; 
+    padding-top: 180px; 
 }
 /* ¡NUEVO! Padding más corto para páginas sin filtros */
 body.page-simple-header {
-    /* 60px (header-top) + 20px (padding) + 10px (padding) = 90px */
-    /* Ajustado a 90px para un espacio visual de 30px */
+    /* 60px (simple header) + 30px (gap) = 90px */
     padding-top: 90px; 
 }
 
