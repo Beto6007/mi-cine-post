@@ -22,7 +22,7 @@ body {
     color: var(--text-dark);
 }
 /* ¡¡¡LA CORRECCIÓN MÁGICA!!! */
-/* El padding es EXACTAMENTE la altura del header */
+/* El padding es EXACTAMENTE la altura del header en ESCRITORIO */
 /* 110px (header-content) + 40px (az-filter) = 150px */
 body {
     padding-top: 150px; 
@@ -69,7 +69,11 @@ h1, h2, h3 {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Header Fijo */
+    
+    /* ¡¡¡CORRECCIÓN IMPORTANTE!!! */
+    /* Fijo en ESCRITORIO */
+    position: fixed; 
+    
     top: 0;
     left: 0;
     width: 100%;
@@ -315,164 +319,16 @@ h1, h2, h3 {
 }
 
 
-/* --- 11. ADAPTACIONES RESPONSIVE (Actualizadas) --- */
+/* --- 11. ADAPTACIONES RESPONSIVE --- */
 
-/* El botón de hamburguesa (sección 12) */
+/* ¡Quitamos todo el CSS del menú de hamburguesa! */
 #mobile-menu-toggle {
-    display: none; /* Oculto en desktop */
-    background: none;
-    border: 2px solid white;
-    color: white;
-    padding: 5px 8px;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    line-height: 1; /* Asegura que el icono esté centrado */
+    display: none;
 }
-
-/* Contenedor del menú (sección 12) */
 .mobile-menu-content {
-    display: block; /* Visible en desktop */
+    display: block; 
 }
 
-
-/* --- Para Tablets (~1024px) --- */
-@media (max-width: 1024px) {
-    .header-content {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .az-filter {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    /* Reducimos el padding y margen en los contenedores principales */
-    #movie-list,
-    .movie-detail-container,
-    .content-page,
-    .form-container,
-    .author-list {
-        /* El margin-top ahora es más pequeño para tablet */
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 20px;
-    }
-}
-
-/* --- Para Móviles (~768px) --- */
-@media (max-width: 768px) {
-    
-    /* Muestra el botón de hamburguesa */
-    #mobile-menu-toggle {
-        display: block;
-    }
-    
-    /* Vuelve a poner el header-top en una sola línea (logo + botón) */
-    .header-top {
-        flex-direction: row;
-        align-items: center; /* Centra logo y botón verticalmente */
-        gap: 0;
-    }
-
-    /* Oculta el contenedor del menú por defecto */
-    .mobile-menu-content {
-        display: none;
-    }
-    
-    /* Muestra el menú cuando el header tiene la clase */
-    .main-header.menu-is-open .mobile-menu-content {
-        display: block;
-        padding-top: 15px; /* Espacio para que no se pegue al botón */
-    }
-    
-    /* Estilos para el menú abierto */
-    .mobile-menu-content .main-nav {
-        margin-top: 10px; /* Espacio entre nav y header-top */
-    }
-    .mobile-menu-content .main-nav ul {
-        flex-direction: column; /* Apila los links */
-        align-items: flex-start;
-        gap: 15px;
-        width: 100%;
-    }
-    
-    /* Estilos de filtros en menú abierto */
-    .mobile-menu-content .header-filters {
-        margin-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-top: 20px;
-    }
-
-    /* --- AJUSTES DE ALTURA DEL BODY (¡IMPORTANTE!) --- */
-    /* El padding del body se ajusta a la altura del header en móvil */
-    /* (header-top: 60px) + (az-filter: 38px) = ~100px */
-    body {
-        /* Reducimos un poco el padding para que no se vea tan grande */
-        padding-top: 100px;
-    }
-    /* (header-top: 60px) */
-    body.page-simple-header {
-        padding-top: 60px;
-    }
-    
-    /* Corregimos la altura del header simple en móvil si el menú está abierto */
-    body.page-simple-header .main-header.menu-is-open {
-        /* Damos espacio para los links que se apilan */
-        padding-bottom: 15px;
-    }
-
-
-    /* --- Filtro A-Z más pequeño --- */
-    .az-filter a {
-        font-size: 0.8rem;
-        padding: 4px 6px;
-    }
-
-    /* --- Tarjetas de Index (2 columnas) --- */
-    #movie-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 15px;
-    }
-    .movie-card {
-        width: 100%; /* Anulamos el ancho fijo de 200px */
-    }
-
-    /* --- Título de Detalle más pequeño --- */
-    .detail-info-col h1 {
-        font-size: 2rem; 
-    }
-    .detail-grid-container {
-        gap: 20px;
-    }
-
-    /* --- Ruleta FAB (más pequeña) --- */
-    .roulette-fab {
-        bottom: 15px;
-        right: 15px;
-        width: 55px;
-        height: 55px;
-    }
-}
-
-/* --- Móviles muy pequeños (~480px) --- */
-@media (max-width: 480px) {
-    
-    /* --- Tarjetas de Index (1 columna) --- */
-    #movie-list {
-        grid-template-columns: 1fr;
-    }
-    .movie-card {
-        /* Centra la tarjeta única */
-        max-width: 300px; 
-        margin: 0 auto;
-    }
-
-    .main-footer {
-        padding: 20px;
-    }
-    .social-links {
-        gap: 20px; /* Más espacio para tocar */
-    }
-}
+/* ¡YA NO NECESITAMOS MEDIA QUERIES! */
+/* Al forzar la vista de escritorio, el sitio se verá igual en todas partes. */
+/* Las media queries ya no son necesarias y solo causaban problemas. */

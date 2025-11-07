@@ -202,14 +202,16 @@ audio {
 
 /* Responsive para la página de detalles */
 @media (max-width: 800px) {
+    /* ¡BORRAMOS ESTA REGLA! Ya no queremos que se apile en móvil */
+    /*
     .detail-grid-container {
-        grid-template-columns: 1fr; /* Apila las columnas */
+        grid-template-columns: 1fr;
     }
     .detail-media-col {
-        /* Opcional: Centrar el póster en móvil */
         max-width: 300px;
         margin: 0 auto;
     }
+    */
 }
 
 
