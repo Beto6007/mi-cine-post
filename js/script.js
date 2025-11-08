@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             // --- ¡IMPORTANTE! ---
-            // Reemplaza '5211234567890' con tu número de WhatsApp completo
+            // Reemplaza '522222784581' con tu número de WhatsApp completo
             const tuNumeroDeWhatsApp = '5211234567890'; 
             
             const nombre = document.getElementById('nombre').value;
