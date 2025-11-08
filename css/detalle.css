@@ -1,7 +1,6 @@
 /* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
-    /* ¡CAMBIO! margin-top quitado */
     margin: 0 auto 30px auto; 
     padding: 30px;
     background-color: var(--card-bg);
@@ -27,7 +26,7 @@
     margin-bottom: 25px; 
 }
 .audio-player-section {
-    margin: 0 0 25px 0; /* ¡CAMBIO! Espacio consistente */
+    margin: 0 0 25px 0; 
 }
 .audio-player-section p {
     font-size: 0.9rem;
@@ -35,7 +34,7 @@
     margin-top: 0;
 }
 audio,
-.audio-player-section iframe { /* ¡CAMBIO! Estilo para SoundCloud */
+.audio-player-section iframe { 
     width: 100%;
     border: none;
     border-radius: 8px;
@@ -74,24 +73,27 @@ audio,
 .detail-meta {
     font-size: 1.1rem;
     color: var(--text-light);
-    margin-bottom: 25px;
+    margin-bottom: 0; /* ¡CAMBIO! Espacio controlado por los hijos */
     font-style: italic;
     line-height: 1.6; 
 }
-/* Estilo para el contador de página */
-.visit-counter-page {
-    margin-top: 10px;
-    opacity: 0.8;
-}
 
-/* ¡NUEVO! Botones de compartir */
+/* ¡CAMBIO! Espaciado simétrico para compartir y contador */
 .share-buttons {
     display: flex;
     gap: 10px;
-    margin-top: 15px;
+    align-items: center;
+    margin-top: 15px; /* Espacio desde el autor/fecha */
+}
+.share-buttons span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+    font-style: normal;
+    margin-right: 5px;
 }
 .share-buttons a {
-    font-size: 1rem; /* Pequeños */
+    font-size: 1rem; 
     color: white;
     background-color: var(--text-light);
     width: 30px;
@@ -109,6 +111,11 @@ audio,
 #share-fb:hover { background-color: #1877F2; }
 #share-x:hover { background-color: #000000; }
 #share-insta:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+.visit-counter-page {
+    margin-top: 15px; /* ¡CAMBIO! Espacio desde los botones de compartir */
+    opacity: 0.8;
+}
 
 
 .detail-meta strong {
@@ -133,6 +140,7 @@ audio,
     background: var(--light-bg);
     border-radius: 8px;
     padding: 20px;
+    margin-top: 25px; /* ¡CAMBIO! Espacio desde el bloque meta */
     margin-bottom: 25px;
 }
 .data-sheet dl {
@@ -172,7 +180,7 @@ audio,
 .awards-section,
 .characteristics-section,
 .trailer-section,
-.suggestions-section { /* ¡NUEVO! */
+.suggestions-section { 
     margin-bottom: 30px;
 }
 .summary h2,
@@ -181,7 +189,7 @@ audio,
 .characteristics-section h2,
 .trailer-section h2, 
 .audio-player-section h3,
-.suggestions-section h2 { /* ¡NUEVO! */
+.suggestions-section h2 { 
     border-bottom: 2px solid var(--primary-color);
     display: inline-block;
     padding-bottom: 5px;
@@ -191,7 +199,6 @@ audio,
     line-height: 1.7;
     font-size: 1.1rem;
 }
-/* ¡CAMBIO! Párrafo justificado y sin margen superior */
 .summary p {
     text-align: justify;
     margin-top: 0;
@@ -201,8 +208,8 @@ audio,
 .icon-list {
     list-style: none;
     padding-left: 0;
-    margin-top: 0; /* ¡CAMBIO! */
-    text-align: left; /* Asegura que no se justifique */
+    margin-top: 0; 
+    text-align: left; 
 }
 .icon-list li {
     position: relative;
@@ -233,7 +240,6 @@ audio,
         grid-template-columns: 1fr; /* Apila las columnas */
     }
     .detail-media-col {
-        /* Opcional: Centrar el póster en móvil */
         max-width: 300px;
         margin: 0 auto;
     }
@@ -246,7 +252,6 @@ audio,
     display: inline-block;
     cursor: help;
 }
-/* ¡CAMBIO! Tarjeta flotante (solo foto) */
 .author-tooltip-card {
     display: none;
     position: absolute;
@@ -304,29 +309,27 @@ audio,
     width: 100%; 
     max-height: 450px; /* Límite de altura */
 }
-/* ¡CAMBIO! Botones del carrusel con estilo anterior + énfasis */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    /* Transparencia púrpura */
     background-color: rgba(106, 17, 203, 0.5); 
     color: white;
     border: none;
     padding: 10px 15px;
     font-size: 1.5rem;
     cursor: pointer;
-    border-radius: 8px; /* Cuadrado redondeado */
+    border-radius: 8px; 
     width: auto;
     height: auto;
-    opacity: 0; /* Oculto por defecto */
+    opacity: 0; 
     transition: opacity 0.3s, background-color 0.3s;
 }
 .carousel:hover .carousel-control {
-    opacity: 1; /* Totalmente visible al pasar el mouse */
+    opacity: 1; 
 }
 .carousel-control:hover {
-    background-color: rgba(106, 17, 203, 0.8); /* Más oscuro al pasar */
+    background-color: rgba(106, 17, 203, 0.8); 
 }
 .carousel-control.prev {
     left: 15px;
@@ -340,7 +343,7 @@ audio,
     background-color: var(--light-bg);
     padding: 20px;
     border-radius: 8px;
-    margin: 0 0 25px 0; /* ¡CAMBIO! Espacio consistente */
+    margin: 0 0 25px 0; 
 }
 .star-rating h3 {
     margin-bottom: 15px;
@@ -443,7 +446,6 @@ audio,
 .suggestions-carousel .movie-card-content h3 {
     font-size: 0.9rem; /* Fuente más pequeña */
     height: 2.6em; /* Mantiene 2 líneas */
-    /* ¡CAMBIO! Añadido para forzar el truncado */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
