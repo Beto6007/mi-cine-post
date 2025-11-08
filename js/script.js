@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Instagram no permite compartir posts por URL,
         // lo mejor es enlazar a tu perfil.
         // ¡CAMBIA ESTO! por tu URL de Instagram
-        shareInsta.href = 'https://www.instagram.com/TU_USUARIO/';
+        shareInsta.href = 'https://www.instagram.com/cine.post.tis/';
     }
 
 
