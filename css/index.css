@@ -39,8 +39,8 @@
 /* --- 5. Cuadrícula de Películas (Página Principal) --- */
 #movie-list {
     display: grid;
-    /* ¡CAMBIO! Tarjetas más pequeñas (170px) y centradas */
-    grid-template-columns: repeat(auto-fit, 170px);
+    /* ¡CAMBIO! Tarjetas más pequeñas (160px) y centradas */
+    grid-template-columns: repeat(auto-fit, 160px);
     gap: 25px; /* Más espacio */
     justify-content: center; 
     
@@ -64,7 +64,7 @@
 /* --- 6. (NUEVO) RESPONSIVE PARA CUADRÍCULA --- */
 @media (max-width: 768px) { /* ¡CAMBIO! Breakpoint alineado con style.css */
     #movie-list {
-        /* Cambiar a 2 columnas fijas (simétricas) */
+        /* ¡CAMBIO! Forzar 2 columnas simétricas */
         grid-template-columns: 1fr 1fr;
         gap: 15px; /* Reducir gap para más espacio */
         padding: 0 15px; /* Reducir padding */
@@ -73,7 +73,7 @@
     /* ¡CAMBIO! Animación de salto eliminada también en hover */
     .movie-card:hover {
         animation: none;
-        transform: none;
+        transform: none; /* Asegura que no haya zoom */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra estática */
     }
 }
