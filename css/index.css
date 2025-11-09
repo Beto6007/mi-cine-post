@@ -50,13 +50,23 @@
     padding: 0 20px;
 }
 
-/* ¡CAMBIO! Animación de salto eliminada */
+/* Animación de salto aleatoria (Solo escritorio) */
+.movie-card {
+    animation: card-float 5s ease-in-out infinite;
+}
+.movie-card-link:nth-child(2n) .movie-card { animation-delay: -2.5s; }
+.movie-card-link:nth-child(3n) .movie-card { animation-delay: -1s; }
+.movie-card-link:nth-child(5n) .movie-card { animation-delay: -4s; }
 
+@keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
-/* ¡CAMBIO! Efecto de hover corregido */
+/* Efecto de hover (Solo escritorio) */
 .movie-card:hover {
     animation: none; /* Detiene la animación de salto */
-    /* ¡CAMBIO! Se elimina el transform: scale() para evitar el "salto" */
+    transform: scale(1.03); /* ¡CAMBIO! Regresa el scale para escritorio */
     box-shadow: 0 10px 25px -5px var(--primary-color-shadow);
 }
 
@@ -70,10 +80,14 @@
         padding: 0 15px; /* Reducir padding */
     }
 
-    /* ¡CAMBIO! Animación de salto eliminada también en hover */
+    /* ¡CAMBIO! Desactiva TODAS las animaciones en móvil */
+    .movie-card {
+        animation: none;
+    }
+
     .movie-card:hover {
         animation: none;
-        transform: none; /* Asegura que no haya zoom */
+        transform: none; /* Asegura que no haya zoom al tocar */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra estática */
     }
 }
