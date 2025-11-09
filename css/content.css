@@ -1,11 +1,11 @@
 /* --- 10. (NUEVO) ESTILOS PARA PÁGINAS DE CONTENIDO --- */
+
 /* Estilo base para páginas de contenido (Release, Contacto, Autores) */
 .content-page,
 .form-container,
 .author-list {
     max-width: 900px; /* Ancho estándar para contenido */
-    /* ¡CAMBIO! Espacio superior quitado */
-    margin: 0 auto 30px auto;
+    margin: 0 auto 30px auto; /* Sin espacio superior */
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -19,36 +19,41 @@
     margin-bottom: 25px;
 }
 
-
-/* Estilos para Release Notes */
+/* --- Release Notes --- */
 .release-note {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
+
 .release-note:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
+
 .release-note h2 {
     color: var(--primary-color);
 }
+
 .release-note ul {
     padding-left: 20px;
 }
 
-/* Estilos para Formulario de Contacto (¡MÁS PEQUEÑO!) */
+/* --- Formulario de Contacto (más compacto) --- */
 .form-container {
-    max-width: 450px; 
+    max-width: 450px;
 }
+
 .form-group {
     margin-bottom: 20px;
 }
+
 .form-group label {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
 }
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -57,62 +62,70 @@
     font-size: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+    box-sizing: border-box; /* Evita desbordes */
 }
+
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
 }
+
 #whatsapp-btn {
     width: 100%;
 }
 
-/* Estilos para Página de Autores (¡MÁS PEQUEÑO!) */
+/* --- Página de Autores (más estrecha) --- */
 .author-list {
-    max-width: 800px; 
+    max-width: 800px;
 }
+
 .author-card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
+    text-align: center;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 25px;
     margin-bottom: 25px;
-    text-align: center;
 }
+
 @media (min-width: 600px) {
     .author-card {
         flex-direction: row;
         text-align: left;
     }
 }
+
 .author-card:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
+
 .author-photo {
-    width: 100px; 
-    height: 100px; 
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    flex-shrink: 0; /* Evita que la imagen se encoja */
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
 }
+
 .author-info h2 {
     margin-bottom: 10px;
 }
+
 .author-info p {
     margin-bottom: 20px;
     color: var(--text-light);
 }
 
-/* ¡NUEVO! Responsive para páginas de contenido */
+/* --- Responsive (móvil) --- */
 @media (max-width: 768px) {
     .content-page,
     .form-container,
     .author-list {
-        padding: 15px; /* ¡CAMBIO! Reducido */
+        padding: 15px; /* Reducido */
     }
 
     .author-card {

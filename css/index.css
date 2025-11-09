@@ -19,21 +19,21 @@
 
 /* ¡NUEVA! Keyframes para la animación del botón */
 @keyframes fab-burst-spin {
-  /* Inicio: Pausa de 1.5s (1.5 / 3 = 50%) */
-  0%, 50% {
-    transform: scale(1) rotate(0deg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-  /* Giro y Expansión Rápida (1s) */
-  83.3% { /* (1.5s + 1s) / 3s = 83.3% */
-    transform: scale(1.25) rotate(720deg);
-    box-shadow: 0 8px 25px var(--primary-color-shadow);
-  }
-  /* Asentamiento (0.5s) */
-  100% { /* (2.5s + 0.5s) / 3s = 100% */
-    transform: scale(1) rotate(720deg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
+    /* Inicio: Pausa de 1.5s (1.5 / 3 = 50%) */
+    0%, 50% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    /* Giro y Expansión Rápida (1s) */
+    83.3% { /* (1.5s + 1s) / 3s = 83.3% */
+        transform: scale(1.25) rotate(720deg);
+        box-shadow: 0 8px 25px var(--primary-color-shadow);
+    }
+    /* Asentamiento (0.5s) */
+    100% { /* (2.5s + 0.5s) / 3s = 100% */
+        transform: scale(1) rotate(720deg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 }
 
 /* --- 5. Cuadrícula de Películas (Página Principal) --- */
@@ -42,11 +42,11 @@
     /* ¡CAMBIO! Tarjetas más pequeñas (160px) y centradas */
     grid-template-columns: repeat(auto-fit, 160px);
     gap: 25px; /* Más espacio */
-    justify-content: center; 
+    justify-content: center; /* <-- ¡CORREGIDO! */
     
     max-width: 1200px;
     /* ¡CAMBIO! Espacio superior quitado (ahora lo controla el body padding) */
-    margin: 0 auto 30px auto; 
+    margin: 0 auto 30px auto;
     padding: 0 20px;
 }
 
@@ -70,9 +70,8 @@
     box-shadow: 0 10px 25px -5px var(--primary-color-shadow);
 }
 
-
 /* --- 6. (NUEVO) RESPONSIVE PARA CUADRÍCULA --- */
-@media (max-width: 768px) { /* ¡CAMBIO! Breakpoint alineado con style.css */
+@media (max-width: 768px) { /* Breakpoint general para tablet/móvil */
     #movie-list {
         /* ¡CAMBIO! Forzar 2 columnas simétricas */
         grid-template-columns: 1fr 1fr;
@@ -85,9 +84,21 @@
         animation: none;
     }
 
+    /* Esta regla es correcta y desactiva el 'scale' en móvil */
     .movie-card:hover {
         animation: none;
         transform: none; /* Asegura que no haya zoom al tocar */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra estática */
+    }
+}
+
+/*
+ * ¡NUEVO! AJUSTE FINO PARA PANTALLAS MUY PEQUEÑAS (480px e inferiores)
+ * Mejora el espacio visual y evita deformaciones.
+ */
+@media (max-width: 480px) {
+    #movie-list {
+        gap: 10px;
+        padding: 0 10px;
     }
 }
