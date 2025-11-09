@@ -280,7 +280,7 @@ h1, h2, h3 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     position: relative;
-    width: 180px; 
+    width: 170px; /* ¡CAMBIO! Tarjetas más pequeñas */
     
     /* ¡NUEVO! Flexbox para simetría */
     display: flex;
@@ -494,17 +494,17 @@ h1, h2, h3 {
                 
     /* ¡CAMBIO! Padding-top ajustado para móvil */
     body {
-        padding-top: 220px; 
+        padding-top: 245px; /* Aumentado para dar más espacio */
     }
 
     body.page-simple-header {
         /* ¡CAMBIO! Reducido para menor espacio */
-        padding-top: 90px; 
+        padding-top: 100px; 
     }
 
     /* --- Header --- */
     .header-content {
-        padding: 8px 15px; /* ¡CAMBIO! Menos padding */
+        padding: 5px 15px; /* ¡CAMBIO! Menos padding */
     }
 
     .header-top {
@@ -514,8 +514,8 @@ h1, h2, h3 {
     }
 
     .logo {
-        font-size: 1.6rem; /* Logo más pequeño */
-        margin-bottom: 5px; /* ¡CAMBIO! Menos espacio */
+        font-size: 1.5rem; /* ¡CAMBIO! Más pequeño */
+        margin-bottom: 5px; 
         margin-right: 0;
         width: auto; /* Ancho automático para centrar */
         text-align: center;
@@ -533,17 +533,27 @@ h1, h2, h3 {
     }
 
     .main-nav a {
-        font-size: 0.9rem; /* Pestañas más pequeñas */
+        font-size: 0.85rem; /* ¡CAMBIO! Más pequeño */
         padding: 2px 0;
     }
 
     .header-filters {
-        margin-top: 10px; /* ¡CAMBIO! Menos espacio */
+        margin-top: 10px; 
+    }
+    
+    .header-filters input,
+    .header-filters select {
+        padding: 6px 10px; /* ¡CAMBIO! Inputs más pequeños */
+        font-size: 0.85rem; /* ¡CAMBIO! Fuente más pequeña */
     }
     
     .az-filter {
         display: flex;
-        padding: 5px 15px; /* ¡CAMBIO! Menos padding */
+        padding: 4px 15px; /* ¡CAMBIO! Menos padding */
+    }
+
+    .az-filter a {
+        font-size: 0.85rem; /* ¡CAMBIO! Más pequeño */
     }
     
     /* --- Tarjetas de Película (Global) --- */
