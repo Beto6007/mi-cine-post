@@ -1,7 +1,7 @@
 /* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
 .movie-detail-container {
     max-width: 1000px; /* Un poco más ancho para el grid */
-    margin: 0 auto 30px auto; 
+    margin: 0 auto 30px auto; /* ¡CAMBIO! Simetría con el footer */
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -57,6 +57,9 @@ audio,
 }
 
 /* Columna Derecha (Información) */
+.detail-info-col {
+    word-wrap: break-word; /* Evita que el texto largo rompa el layout */
+}
 .detail-info-col .original-title {
     font-size: 1rem;
     font-style: italic;
@@ -240,7 +243,7 @@ audio,
         grid-template-columns: 1fr; /* Apila las columnas */
     }
     .detail-media-col {
-        max-width: 300px;
+        max-width: 350px; /* Un poco más grande que antes, pero centrado */
         margin: 0 auto;
     }
 }
@@ -431,21 +434,20 @@ audio,
 
 /* ¡NUEVO! Sobrescribir el tamaño de las tarjetas de sugerencia */
 .suggestions-carousel .movie-card {
-    width: 150px; /* ¡MÁS PEQUEÑAS! */
+    width: 140px; 
     flex-shrink: 0; /* Evita que se encojan */
     animation: none; /* Quitamos la animación de salto */
 }
 
 /* ¡NUEVO! Ajustar contenido de tarjetas pequeñas */
 .suggestions-carousel .movie-card-content {
-    padding: 12px; /* Menos padding */
-    /* ¡CAMBIO! Altura mínima para evitar deformación */
+    padding: 10px; 
     min-height: 5em;
 }
 
 .suggestions-carousel .movie-card-content h3 {
-    font-size: 0.9rem; /* Fuente más pequeña */
-    height: 2.6em; /* Mantiene 2 líneas */
+    font-size: 0.85rem; 
+    height: 2.4em; 
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -465,10 +467,31 @@ audio,
 }
 
 .suggestions-carousel .movie-card-meta {
-    font-size: 0.8rem; /* Fuente de meta más pequeña */
+    font-size: 0.75rem; 
 }
 
 .suggestions-carousel .card-badge {
     font-size: 0.7rem; /* Etiqueta más pequeña */
     padding: 3px 6px;
+}
+
+/* ¡NUEVO! Responsive para paddings en móvil */
+@media (max-width: 768px) {
+    .movie-detail-container {
+        padding: 15px; /* REDUCIDO de 30px */
+    }
+
+    .detail-info-col h1 {
+        font-size: 1.8rem; /* Título más pequeño en móvil */
+    }
+
+    .data-sheet {
+        padding: 15px; /* Menos padding en ficha */
+    }
+
+    /* Reducir padding en cajas de contenido */
+    .content-box,
+    .star-rating {
+        padding: 15px;
+    }
 }

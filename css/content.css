@@ -106,3 +106,17 @@
     margin-bottom: 20px;
     color: var(--text-light);
 }
+
+/* ¡NUEVO! Responsive para páginas de contenido */
+@media (max-width: 768px) {
+    .content-page,
+    .form-container,
+    .author-list {
+        padding: 15px; /* ¡CAMBIO! Reducido */
+    }
+
+    .author-card {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+}

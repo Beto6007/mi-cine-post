@@ -39,8 +39,8 @@
 /* --- 5. Cuadrícula de Películas (Página Principal) --- */
 #movie-list {
     display: grid;
-    /* Tarjetas más pequeñas (180px) y centradas */
-    grid-template-columns: repeat(auto-fit, 180px);
+    /* Tarjetas más grandes (200px) y centradas */
+    grid-template-columns: repeat(auto-fit, 200px);
     gap: 25px; /* Más espacio */
     justify-content: center; 
     
@@ -50,24 +50,23 @@
     padding: 0 20px;
 }
 
-/* ¡CAMBIO! Animación de salto eliminada */
+/* Animación de salto aleatoria */
+.movie-card {
+    animation: card-float 5s ease-in-out infinite;
+}
+.movie-card-link:nth-child(2n) .movie-card { animation-delay: -2.5s; }
+.movie-card-link:nth-child(3n) .movie-card { animation-delay: -1s; }
+.movie-card-link:nth-child(5n) .movie-card { animation-delay: -4s; }
 
+@keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
 /* ¡CAMBIO! Efecto de hover corregido */
 .movie-card:hover {
     animation: none; /* Detiene la animación de salto */
-    /* ¡CAMBIO! Se elimina el transform: scale() para evitar el "salto" */
-    box-shadow: 0 10px 25px -5px var(--primary-color-shadow);
-}
-
-
-/* --- 6. (NUEVO) RESPONSIVE PARA CUADRÍCULA --- */
-@media (max-width: 600px) {
-    #movie-list {
-        /* Cambiar a 2 columnas fijas */
-        grid-template-columns: 1fr 1fr;
-        gap: 15px; /* Reducir gap para más espacio */
-        padding: 0 15px; /* Reducir padding */
-    }
-
+    transform: scale(1.05); /* Aplica solo la expansión */
+    /* Sombra Púrpura (más fuerte) */
+    box-shadow: 0 15px 40px -5px var(--primary-color-shadow);
 }

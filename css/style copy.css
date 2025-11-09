@@ -260,13 +260,11 @@ h1, h2, h3 {
 }
 
 /* --- 5. Estilos de Tarjetas (GLOBALES) --- */
+/* ¡MOVIDO AQUÍ! Estilos de tarjeta ahora son globales */
 
 .movie-card-link {
     text-decoration: none;
     color: var(--text-dark);
-    /* ¡NUEVO! Ayuda al grid a alinear los items */
-    display: flex; 
-    align-items: stretch; /* Asegura que los hijos (la tarjeta) se estiren */
 }
 /* Estilo de Highlight para Ruleta */
 .movie-card-link.highlight .movie-card {
@@ -280,12 +278,7 @@ h1, h2, h3 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     position: relative;
-    width: 180px; 
-    
-    /* ¡NUEVO! Flexbox para simetría */
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Ocupa todo el espacio del link */
+    width: 200px; /* Ancho fijo */
 }
 
 .movie-poster {
@@ -296,7 +289,6 @@ h1, h2, h3 {
     border-radius: 12px 12px 0 0; 
     position: relative;
     overflow: hidden; 
-    flex-shrink: 0; /* Evita que la imagen se encoja */
 }
 .movie-poster::after {
     content: '';
@@ -325,11 +317,6 @@ h1, h2, h3 {
 .movie-card-content {
     padding: 15px; 
     box-sizing: border-box;
-    
-    /* ¡NUEVO! Flexbox para alinear contenido */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Ocupa el espacio vertical restante */
 }
 
 .movie-card-content h3 {
@@ -375,9 +362,6 @@ h1, h2, h3 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
-    /* ¡NUEVO! Empuja esto al fondo de la tarjeta */
-    margin-top: auto; 
 }
 .movie-card-meta .author {
     font-weight: 500;
@@ -390,6 +374,7 @@ h1, h2, h3 {
     color: #aaa;
     padding: 30px 20px;
     text-align: center;
+    /* ¡CAMBIO! margin-top quitado */
     margin-top: 0;
 }
 /* Estilo para el contador del footer */
@@ -418,6 +403,7 @@ h1, h2, h3 {
     cursor: not-allowed;
 }
 .is-locked .movie-card {
+    /* Mantenemos el fondo oscuro pero lo atenuamos */
     background-color: var(--card-bg-dark);
     opacity: 0.7;
     animation: none; /* Quitamos la animación de salto */
@@ -487,89 +473,4 @@ h1, h2, h3 {
 .flatpickr-months .flatpickr-prev-month:hover svg,
 .flatpickr-months .flatpickr-next-month:hover svg {
     fill: var(--secondary-color);
-}
-
-/* --- 11. (NUEVO) ESTILOS RESPONSIVE --- */
-@media (max-width: 768px) {
-                
-    /* ¡CAMBIO! Padding-top ajustado para móvil */
-    body {
-        padding-top: 220px; 
-    }
-
-    body.page-simple-header {
-        /* ¡CAMBIO! Reducido para menor espacio */
-        padding-top: 90px; 
-    }
-
-    /* --- Header --- */
-    .header-content {
-        padding: 8px 15px; /* ¡CAMBIO! Menos padding */
-    }
-
-    .header-top {
-        flex-direction: column; /* Apilar logo y nav */
-        justify-content: center; /* Centrar logo en móvil */
-        gap: 0 10px;
-    }
-
-    .logo {
-        font-size: 1.6rem; /* Logo más pequeño */
-        margin-bottom: 5px; /* ¡CAMBIO! Menos espacio */
-        margin-right: 0;
-        width: auto; /* Ancho automático para centrar */
-        text-align: center;
-    }
-
-    .main-nav {
-        display: block; 
-        width: 100%;
-        margin-top: 0;
-    }
-    
-    .main-nav ul {
-        justify-content: center;
-        gap: 15px; /* Menos espacio entre pestañas */
-    }
-
-    .main-nav a {
-        font-size: 0.9rem; /* Pestañas más pequeñas */
-        padding: 2px 0;
-    }
-
-    .header-filters {
-        margin-top: 10px; /* ¡CAMBIO! Menos espacio */
-    }
-    
-    .az-filter {
-        display: flex;
-        padding: 5px 15px; /* ¡CAMBIO! Menos padding */
-    }
-    
-    /* --- Tarjetas de Película (Global) --- */
-    .movie-card {
-        width: 100%; 
-    }
-
-    .movie-card-content h3 {
-        font-size: 0.9rem; /* Títulos más pequeños en móvil */
-    }
-
-    .movie-card-meta {
-        font-size: 0.8rem; /* Meta más pequeña */
-    }
-
-    /* --- Footer --- */
-    .main-footer {
-        padding: 20px 15px;
-    }
-    .main-footer p {
-        font-size: 0.9rem;
-    }
-    .social-links {
-        gap: 10px;
-    }
-    .social-links a {
-        font-size: 1.3rem;
-    }
 }
