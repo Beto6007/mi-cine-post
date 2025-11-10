@@ -1,4 +1,92 @@
-<main id="movie-list">
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CinePost - E.T,. El extraterrestre</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo">CinePost</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                    </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+        
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
+            </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="	https://m.media-amazon.com/images/I/515EK8C6HEL._AC_UF894,1000_QL80_.jpg"
+                    alt="Poster de E.T. El extraterrestre" class="detail-poster">
+
+                <div class="star-rating" data-movie-id="et-extraterrestre">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2209816880&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez" target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a href="https://soundcloud.com/alberto-martinez-700091428/et-resumen" title="E.T-resumen" target="_blank" style="color: #cccccc; text-decoration: none;">E.T-resumen</a></div>
+                </div>
+                
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel">
 
        <!-- <a href="/pages/[NOMBRE-DEL-ARCHIVO.html]" class="movie-card-link" 
    data-title="[Nombre de la Película]" 
@@ -583,4 +671,138 @@
             </article>
         </a>
 
+                        </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>E.T., el extraterrestre</h1>
+                <span class="original-title">E.T., the Extra-Terrestrial</span>
+
+                <div class="detail-meta">
+                    Subido por
+                    <a href="/index.html?author=amc" class="author-tooltip-trigger"
+                        title="Ver todos los posts de Alberto Martínez Cruz" data-fullname="Alberto Marínez Cruz"
+                        data-photo="[URL_FOTO_AUTOR.jpg]">
+                        <strong>Alberto Martínez Cruz</strong>
+                        <div class="author-tooltip-card">
+                            <img src="https://scontent.fpbc2-6.fna.fbcdn.net/v/t39.30808-6/459326532_3727483417581788_7380911360526922672_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_3S__oluHWsQ7kNvwGmM5T_&_nc_oc=AdmRyL6qPxPshEWk8Cgz0FA5aAFFJ5-dNH022YGAbva13Gsohc8rD_Bnz4-vd5hazgIRbm389PlM6t8UxN4GcdBl&_nc_zt=23&_nc_ht=scontent.fpbc2-6.fna&_nc_gid=igDdtFfwmqwI7y28abO7jA&oh=00_AfiBDzO-iT6JwOlVqrxakGWK42P0MgyEyWRiQ3EPha7QBw&oe=69171361"
+                                alt="Foto de Alberto Martínez Cruz">
+                        </div>
+                    </a>
+                    el
+                    <a href="/index.html?date=2025-11-10" class="date-link" title="Ver todos de esta fecha">
+                        10 de Noviembre de 2025
+                    </a>
+                    
+                    <div class="visit-counter-page">
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmi-cine-post.vercel.app%2Fpages%2Fet.html&countColor=%236a11cb"/>
+                    </div>
+                    
+                    <div class="share-buttons">
+                        <a href="#" id="share-fb" target="_blank" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="share-x" target="_blank" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" id="share-insta" target="_blank" title="Compartir en Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>1982</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=ciencia-ficcion" class="data-sheet-link">Ciencia Ficción</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Steven Spielberg</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>Universal Pictures</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Henry Thomas, Drew Barrymore, Dee Wallace, Peter Coyote, Robert MacNaughton.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://www.primevideo.com/dp/amzn1.dv.gti.0ea9f78a-fd51-d9b7-c114-58f511f74d79?autoplay=0&ref_=atv_cf_strg_wb" title="Amazon Prime Video"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png" alt="Amazon Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qYAETtIIClk?si=vgSP2V-GcU-Yw47R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        Un joven y solitario niño llamado Elliott traba amistad con un gentil alienígena (E.T.) que ha quedado varado en la Tierra. Elliott y sus hermanos, Gertie y Michael, deciden ocultar a E.T. de su madre y de los amenazantes agentes del gobierno que están buscando al visitante. A medida que la salud de E.T. comienza a deteriorarse por estar lejos de su mundo y Elliott forma una profunda conexión psíquica con él, deben correr contra el tiempo para ayudar a E.T. a "llamar a casa" y ser rescatado, todo mientras evaden a las autoridades en una persecución de alto riesgo que culmina en un clímax inolvidable.
+                    </p>
+                </div>
+
+<div class="carousel-section">
+    <h2>Escenas Destacadas</h2>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img src="https://es.web.img3.acsta.net/r_654_368/newsv7/22/06/18/09/32/1110544.jpg" alt="Random 1" class="carousel-item">
+            
+            <img src="https://img2.rtve.es/i/?w=1600&i=1669803155921.jpg" alt="Random 2" class="carousel-item">
+            <img src="https://img.rtve.es/imagenes/et-extraterrestre/1670229574958.jpg" alt="Random 3" class="carousel-item">
+        </div>
+        <button class="carousel-control prev">&lt;</button>
+        <button class="carousel-control next">&gt;</button>
+    </div>
+</div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora de 4 Premios Oscar (Banda Sonora, Efectos Visuales, Sonido, Edición de Sonido).</li>
+                        <li>Ganadora de 2 Globos de Oro (Mejor Película - Drama, Mejor Banda Sonora).</li>
+                        <li>Ganadora del Premio BAFTA a la Mejor Banda Sonora (John Williams).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>Narrativa Emocional y Empática:</strong> Una obra maestra de la narración centrada en la perspectiva infantil, explorando temas universales como la amistad, la soledad y la inocencia.</li>
+                        <li><strong>Música Inolvidable:</strong> La icónica banda sonora de John Williams es legendaria, responsable de elevar la emoción de la película, especialmente en la famosa escena del vuelo de las bicicletas.</li>
+                        <li><strong>Hito de Efectos Prácticos:</strong> El animatronic de E.T. (creado por Carlo Rambaldi) fue una maravilla técnica para su época, dotando a la criatura de una expresividad y vida que le permitieron conectar profundamente con la audiencia.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/et.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
     </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="[URL_FACEBOOK]" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="[URL_INSTAGRAM]" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="[URL_X_TWITTER]" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="[URL_GITHUB]" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
