@@ -40,7 +40,7 @@
 #movie-list {
     display: grid;
     /* ¡CAMBIO! Tarjetas más pequeñas (160px) y centradas */
-    grid-template-columns: repeat(auto-fit, 160px);
+    grid-template-columns: repeat(auto-fit, 200px);
     gap: 25px; /* Más espacio */
     justify-content: center; /* <-- ¡CORREGIDO! */
     

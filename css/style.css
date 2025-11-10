@@ -33,7 +33,7 @@ body {
 /* ¡CAMBIO! Padding-top ahora incluye el espacio de 30px */
 body {
     /* 160px (header) + 30px (gap) = 190px */
-    padding-top: 190px; 
+    padding-top: 180px; 
 }
 /* ¡NUEVO! Padding más corto para páginas sin filtros */
 body.page-simple-header {
@@ -286,7 +286,7 @@ h1, h2, h3 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     position: relative;
-    width: 160px; /* ¡CAMBIO! Tarjetas más pequeñas */
+    width: 200px; /* ¡CAMBIO! Tarjetas más pequeñas */
     
     /* ¡NUEVO! Flexbox para simetría */
     display: flex;
@@ -500,7 +500,7 @@ h1, h2, h3 {
                 
     /* ¡CAMBIO! Padding-top ajustado para móvil (más espacio) */
     body {
-        padding-top: 240px; 
+        padding-top: 230px; 
     }
 
     body.page-simple-header {
