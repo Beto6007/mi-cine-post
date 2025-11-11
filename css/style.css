@@ -31,7 +31,7 @@ body {
 }
 
 body.page-simple-header {
-    padding-top: 90px; 
+    padding-top: 80px; 
 }
 
 
@@ -477,7 +477,7 @@ h1, h2, h3 {
 @media (max-width: 768px) {
                 
     body {
-        padding-top: 230px; 
+        padding-top: 240px; 
     }
     body.page-simple-header {
         padding-top: 90px; 
@@ -485,7 +485,7 @@ h1, h2, h3 {
 
     /* --- Header --- */
     .header-content {
-        padding: 5px 15px;
+        padding: 5px 15px auto 5px;
     }
     .header-top {
         flex-direction: column;

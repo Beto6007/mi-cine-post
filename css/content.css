@@ -5,7 +5,7 @@
 .form-container,
 .author-list {
     max-width: 900px; /* Ancho estándar para contenido */
-    margin: 0 auto 30px auto; /* Sin espacio superior */
+    margin: 0 auto 20px auto; /* Sin espacio superior */
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -126,6 +126,12 @@
     .form-container,
     .author-list {
         padding: 15px; /* Reducido */
+    }
+
+    .content-page h1,
+    .form-container h1,
+    .author-list h1 {
+        text-align: center;
     }
 
     .author-card {
