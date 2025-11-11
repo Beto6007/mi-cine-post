@@ -1,8 +1,15 @@
-/* --- 3. Widget de Ruleta Flotante y Modal --- */
+/*
+ * ===================================================
+ * ESTILOS ESPECÍFICOS DE INDEX.HTML
+ * Cargar DESPUÉS de style.css
+ * ===================================================
+ */
+
+/* --- 3. Widget de Ruleta Flotante (Específico de Index) --- */
 .roulette-fab {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* Más a la derecha */
+    right: 20px;
     z-index: 999;
     width: 60px;
     height: 60px;
@@ -13,50 +20,43 @@
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    /* ¡CAMBIO! Animación de pulso y giro */
     animation: fab-burst-spin 3s infinite ease-in-out;
 }
 
-/* ¡NUEVA! Keyframes para la animación del botón */
+/* Animación del botón flotante */
 @keyframes fab-burst-spin {
-    /* Inicio: Pausa de 1.5s (1.5 / 3 = 50%) */
     0%, 50% {
         transform: scale(1) rotate(0deg);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
-    /* Giro y Expansión Rápida (1s) */
-    83.3% { /* (1.5s + 1s) / 3s = 83.3% */
+    83.3% { 
         transform: scale(1.25) rotate(720deg);
         box-shadow: 0 8px 25px var(--primary-color-shadow);
     }
-    /* Asentamiento (0.5s) */
-    100% { /* (2.5s + 0.5s) / 3s = 100% */
+    100% { 
         transform: scale(1) rotate(720deg);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 }
 
-/* --- 5. Cuadrícula de Películas (Página Principal) --- */
+/* --- 5.1 Cuadrícula de Películas (Específico de Index) --- */
 #movie-list {
     display: grid;
-    /* ¡CAMBIO! Tarjetas más pequeñas (160px) y centradas */
     grid-template-columns: repeat(auto-fit, 200px);
-    gap: 25px; /* Más espacio */
-    justify-content: center; /* <-- ¡CORREGIDO! */
-    
+    gap: 25px;
+    justify-content: center;
     max-width: 1200px;
-    /* ¡CAMBIO! Espacio superior quitado (ahora lo controla el body padding) */
     margin: 0 auto 30px auto;
     padding: 0 20px;
 }
 
 /* Animación de salto aleatoria (Solo escritorio) */
-.movie-card {
+#movie-list .movie-card {
     animation: card-float 5s ease-in-out infinite;
 }
-.movie-card-link:nth-child(2n) .movie-card { animation-delay: -2.5s; }
-.movie-card-link:nth-child(3n) .movie-card { animation-delay: -1s; }
-.movie-card-link:nth-child(5n) .movie-card { animation-delay: -4s; }
+#movie-list .movie-card-link:nth-child(2n) .movie-card { animation-delay: -2.5s; }
+#movie-list .movie-card-link:nth-child(3n) .movie-card { animation-delay: -1s; }
+#movie-list .movie-card-link:nth-child(5n) .movie-card { animation-delay: -4s; }
 
 @keyframes card-float {
     0%, 100% { transform: translateY(0); }
@@ -64,41 +64,36 @@
 }
 
 /* Efecto de hover (Solo escritorio) */
-.movie-card:hover {
+#movie-list .movie-card:hover {
     animation: none; /* Detiene la animación de salto */
-    transform: scale(1.03); /* ¡CAMBIO! Regresa el scale para escritorio */
+    transform: scale(1.03);
     box-shadow: 0 10px 25px -5px var(--primary-color-shadow);
 }
 
-/* --- 6. (NUEVO) RESPONSIVE PARA CUADRÍCULA --- */
-@media (max-width: 768px) { /* Breakpoint general para tablet/móvil */
+
+/* --- 11.1 RESPONSIVE Específico de Index (Grid) --- */
+@media (max-width: 768px) {
+    
     #movie-list {
-        /* ¡CAMBIO! Forzar 2 columnas simétricas */
         grid-template-columns: 1fr 1fr;
-        gap: 15px; /* Reducir gap para más espacio */
-        padding: 0 15px; /* Reducir padding */
+        gap: 15px; 
+        padding: 0 15px; 
     }
 
-    /* ¡CAMBIO! Desactiva TODAS las animaciones en móvil */
-    .movie-card {
-        animation: none;
+    /* * Anula la regla global .movie-card-link (90%)
+     * para que las tarjetas llenen el grid de 2 columnas.
+     */
+    #movie-list .movie-card-link {
+        width: 100%;
+        margin: 0;
     }
 
-    /* Esta regla es correcta y desactiva el 'scale' en móvil */
-    .movie-card:hover {
-        animation: none;
-        transform: none; /* Asegura que no haya zoom al tocar */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra estática */
-    }
-}
 
-/*
- * ¡NUEVO! AJUSTE FINO PARA PANTALLAS MUY PEQUEÑAS (480px e inferiores)
- * Mejora el espacio visual y evita deformaciones.
- */
+/* Ajuste fino para pantallas muy pequeñas */
 @media (max-width: 480px) {
     #movie-list {
         gap: 10px;
         padding: 0 10px;
     }
+}
 }
