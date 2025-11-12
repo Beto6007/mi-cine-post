@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     if (carousels.length > 0) {
-        // --- 1a. Lógica del Carrusel ---
+        // --- 1a. Lógica del Carrusel (MODIFICADA) ---
         carousels.forEach(carousel => {
             const inner = carousel.querySelector('.carousel-inner');
             const items = carousel.querySelectorAll('.carousel-item');
@@ -39,19 +39,46 @@ document.addEventListener('DOMContentLoaded', () => {
             let currentIndex = 0;
             const totalItems = items.length;
 
+            // --- ¡NUEVO! ---
+            let autoSlideInterval; // Variable para guardar el intervalo
+            const intervalTime = 3000; // 5000ms = 5 segundos (¡puedes cambiar esto!)
+
             function moveCarousel() {
-                inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                // Asegura que solo se mueva si hay más de un item
+                if (totalItems > 1) { 
+                    inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+            }
+
+            // --- ¡NUEVO! Función para avanzar automáticamente ---
+            function autoAdvance() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                moveCarousel();
+            }
+
+            // --- ¡NUEVO! Función para reiniciar el intervalo (al hacer clic manual) ---
+            function resetInterval() {
+                clearInterval(autoSlideInterval); // Limpia el intervalo anterior
+                // Inicia uno nuevo si hay más de un item
+                if (totalItems > 1) {
+                    autoSlideInterval = setInterval(autoAdvance, intervalTime);
+                }
             }
 
             nextBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % totalItems;
                 moveCarousel();
+                resetInterval(); // ¡NUEVO! Reinicia el timer
             });
 
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + totalItems) % totalItems;
                 moveCarousel();
+                resetInterval(); // ¡NUEVO! Reinicia el timer
             });
+
+            // --- ¡NUEVO! Iniciar el auto-slide al cargar ---
+            resetInterval(); // Se usa resetInterval para iniciar el primer intervalo
         });
     }
 
