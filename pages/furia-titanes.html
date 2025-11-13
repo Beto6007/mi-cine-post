@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Detalle - Furia de Titanes (1981)</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo">CinePost</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    <option value="terror">Terror</option>
+                    <option value="comedia">Comedia</option>
+                    </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                    </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+        
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
+            </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="https://m.media-amazon.com/images/M/MV5BM2UwMDkzMDItMzI2OC00ZDEzLWI2MmUtMGM4MDY2MjQ2ZmYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg"
+                    alt="Poster de Furia de Titanes (1981)" class="detail-poster">
+
+                <div class="star-rating" data-movie-id="furia-titanes-1981">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe 
+                        width="100%" 
+                        height="166" 
+                        scrolling="no" 
+                        frameborder="no" 
+                        allow="autoplay" 
+                        src="https://w.soundcloud.com/player/?url=[URL_ENCODED_DE_SOUNDCLOUD_TRACK]&color=%236a11cb&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+                    </iframe>
+                </div>
+                
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel">
+                        </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Furia de Titanes</h1>
+                <span class="original-title">Clash of the Titans (1981)</span>
+
+                <div class="detail-meta">
+                    Subido por
+                    <a href="/index.html?author=[ID_AUTOR_EJ: amc]" class="author-tooltip-trigger"
+                        title="Ver todos los posts de [Nombre del Autor]" data-fullname="[Nombre del Autor]"
+                        data-photo="[URL_FOTO_AUTOR.jpg]">
+                        <strong>[Nombre del Autor]</strong>
+                        <div class="author-tooltip-card">
+                            <img src="[URL_FOTO_AUTOR.jpg]"
+                                alt="Foto de [Nombre del Autor]">
+                        </div>
+                    </a>
+                    el
+                    <a href="/index.html?date=2025-11-12" class="date-link" title="Ver todos de esta fecha">
+                        12 de Noviembre de 2025
+                    </a>
+                    
+                    <div class="visit-counter-page">
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2F[TU_DOMINIO.com]%2Fpages%2Ffuria-de-titanes-1981.html&countColor=%236a11cb"/>
+                    </div>
+                    
+                    <div class="share-buttons">
+                        <a href="#" id="share-fb" target="_blank" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="share-x" target="_blank" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" id="share-insta" target="_blank" title="Compartir en Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>1981</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=fantasia" class="data-sheet-link">Fantasía / Aventura</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Desmond Davis</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>United Artists</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Harry Hamlin, Laurence Olivier, Judi Bowker, Maggie Smith, Burgess Meredith.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                             <a href="https://www.primevideo.com/" title="Amazon Prime Video"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png" alt="Amazon Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/lJDIdkj6F00"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        Perseo, hijo mortal del dios Zeus, debe embarcarse en una peligrosa búsqueda para salvar a su amada, la Princesa Andrómeda, de ser sacrificada al monstruoso Kraken, una bestia marina colosal liberada por orden de la vengativa diosa Tetis. Para derrotar al invencible Kraken, Perseo debe enfrentar desafíos imposibles: capturar al caballo alado Pegaso, buscar respuestas con las Brujas de Estigia y, lo más peligroso de todo, adentrarse en la guarida de la gorgona Medusa. Su objetivo es obtener la cabeza de Medusa, cuya mirada convierte a cualquier criatura viviente en piedra, y usarla como el arma definitiva para detener la destrucción de la ciudad de Joppe.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="/images/scenes/clash1981/scene1.jpg" alt="Escena 1 - Perseo y Medusa" class="carousel-item">
+                            <img src="/images/scenes/clash1981/scene2.jpg" alt="Escena 2 - El Kraken emergiendo" class="carousel-item">
+                            <img src="/images/scenes/clash1981/scene3.jpg" alt="Escena 3 - Pegaso volando" class="carousel-item">
+                            </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora del Premio Saturn a la Mejor Película de Fantasía.</li>
+                        <li>Ganadora del Premio Young Artist a la Mejor Película Familiar.</li>
+                        <li>Nominada al Premio Saturn a la Mejor Música y Mejores Efectos Especiales.</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>El Legado de Ray Harryhausen:</strong> Fue la última película en la que trabajó el maestro de los efectos especiales Ray Harryhausen. Sus criaturas animadas en <em>stop-motion</em> (Medusa, el Kraken) son hitos del cine.</li>
+                        <li><strong>Mitología Épica:</strong> Captura la grandeza teatral de los mitos griegos, mostrando a los dioses del Olimpo (liderados por Laurence Olivier) manipulando el destino de los humanos como piezas de ajedrez.</li>
+                        <li><strong>La Escena de Medusa:</strong> El enfrentamiento contra Medusa es considerada una de las escenas de mayor tensión y mejor logradas en el cine de aventuras, combinando iluminación y animación de forma magistral.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://[TU_DOMINIO.com]/pages/furia-de-titanes-1981.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="[URL_FACEBOOK]" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="[URL_INSTAGRAM]" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="[URL_X_TWITTER]" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="[URL_GITHUB]" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
