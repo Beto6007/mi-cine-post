@@ -1,65 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================================================
-    // --- 1. LÓGICA DE DETALLE.HTML (ESTRELLAS, CARRUSEL, SHARE) ---
+    // --- 1. LLAMADAS DE RENDERIZADO (AL CARGAR) ---
+    // =========================================================================
+    
+    // Revisa si las funciones de movies.js están listas
+    const hasRenderFunction = typeof renderMovies === 'function';
+    const hasMetaRenderFunction = typeof renderMovieMetadata === 'function';
+
+    // CASO A: Estamos en el Index
+    const mainList = document.getElementById('movie-list');
+    if (mainList && hasRenderFunction) {
+        renderMovies('movie-list', false); // false = modo normal (todas)
+    }
+
+    // CASO B: Estamos en una página de Detalle (Sugerencias)
+    const suggestions = document.querySelector('.suggestions-carousel');
+    if (suggestions && hasRenderFunction) {
+        if (!suggestions.id) suggestions.id = 'suggestions-container-gen';
+        renderMovies(suggestions.id, true); // true = modo sugerencias
+    }
+
+    // CASO C: Estamos en página de Detalle (Info de Autor/Fecha)
+    const metaContainer = document.getElementById('movie-meta-container');
+    if (metaContainer && hasMetaRenderFunction) {
+        const movieId = metaContainer.dataset.id;
+        renderMovieMetadata('movie-meta-container', movieId);
+    }
+
+    // =========================================================================
+    // --- 2. SELECCIÓN DE ELEMENTOS (POST-RENDERIZADO) ---
+    // =========================================================================
+    
+    // Espera a que el evento 'moviesRendered' se dispare para activar clics
+    document.addEventListener('moviesRendered', () => {
+        // Activar bloqueo de click en tarjetas 'locked'
+        document.querySelectorAll('.movie-card-link.is-locked').forEach(link => {
+            link.addEventListener('click', (e) => e.preventDefault());
+        });
+    });
+
+
+    // =========================================================================
+    // --- 3. LÓGICA DE DETALLE.HTML (ESTRELLAS, CARRUSEL, SHARE) ---
     // =========================================================================
     
     const carousels = document.querySelectorAll('.carousel');
     const starRatingContainer = document.querySelector('.star-rating');
     
-    // ¡NUEVO! Función para activar los botones de compartir
     function setupShareButtons() {
         const shareFb = document.getElementById('share-fb');
         const shareX = document.getElementById('share-x');
-        const shareInsta = document.getElementById('share-insta'); // Nota: Instagram no tiene API de compartir post
+        const shareInsta = document.getElementById('share-insta'); 
         
-        if (!shareFb) return; // Si no hay botones de compartir, no hace nada
+        if (!shareFb) return; 
         
         const url = encodeURIComponent(window.location.href);
         const title = encodeURIComponent(document.title);
         
         shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
         shareX.href = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-        
-        // Instagram no permite compartir posts por URL,
-        // lo mejor es enlazar a tu perfil.
-        // ¡CAMBIA ESTO! por tu URL de Instagram
-        shareInsta.href = 'https://www.instagram.com/cine.post.tis/';
+        shareInsta.href = 'https://www.instagram.com/cine.post.tis/'; // Enlace a tu perfil
     }
 
+    // Escucha el evento que disparamos en movies.js
+    document.addEventListener('metadataRendered', setupShareButtons);
 
     if (carousels.length > 0) {
-        // --- 1a. Lógica del Carrusel (MODIFICADA) ---
         carousels.forEach(carousel => {
             const inner = carousel.querySelector('.carousel-inner');
             const items = carousel.querySelectorAll('.carousel-item');
             const prevBtn = carousel.querySelector('.prev');
             const nextBtn = carousel.querySelector('.next');
+            if (!inner || !prevBtn || !nextBtn || items.length === 0) return;
             
             let currentIndex = 0;
             const totalItems = items.length;
-
-            // --- ¡NUEVO! ---
-            let autoSlideInterval; // Variable para guardar el intervalo
-            const intervalTime = 3000; // 5000ms = 5 segundos (¡puedes cambiar esto!)
+            let autoSlideInterval; 
+            const intervalTime = 3000; 
 
             function moveCarousel() {
-                // Asegura que solo se mueva si hay más de un item
                 if (totalItems > 1) { 
                     inner.style.transform = `translateX(-${currentIndex * 100}%)`;
                 }
             }
-
-            // --- ¡NUEVO! Función para avanzar automáticamente ---
             function autoAdvance() {
                 currentIndex = (currentIndex + 1) % totalItems;
                 moveCarousel();
             }
-
-            // --- ¡NUEVO! Función para reiniciar el intervalo (al hacer clic manual) ---
             function resetInterval() {
-                clearInterval(autoSlideInterval); // Limpia el intervalo anterior
-                // Inicia uno nuevo si hay más de un item
+                clearInterval(autoSlideInterval); 
                 if (totalItems > 1) {
                     autoSlideInterval = setInterval(autoAdvance, intervalTime);
                 }
@@ -68,22 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % totalItems;
                 moveCarousel();
-                resetInterval(); // ¡NUEVO! Reinicia el timer
+                resetInterval(); 
             });
-
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + totalItems) % totalItems;
                 moveCarousel();
-                resetInterval(); // ¡NUEVO! Reinicia el timer
+                resetInterval(); 
             });
-
-            // --- ¡NUEVO! Iniciar el auto-slide al cargar ---
-            resetInterval(); // Se usa resetInterval para iniciar el primer intervalo
+            resetInterval(); 
         });
     }
 
     if (starRatingContainer) {
-        // --- 1b. Lógica de Ranking de Estrellas ---
+        // ... (Tu lógica de estrellas va aquí, no necesita cambios) ...
         const stars = starRatingContainer.querySelectorAll('.stars i');
         const movieId = starRatingContainer.dataset.movieId;
         const avgDisplay = document.getElementById('star-avg-display');
@@ -99,16 +126,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const hasVoted = localStorage.getItem(votedKey) === 'true';
 
             let avgRating = 0;
-            if (count > 0) {
-                avgRating = score / count;
-            }
-            avgDisplay.textContent = `${avgRating.toFixed(1)} estrellas (${count} votos)`;
+            if (count > 0) avgRating = score / count;
+            
+            if(avgDisplay) avgDisplay.textContent = `${avgRating.toFixed(1)} estrellas (${count} votos)`;
             fillStars(Math.round(avgRating));
 
             if (hasVoted) {
                 starRatingContainer.classList.add('voted');
-                savedMsg.textContent = '¡Gracias por tu voto!';
-                savedMsg.style.opacity = '1';
+                if(savedMsg) {
+                    savedMsg.textContent = '¡Gracias por tu voto!';
+                    savedMsg.style.opacity = '1';
+                }
             }
         }
 
@@ -138,33 +166,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rating = parseInt(star.dataset.value);
                 let score = parseInt(localStorage.getItem(scoreKey) || 0);
                 let count = parseInt(localStorage.getItem(countKey) || 0);
-                score += rating;
-                count += 1;
-                localStorage.setItem(scoreKey, score);
-                localStorage.setItem(countKey, count);
+                localStorage.setItem(scoreKey, score + rating);
+                localStorage.setItem(countKey, count + 1);
                 localStorage.setItem(votedKey, 'true');
                 loadSavedRating();
             });
         });
-
-        loadSavedRating(); // Carga la calificación al iniciar
-        
-        // ¡NUEVO! Activa los botones de compartir
-        setupShareButtons();
+        loadSavedRating(); 
     }
 
 
     // =========================================================================
-    // --- 2. LÓGICA DE FILTRO A-Z (PARA AMBAS PÁGINAS) ---
+    // --- 4. LÓGICA DE FILTRO A-Z ---
     // =========================================================================
     
     const azNav = document.getElementById('az-filter-nav');
     
-    // Generador de Filtro A-Z
     function setupAZFilter() {
         if (!azNav) return; 
 
-        for (let i = 65; i <= 90; i++) { // 65=A, 90=Z
+        for (let i = 65; i <= 90; i++) { 
             const letter = String.fromCharCode(i);
             const link = document.createElement('a');
             link.href = `/index.html?letter=${letter.toLowerCase()}`; 
@@ -173,45 +194,32 @@ document.addEventListener('DOMContentLoaded', () => {
             azNav.appendChild(link);
         }
         
-        // Añadir listeners (solo para index.html)
-        azNav.querySelectorAll('a').forEach(link => {
-            if (document.getElementById('movie-list')) { // Solo si estamos en index.html
+        if (mainList) { 
+            azNav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Evita recargar la página
+                    e.preventDefault(); 
                     resetAllFilters(link); 
-                    
-                    if (azNav.querySelector('a.active')) {
-                        azNav.querySelector('a.active').classList.remove('active');
-                    }
+                    if (azNav.querySelector('a.active')) azNav.querySelector('a.active').classList.remove('active');
                     link.classList.add('active');
-                    
                     window.selectedLetter = link.dataset.letter.toLowerCase();
-                    window.filterAndSearchMovies(); // Llama a la función de filtrado
+                    window.filterAndSearchMovies(); 
                 });
-            }
-        });
+            });
+        }
     }
-
     setupAZFilter(); 
 
 
     // =========================================================================
-    // --- 3. LÓGICA DE INDEX.HTML (FILTROS, RULETA, ETC.) ---
+    // --- 5. LÓGICA PRINCIPAL DE INDEX (FILTROS Y RULETA) ---
     // =========================================================================
     
-    const movieListContainer = document.getElementById('movie-list');
-    
-    // Comprueba si estamos en index.html
-    if (movieListContainer) {
+    if (mainList) {
         
-        // --- 3a. Seleccionar TODOS los elementos del DOM ---
         const searchBar = document.getElementById('search-bar');
         const genreFilter = document.getElementById('genre-filter');
         const authorFilter = document.getElementById('author-filter');
         const dateFilterInput = document.getElementById('date-filter');
-        const azNavLinks = azNav.querySelectorAll('a'); // Links A-Z
-        
-        // Selectores de Ruleta
         const rouletteModal = document.getElementById('roulette-widget');
         const openRouletteBtn = document.getElementById('open-roulette-btn');
         const closeRouletteBtn = document.getElementById('close-roulette-btn');
@@ -219,13 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const rouletteWheel = document.getElementById('roulette-wheel');
         const rouletteResult = document.getElementById('roulette-result');
         
-        let allMovieLinks = document.querySelectorAll('.movie-card-link'); 
-        
-        window.selectedLetter = 'all'; // Variable global para el filtro A-Z
-        let calendarInstance = null; // Se definirá después
+        window.selectedLetter = 'all'; 
+        let calendarInstance = null; 
 
-        
-        // --- (NUEVA) FUNCIÓN DE RESETEO DE FILTROS ---
         function resetAllFilters(exceptThisElement) {
             if (exceptThisElement !== searchBar) searchBar.value = '';
             if (exceptThisElement !== genreFilter) genreFilter.value = 'all';
@@ -233,24 +237,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (exceptThisElement !== dateFilterInput && calendarInstance) {
                 calendarInstance.clear(false); 
             }
-            let isAzLink = Array.from(azNavLinks).includes(exceptThisElement);
             
-            if (!isAzLink) {
-                if (azNav.querySelector('a.active')) {
-                    azNav.querySelector('a.active').classList.remove('active');
-                }
-                azNav.querySelector('[data-letter="all"]').classList.add('active');
+            const isAzLink = azNav && Array.from(azNav.querySelectorAll('a')).includes(exceptThisElement);
+            if (!isAzLink && azNav) {
+                if (azNav.querySelector('a.active')) azNav.querySelector('a.active').classList.remove('active');
+                const allLink = azNav.querySelector('[data-letter="all"]');
+                if(allLink) allLink.classList.add('active');
                 window.selectedLetter = 'all';
             }
         }
 
-
-        // --- 3b. Función de Filtrado PRINCIPAL (Global) ---
         window.filterAndSearchMovies = function() {
             const searchTerm = searchBar.value.toLowerCase();
             const selectedGenre = decodeURIComponent(genreFilter.value);
             const selectedAuthor = decodeURIComponent(authorFilter.value);
             const selectedDate = dateFilterInput.value; 
+            
+            // Re-selecciona las tarjetas por si acaso
+            const allMovieLinks = document.querySelectorAll('#movie-list .movie-card-link');
 
             allMovieLinks.forEach(link => {
                 const title = link.dataset.title.toLowerCase();
@@ -258,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const author = link.dataset.author;
                 const postDate = link.dataset.date; 
 
-                // Lógica de "un solo filtro a la vez"
                 let show = true; 
                 
                 if (searchTerm !== '') {
@@ -273,26 +276,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     show = title.startsWith(window.selectedLetter);
                 }
 
-                if (show) {
-                    link.style.display = 'block';
-                } else {
-                    link.style.display = 'none';
-                }
+                link.style.display = show ? 'block' : 'none';
             });
         }
         
-        // --- 3c. Lógica de la Ruleta (Modal) ---
         function setupRoulette() {
-            openRouletteBtn.addEventListener('click', () => {
-                rouletteModal.classList.add('visible');
-            });
-            closeRouletteBtn.addEventListener('click', () => {
-                rouletteModal.classList.remove('visible');
-            });
+            if(!openRouletteBtn) return;
+            openRouletteBtn.addEventListener('click', () => rouletteModal.classList.add('visible'));
+            closeRouletteBtn.addEventListener('click', () => rouletteModal.classList.remove('visible'));
             rouletteModal.addEventListener('click', (e) => {
-                if(e.target === rouletteModal) { 
-                    rouletteModal.classList.remove('visible');
-                }
+                if(e.target === rouletteModal) rouletteModal.classList.remove('visible');
             });
 
             spinBtn.addEventListener('click', () => {
@@ -301,14 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 rouletteResult.textContent = 'Buscando...';
                 
                 const oldHighlight = document.querySelector('.movie-card-link.highlight');
-                if (oldHighlight) {
-                    oldHighlight.classList.remove('highlight');
-                }
+                if (oldHighlight) oldHighlight.classList.remove('highlight');
 
                 resetAllFilters(null);
-                window.filterAndSearchMovies();
+                window.filterAndSearchMovies(); 
                 
-                const visibleMovies = Array.from(allMovieLinks).filter(
+                const visibleMovies = Array.from(document.querySelectorAll('#movie-list .movie-card-link')).filter(
                     movie => !movie.classList.contains('is-locked')
                 );
 
@@ -319,23 +310,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (visibleMovies.length > 0) {
                         const randomIndex = Math.floor(Math.random() * visibleMovies.length);
                         const chosenMovie = visibleMovies[randomIndex];
-                        const movieTitle = chosenMovie.dataset.title;
-                        rouletteResult.textContent = `¡Te recomendamos: ${movieTitle}!`;
+                        rouletteResult.textContent = `¡Te recomendamos: ${chosenMovie.dataset.title}!`;
                         
                         setTimeout(() => {
                             rouletteModal.classList.remove('visible');
                             chosenMovie.classList.add('highlight');
                             chosenMovie.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }, 1000); 
-
                     } else {
-                        rouletteResult.textContent = 'No hay películas para recomendar.';
+                        rouletteResult.textContent = 'No hay películas disponibles.';
                     }
                 }, 1500); 
             });
         }
 
-        // --- 3d. Lógica de Carga de Parámetros URL (ACTUALIZADA) ---
         function checkURLForParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const dateFromURL = urlParams.get('date');
@@ -346,48 +334,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (letterFromURL) {
                 resetAllFilters(azNav.querySelector(`[data-letter="${letterFromURL.toUpperCase()}"]`));
                 window.selectedLetter = letterFromURL.toLowerCase();
-                if (azNav.querySelector('a.active')) {
-                     azNav.querySelector('a.active').classList.remove('active');
-                }
+                if (azNav.querySelector('a.active')) azNav.querySelector('a.active').classList.remove('active');
                 const newActiveLetter = azNav.querySelector(`[data-letter="${letterFromURL.toUpperCase()}"]`);
                 if (newActiveLetter) newActiveLetter.classList.add('active');
-                
             } else if (authorFromURL) {
                 resetAllFilters(authorFilter);
                 authorFilter.value = authorFromURL;
-                
             } else if (genreFromURL) { 
                 resetAllFilters(genreFilter);
                 genreFilter.value = genreFromURL;
-
             } else if (dateFromURL) {
                 resetAllFilters(dateFilterInput);
-                calendarInstance.setDate(dateFromURL, false); 
+                if(calendarInstance) calendarInstance.setDate(dateFromURL, false); 
             }
             
             window.filterAndSearchMovies();
         }
         
-        // --- 3e. Inicialización de todo en Index.html ---
-        
-        // ¡CAMBIO! Ordenado por fecha (el data-date)
-        const sortedLinks = Array.from(allMovieLinks).sort((a, b) => {
-            // Orden descendente (más nuevo primero)
-            return b.dataset.date.localeCompare(a.dataset.date);
-        });
-        movieListContainer.innerHTML = ''; 
-        sortedLinks.forEach(link => movieListContainer.appendChild(link));
-        allMovieLinks = document.querySelectorAll('.movie-card-link'); 
-        
-        // 2. Activar tarjeta bloqueada
-        document.querySelectorAll('.movie-card-link.is-locked').forEach(link => {
-            link.addEventListener('click', (e) => e.preventDefault());
-        });
-        
-        // 3. Activar Ruleta
+        // Inicializar componentes del Index
         setupRoulette();
         
-        // 4. Activar Filtros Normales (ahora con reset)
         searchBar.addEventListener('input', () => {
             resetAllFilters(searchBar);
             window.filterAndSearchMovies();
@@ -401,14 +367,13 @@ document.addEventListener('DOMContentLoaded', () => {
             window.filterAndSearchMovies();
         });
 
-        // 5. Activar Calendario (Flatpickr)
         calendarInstance = flatpickr(dateFilterInput, {
             dateFormat: "Y-m-d",
-            onChange: function(selectedDates, dateStr, instance) {
+            onChange: (selectedDates, dateStr) => {
                 resetAllFilters(dateFilterInput); 
                 window.filterAndSearchMovies(); 
             },
-            onClose: function(selectedDates, dateStr, instance) {
+            onClose: (selectedDates, dateStr) => {
                 if (dateStr === '') { 
                     resetAllFilters(null); 
                     window.filterAndSearchMovies();
@@ -416,74 +381,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // 6. Revisar URL para filtros
-        checkURLForParams();
+        // Espera a que las películas se dibujen antes de checar la URL
+        document.addEventListener('moviesRendered', checkURLForParams);
     }
     
+    // =========================================================================
+    // --- 6. LÓGICA PARA REDIRECCIÓN DESDE SUBPÁGINAS ---
+    // =========================================================================
     
-    // --- 4. LÓGICA DE FILTRO PARA PÁGINAS (DETALLE, CONTACTO, ETC.) ---
-    
-    if (!movieListContainer) { // Si NO estamos en index.html
+    if (!mainList) { 
         const headerFilters = document.querySelector('.header-filters');
         if (headerFilters) {
-            
             function redirectToIndex(paramName, paramValue) {
                 if(paramValue === 'all' || paramValue === '') { 
-                   window.location.href = `/index.html`; // Ruta raíz
+                   window.location.href = `/index.html`; 
                    return;
                 }
-                const encodedValue = encodeURIComponent(paramValue);
-                window.location.href = `/index.html?${paramName}=${encodedValue}`; // Ruta raíz
+                window.location.href = `/index.html?${paramName}=${encodeURIComponent(paramValue)}`; 
             }
             
-            headerFilters.querySelector('#search-bar').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && e.target.value.trim() !== '') {
-                   redirectToIndex('search', e.target.value);
-                }
+            const sBar = headerFilters.querySelector('#search-bar');
+            if(sBar) sBar.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && e.target.value.trim() !== '') redirectToIndex('search', e.target.value);
             });
-            headerFilters.querySelector('#genre-filter').addEventListener('change', (e) => {
-                redirectToIndex('genre', e.target.value);
-            });
-            headerFilters.querySelector('#author-filter').addEventListener('change', (e) => {
-                redirectToIndex('author', e.target.value);
-            });
-            flatpickr(headerFilters.querySelector('#date-filter'), {
+            
+            const gFilter = headerFilters.querySelector('#genre-filter');
+            if(gFilter) gFilter.addEventListener('change', (e) => redirectToIndex('genre', e.target.value));
+
+            const aFilter = headerFilters.querySelector('#author-filter');
+            if(aFilter) aFilter.addEventListener('change', (e) => redirectToIndex('author', e.target.value));
+
+            const dFilter = headerFilters.querySelector('#date-filter');
+            if(dFilter) flatpickr(dFilter, {
                 dateFormat: "Y-m-d",
-                onChange: function(selectedDates, dateStr, instance) {
-                    redirectToIndex('date', dateStr);
-                }
+                onChange: (selectedDates, dateStr) => redirectToIndex('date', dateStr)
             });
         }
     }
 
-    
     // =========================================================================
-    // --- 5. LÓGICA DE CONTACTO.HTML (Formulario WhatsApp) ---
+    // --- 7. LÓGICA DE CONTACTO.HTML ---
     // =========================================================================
     
     const contactForm = document.getElementById('contact-form');
-    
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // --- ¡IMPORTANTE! ---
-            // Reemplaza '522222784581' con tu número de WhatsApp completo
             const tuNumeroDeWhatsApp = '522222784581'; 
-            
             const nombre = document.getElementById('nombre').value;
             const motivo = document.getElementById('motivo').value;
             const mensaje = document.getElementById('mensaje').value;
             
-            let texto = `¡Hola! Soy ${nombre}.\n\n`;
-            texto += `*Motivo:* ${motivo}\n`;
-            texto += `*Mensaje:*\n${mensaje}`;
-            
-            const textoCodificado = encodeURIComponent(texto);
-            
-            const urlWhatsApp = `https://wa.me/${tuNumeroDeWhatsApp}?text=${textoCodificado}`;
-            
-            window.open(urlWhatsApp, '_blank');
+            let texto = `¡Hola! Soy ${nombre}.\n\n*Motivo:* ${motivo}\n*Mensaje:*\n${mensaje}`;
+            window.open(`https://wa.me/${tuNumeroDeWhatsApp}?text=${encodeURIComponent(texto)}`, '_blank');
         });
     }
 
