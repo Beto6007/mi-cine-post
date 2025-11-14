@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>CinePost - Furia de Titanes (1981)</title>
 
     <link rel="icon" type="image/png" href="/logo-cinepost.png">
@@ -34,26 +34,26 @@
                     </ul>
                 </nav>
             </div>
-            
+
             <div class="header-filters">
                 <input type="search" id="search-bar" placeholder="Buscar por título...">
                 <select id="genre-filter">
                     <option value="all">Género</option>
                     <option value="fantasia">Fantasía</option>
                     <option value="ficcion">Ciencia Ficción</option>
-                    </select>
+                </select>
                 <select id="author-filter">
                     <option value="all">Autor</option>
                     <option value="amc">Alberto Martínez Cruz</option>
                     <option value="one">4lb One</option>
-                    </select>
+                </select>
                 <input type="text" id="date-filter" placeholder="Fecha...">
             </div>
         </div>
-        
+
         <nav class="az-filter" id="az-filter-nav">
             <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
-            </nav>
+        </nav>
     </header>
 
     <main class="movie-detail-container">
@@ -81,20 +81,21 @@
                 <div class="audio-player-section">
                     <h3>Resumen en Audio</h3>
                     <p>Escucha la reseña completa (solo voz).</p>
-                    <iframe 
-                        width="100%" 
-                        height="166" 
-                        scrolling="no" 
-                        frameborder="no" 
-                        allow="autoplay" 
-                        src="https://w.soundcloud.com/player/?url=[URL_ENCODED_DE_SOUNDCLOUD_TRACK]&color=%236a11cb&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-                    </iframe>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2212258481&color=%236224c9&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="https://soundcloud.com/alberto-martinez-700091428/furia-de-titanes-resumen"
+                            title="Furia-de-Titanes-resumen" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Furia-de-Titanes-resumen</a></div>
                 </div>
-                
+
                 <div class="suggestions-section">
                     <h2>También te puede gustar...</h2>
                     <div class="suggestions-carousel">
-    <!-- <a href="/pages/[NOMBRE-DEL-ARCHIVO.html]" class="movie-card-link" 
+                        <!-- <a href="/pages/[NOMBRE-DEL-ARCHIVO.html]" class="movie-card-link" 
    data-title="[Nombre de la Película]" 
    data-genre="[genero-en-minusculas-ej: fantasia]" 
    data-author="[id-autor-ej: amc]" 
@@ -111,465 +112,491 @@
     </article>
 </a> -->
 
-    <a href="/pages/star-wars.html" class="movie-card-link" data-title="Star Wars: Episodio IV - Una Nueva Esperanza"
-        data-genre="ficcion" data-author="amc" data-date="2025-11-08">
-        <article class="movie-card">
-            <span class="card-badge">Ciencia Ficción</span>
-            <img src="https://m.media-amazon.com/images/I/91uddP3RA5L._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Harry Potter 3" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Star Wars: Episodio IV - Una Nueva Esperanza</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">Alberto Martínez</span> | <span class="date">08 nov 2025</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                        <a href="/pages/star-wars.html" class="movie-card-link"
+                            data-title="Star Wars: Episodio IV - Una Nueva Esperanza" data-genre="ficcion"
+                            data-author="amc" data-date="2025-11-08">
+                            <article class="movie-card">
+                                <span class="card-badge">Ciencia Ficción</span>
+                                <img src="https://m.media-amazon.com/images/I/91uddP3RA5L._AC_UF894,1000_QL80_.jpg"
+                                    alt="Poster Harry Potter 3" class="movie-poster">
+                                <div class="movie-card-content">
+                                    <h3><span>Star Wars: Episodio IV - Una Nueva Esperanza</span></h3>
+                                    <div class="movie-card-meta">
+                                        <span class="author">Alberto Martínez</span> | <span class="date">08 nov
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-    <a href="/pages/gremlins.html" class="movie-card-link" data-title="Gremlins" data-genre="fantasia" data-author="amc"
-        data-date="2025-11-09">
-        <article class="movie-card">
-            <span class="card-badge">Fantasía</span>
-            <img src="	https://m.media-amazon.com/images/I/61yE11TL06L.jpg" alt="Poster Harry Potter 3"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Gremlins</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">Alberto Martínez</span> | <span class="date">09 nov 2025</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                        <a href="/pages/gremlins.html" class="movie-card-link" data-title="Gremlins"
+                            data-genre="fantasia" data-author="amc" data-date="2025-11-09">
+                            <article class="movie-card">
+                                <span class="card-badge">Fantasía</span>
+                                <img src="	https://m.media-amazon.com/images/I/61yE11TL06L.jpg"
+                                    alt="Poster Harry Potter 3" class="movie-poster">
+                                <div class="movie-card-content">
+                                    <h3><span>Gremlins</span></h3>
+                                    <div class="movie-card-meta">
+                                        <span class="author">Alberto Martínez</span> | <span class="date">09 nov
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-    <a href="/pages/et.html" class="movie-card-link" data-title="E.T., el extraterrestre" data-genre="ficcion"
-        data-author="amc" data-date="2025-11-10">
-        <article class="movie-card">
-            <span class="card-badge">Ciencia Ficción</span>
-            <img src="https://m.media-amazon.com/images/I/515EK8C6HEL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Harry Potter 3" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>E.T., el extraterrestre</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">Alberto Martínez</span> | <span class="date">10 nov 2025</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                        <a href="/pages/et.html" class="movie-card-link" data-title="E.T., el extraterrestre"
+                            data-genre="ficcion" data-author="amc" data-date="2025-11-10">
+                            <article class="movie-card">
+                                <span class="card-badge">Ciencia Ficción</span>
+                                <img src="https://m.media-amazon.com/images/I/515EK8C6HEL._AC_UF894,1000_QL80_.jpg"
+                                    alt="Poster Harry Potter 3" class="movie-poster">
+                                <div class="movie-card-content">
+                                    <h3><span>E.T., el extraterrestre</span></h3>
+                                    <div class="movie-card-meta">
+                                        <span class="author">Alberto Martínez</span> | <span class="date">10 nov
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-    <a href="/pages/laberinto-fauno.html" class="movie-card-link" data-title="El laberinto del fauno"
-        data-genre="fantasia" data-author="amc" data-date="2025-11-11">
-        <article class="movie-card">
-            <span class="card-badge">Fantasía</span>
-            <img src="https://image.tmdb.org/t/p/original/taa9P4xmywUufE41RYD88kE9g9X.jpg" alt="Poster Harry Potter 3"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>El laberinto del fauno</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">Alberto Martínez</span> | <span class="date">11 nov 2025</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                        <a href="/pages/laberinto-fauno.html" class="movie-card-link"
+                            data-title="El laberinto del fauno" data-genre="fantasia" data-author="amc"
+                            data-date="2025-11-11">
+                            <article class="movie-card">
+                                <span class="card-badge">Fantasía</span>
+                                <img src="https://image.tmdb.org/t/p/original/taa9P4xmywUufE41RYD88kE9g9X.jpg"
+                                    alt="Poster Harry Potter 3" class="movie-poster">
+                                <div class="movie-card-content">
+                                    <h3><span>El laberinto del fauno</span></h3>
+                                    <div class="movie-card-meta">
+                                        <span class="author">Alberto Martínez</span> | <span class="date">11 nov
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-    <a href="/pages/inception.html" class="movie-card-link" data-title="Inception (El Origen)" data-genre="ficcion"
-        data-author="amc" data-date="2025-11-12">
-        <article class="movie-card">
-            <span class="card-badge">Ciencia Ficción</span>
-            <img src="https://moviepostermexico.com/cdn/shop/products/inception_ver4_xlg_1024x1024@2x.jpg?v=1574871227" alt="Poster Harry Potter 3"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Inception (El Origen)</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">Alberto Martínez</span> | <span class="date">12 nov 2025</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                        <a href="/pages/inception.html" class="movie-card-link" data-title="Inception (El Origen)"
+                            data-genre="ficcion" data-author="amc" data-date="2025-11-12">
+                            <article class="movie-card">
+                                <span class="card-badge">Ciencia Ficción</span>
+                                <img src="https://moviepostermexico.com/cdn/shop/products/inception_ver4_xlg_1024x1024@2x.jpg?v=1574871227"
+                                    alt="Poster Harry Potter 3" class="movie-poster">
+                                <div class="movie-card-content">
+                                    <h3><span>Inception (El Origen)</span></h3>
+                                    <div class="movie-card-meta">
+                                        <span class="author">Alberto Martínez</span> | <span class="date">12 nov
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-    <a href="/pages/furia-titanes.html" class="movie-card-link" data-title="Furia de Titanes" data-genre="fantasia"
-        data-author="amc" data-date="2025-11-13">
-        <article class="movie-card">
-            <span class="card-badge">Fantasía</span>
-            <img src="https://i.pinimg.com/736x/b8/61/59/b861593b15e6143c6763ae673a6513e0.jpg" alt="Poster Harry Potter 3"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Furia de Titanes</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">Alberto Martínez</span> | <span class="date">13 nov 2025</span>
-                </div>
-            </div>
-        </article>
-
-
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://www.originalfilmart.com/cdn/shop/products/avatar_2009_advance_styleC_original_film_art_5000x.webp?v=1671134076"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/71PfZFFz9yL.jpg" alt="Poster Próximamente"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/41jOy+rrcHL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://moviepostermexico.com/cdn/shop/products/shrek_ver3_xxlg_1024x1024@2x.jpg?v=1581215574"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/6143TqGItiL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://www.originalfilmart.com/cdn/shop/products/gravity_2013_advance_original_film_art_30d74323-6a3b-4901-a3a4-bd946e9c0c45_5000x.jpg?v=1589238161"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                        <a href="/pages/furia-titanes.html" class="movie-card-link" data-title="Furia de Titanes"
+                            data-genre="fantasia" data-author="amc" data-date="2025-11-13">
+                            <article class="movie-card">
+                                <span class="card-badge">Fantasía</span>
+                                <img src="https://i.pinimg.com/736x/b8/61/59/b861593b15e6143c6763ae673a6513e0.jpg"
+                                    alt="Poster Harry Potter 3" class="movie-poster">
+                                <div class="movie-card-content">
+                                    <h3><span>Furia de Titanes</span></h3>
+                                    <div class="movie-card-meta">
+                                        <span class="author">Alberto Martínez</span> | <span class="date">13 nov
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </article>
 
 
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://www.originalfilmart.com/cdn/shop/files/a_clockwork_orange_1972_linen_x_rated_original_film_art_f_1600x.webp?v=1746466043"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://www.originalfilmart.com/cdn/shop/products/avatar_2009_advance_styleC_original_film_art_5000x.webp?v=1671134076"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/71PfZFFz9yL.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/41jOy+rrcHL._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://moviepostermexico.com/cdn/shop/products/shrek_ver3_xxlg_1024x1024@2x.jpg?v=1581215574"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/6143TqGItiL._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://www.originalfilmart.com/cdn/shop/products/gravity_2013_advance_original_film_art_30d74323-6a3b-4901-a3a4-bd946e9c0c45_5000x.jpg?v=1589238161"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
 
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/A1sc22tugbL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/71O4PY10pTL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>🔒</span>
-                </div>
-            </div>
-        </article>
-    </a>
-
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://www.originalfilmart.com/cdn/shop/products/alien_1979_german_a1_original_film_art_5000x.jpg?v=1613719562"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://www.originalfilmart.com/cdn/shop/files/a_clockwork_orange_1972_linen_x_rated_original_film_art_f_1600x.webp?v=1746466043"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
 
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/91mjR0cmayL.jpg" alt="Poster Próximamente"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/A1sc22tugbL._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/71pwYomGC1L._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/71O4PY10pTL._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>🔒</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://www.originalfilmart.com/cdn/shop/products/alien_1979_german_a1_original_film_art_5000x.jpg?v=1613719562"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/61qCgQZyhOL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://es.web.img3.acsta.net/r_1280_720/pictures/14/05/07/12/13/408663.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/71zji3aER6L._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/91mjR0cmayL.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/81JnqdgWM4L._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
-    
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/91XMXQCZwKL.jpg" alt="Poster Próximamente"
-                class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/71pwYomGC1L._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
-    <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1" data-date="2025-10-09">
-        <article class="movie-card">
-            <span class="card-badge">🔒</span>
-            <img src="https://m.media-amazon.com/images/I/61ASebTsLpL._AC_UF894,1000_QL80_.jpg"
-                alt="Poster Próximamente" class="movie-poster">
-            <div class="movie-card-content">
-                <h3><span>Próximamente</span></h3>
-                <div class="movie-card-meta">
-                    <span class="author">🔒</span> | <span class="date">**</span>
-                </div>
-            </div>
-            <div class="card-lock-overlay">
-                <div class="lock-message">
-                    <i class="fas fa-lock"></i>
-                    <span>Próximamente</span>
-                </div>
-            </div>
-        </article>
-    </a>
 
-    <!-- <a href="/pages/[NOMBRE-DEL-ARCHIVO.html]" class="movie-card-link" 
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/61qCgQZyhOL._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://es.web.img3.acsta.net/r_1280_720/pictures/14/05/07/12/13/408663.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/71zji3aER6L._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/81JnqdgWM4L._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/91XMXQCZwKL.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <a class="movie-card-link is-locked" data-title="z" data-genre="1" data-author="1"
+                                data-date="2025-10-09">
+                                <article class="movie-card">
+                                    <span class="card-badge">🔒</span>
+                                    <img src="https://m.media-amazon.com/images/I/61ASebTsLpL._AC_UF894,1000_QL80_.jpg"
+                                        alt="Poster Próximamente" class="movie-poster">
+                                    <div class="movie-card-content">
+                                        <h3><span>Próximamente</span></h3>
+                                        <div class="movie-card-meta">
+                                            <span class="author">🔒</span> | <span class="date">**</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-lock-overlay">
+                                        <div class="lock-message">
+                                            <i class="fas fa-lock"></i>
+                                            <span>Próximamente</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <!-- <a href="/pages/[NOMBRE-DEL-ARCHIVO.html]" class="movie-card-link" 
    data-title="[Nombre de la Película]" 
    data-genre="[genero-en-minusculas-ej: fantasia]" 
    data-author="[id-autor-ej: amc]" 
@@ -585,7 +612,7 @@
         </div>
     </article>
 </a> -->
-                        </div>
+                    </div>
                 </div>
 
             </aside>
@@ -610,15 +637,19 @@
                     <a href="/index.html?date=2025-11-13" class="date-link" title="Ver todos de esta fecha">
                         13 de Nov de 2025
                     </a>
-                    
+
                     <div class="visit-counter-page">
-                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmi-cine-post.vercel.app%2Fpages%2Ffuria-titanes.html&countColor=%236a11cb"/>
+                        <img
+                            src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmi-cine-post.vercel.app%2Fpages%2Ffuria-titanes.html&countColor=%236a11cb" />
                     </div>
-                    
+
                     <div class="share-buttons">
-                        <a href="#" id="share-fb" target="_blank" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" id="share-x" target="_blank" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" id="share-insta" target="_blank" title="Compartir en Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" id="share-fb" target="_blank" title="Compartir en Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="share-x" target="_blank" title="Compartir en X (Twitter)"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" id="share-insta" target="_blank" title="Compartir en Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -643,7 +674,10 @@
 
                         <dt>Ver en:</dt>
                         <dd class="streaming-logos-inline">
-                             <a href="https://www.primevideo.com/dp/amzn1.dv.gti.eca9f763-e568-4fa7-2d8c-14669a7e06e6?autoplay=0&ref_=atv_cf_strg_wb" title="Amazon Prime Video"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png" alt="Amazon Prime Video"></a>
+                            <a href="https://www.primevideo.com/dp/amzn1.dv.gti.eca9f763-e568-4fa7-2d8c-14669a7e06e6?autoplay=0&ref_=atv_cf_strg_wb"
+                                title="Amazon Prime Video"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png"
+                                    alt="Amazon Prime Video"></a>
                         </dd>
                     </dl>
                 </div>
@@ -651,14 +685,24 @@
                 <div class="trailer-section">
                     <h2>Tráiler</h2>
                     <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ojw1sau98Jg?si=yVN19lmCE0xoGGmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/ojw1sau98Jg?si=yVN19lmCE0xoGGmM"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <div class="summary">
                     <h2>Resumen</h2>
                     <p class="content-box">
-                        Perseo, hijo mortal del dios Zeus, debe embarcarse en una peligrosa búsqueda para salvar a su amada, la Princesa Andrómeda, de ser sacrificada al monstruoso Kraken, una bestia marina colosal liberada por orden de la vengativa diosa Tetis. Para derrotar al invencible Kraken, Perseo debe enfrentar desafíos imposibles: capturar al caballo alado Pegaso, buscar respuestas con las Brujas de Estigia y, lo más peligroso de todo, adentrarse en la guarida de la gorgona Medusa. Su objetivo es obtener la cabeza de Medusa, cuya mirada convierte a cualquier criatura viviente en piedra, y usarla como el arma definitiva para detener la destrucción de la ciudad de Joppe.
+                        Perseo, hijo mortal del dios Zeus, debe embarcarse en una peligrosa búsqueda para salvar a su
+                        amada, la Princesa Andrómeda, de ser sacrificada al monstruoso Kraken, una bestia marina colosal
+                        liberada por orden de la vengativa diosa Tetis. Para derrotar al invencible Kraken, Perseo debe
+                        enfrentar desafíos imposibles: capturar al caballo alado Pegaso, buscar respuestas con las
+                        Brujas de Estigia y, lo más peligroso de todo, adentrarse en la guarida de la gorgona Medusa. Su
+                        objetivo es obtener la cabeza de Medusa, cuya mirada convierte a cualquier criatura viviente en
+                        piedra, y usarla como el arma definitiva para detener la destrucción de la ciudad de Joppe.
                     </p>
                 </div>
 
@@ -666,10 +710,13 @@
                     <h2>Escenas Destacadas</h2>
                     <div class="carousel">
                         <div class="carousel-inner">
-                            <img src="https://www.lavanguardia.com/peliculas-series/images/all/movie/backdrops/1981/6/movie-10323/w1280/ahJACDrsH6Tkqc7rFHAk62x2Ee6.jpg" alt="Random 1" class="carousel-item">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC-mocKvPgU4ZScb8uzadiHHIN8zRRh0YfvQSX4d3X44vEIwgEsSJ-ZP2UKa7ZuRSLhgoYJOe20gTLm6-UrpzG5gQqrAS19FfnqaPZv7LGhKJH5R_AfWNnGuzECFKQqSZR7MIRMlGLWx0g/s1600/pegasus-furia-de-titanes.jpg" alt="Random 2" class="carousel-item">
-                            <img src="https://m.media-amazon.com/images/M/MV5BN2ZmYTdlMTItMWI0YS00YzEyLTg5ZjItZWM3M2M3MjNhMDA0XkEyXkFqcGc@._V1_.jpg" alt="Random 3" class="carousel-item">
-                            </div>
+                            <img src="https://www.lavanguardia.com/peliculas-series/images/all/movie/backdrops/1981/6/movie-10323/w1280/ahJACDrsH6Tkqc7rFHAk62x2Ee6.jpg"
+                                alt="Random 1" class="carousel-item">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC-mocKvPgU4ZScb8uzadiHHIN8zRRh0YfvQSX4d3X44vEIwgEsSJ-ZP2UKa7ZuRSLhgoYJOe20gTLm6-UrpzG5gQqrAS19FfnqaPZv7LGhKJH5R_AfWNnGuzECFKQqSZR7MIRMlGLWx0g/s1600/pegasus-furia-de-titanes.jpg"
+                                alt="Random 2" class="carousel-item">
+                            <img src="https://m.media-amazon.com/images/M/MV5BN2ZmYTdlMTItMWI0YS00YzEyLTg5ZjItZWM3M2M3MjNhMDA0XkEyXkFqcGc@._V1_.jpg"
+                                alt="Random 3" class="carousel-item">
+                        </div>
                         <button class="carousel-control prev">&lt;</button>
                         <button class="carousel-control next">&gt;</button>
                     </div>
@@ -687,9 +734,15 @@
                 <div class="characteristics-section">
                     <h2>3 Características Clave</h2>
                     <ul class="icon-list check content-box">
-                        <li><strong>El Legado de Ray Harryhausen:</strong> Fue la última película en la que trabajó el maestro de los efectos especiales Ray Harryhausen. Sus criaturas animadas en <em>stop-motion</em> (Medusa, el Kraken) son hitos del cine.</li>
-                        <li><strong>Mitología Épica:</strong> Captura la grandeza teatral de los mitos griegos, mostrando a los dioses del Olimpo (liderados por Laurence Olivier) manipulando el destino de los humanos como piezas de ajedrez.</li>
-                        <li><strong>La Escena de Medusa:</strong> El enfrentamiento contra Medusa es considerada una de las escenas de mayor tensión y mejor logradas en el cine de aventuras, combinando iluminación y animación de forma magistral.</li>
+                        <li><strong>El Legado de Ray Harryhausen:</strong> Fue la última película en la que trabajó el
+                            maestro de los efectos especiales Ray Harryhausen. Sus criaturas animadas en
+                            <em>stop-motion</em> (Medusa, el Kraken) son hitos del cine.</li>
+                        <li><strong>Mitología Épica:</strong> Captura la grandeza teatral de los mitos griegos,
+                            mostrando a los dioses del Olimpo (liderados por Laurence Olivier) manipulando el destino de
+                            los humanos como piezas de ajedrez.</li>
+                        <li><strong>La Escena de Medusa:</strong> El enfrentamiento contra Medusa es considerada una de
+                            las escenas de mayor tensión y mejor logradas en el cine de aventuras, combinando
+                            iluminación y animación de forma magistral.</li>
                     </ul>
                 </div>
 
@@ -707,9 +760,12 @@
     <footer class="main-footer">
         <p>© 2025 CinePost. Todos los derechos reservados.</p>
         <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
             <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
     </footer>
