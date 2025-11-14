@@ -1,55 +1,30 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
+// (Aquí es el único lugar donde agregas/editas películas)
 const realMovies = [
-    {
-        id: "star-wars",
-        title: "Star Wars: Episodio IV - Una Nueva Esperanza",
-        url: "/pages/star-wars.html",
-        image: "https://m.media-amazon.com/images/I/91uddP3RA5L._AC_UF894,1000_QL80_.jpg",
+        {
+        id: "naranja-mecanica",
+        title: "La naranja mecánica",
+        url: "/pages/naranja-mecanica.html",
+        image: "https://www.originalfilmart.com/cdn/shop/files/a_clockwork_orange_1972_linen_x_rated_original_film_art_f_1600x.webp?v=1746466043",
         genre: "ficcion",
         genreLabel: "Ciencia Ficción",
         author: "amc",
         authorName: "Alberto Martínez",
-        dateISO: "2025-11-08",
-        dateDisplay: "08 nov 2025",
+        dateISO: "2025-11-14",
+        dateDisplay: "14 nov 2025",
         locked: false
     },
     {
-        id: "gremlins",
-        title: "Gremlins",
-        url: "/pages/gremlins.html",
-        image: "https://m.media-amazon.com/images/I/61yE11TL06L.jpg",
+        id: "furia-titanes",
+        title: "Furia de Titanes",
+        url: "/pages/furia-titanes.html",
+        image: "https://i.pinimg.com/736x/b8/61/59/b861593b15e6143c6763ae673a6513e0.jpg",
         genre: "fantasia",
         genreLabel: "Fantasía",
         author: "amc",
         authorName: "Alberto Martínez",
-        dateISO: "2025-11-09",
-        dateDisplay: "09 nov 2025",
-        locked: false
-    },
-    {
-        id: "et",
-        title: "E.T., el extraterrestre",
-        url: "/pages/et.html",
-        image: "https://m.media-amazon.com/images/I/515EK8C6HEL._AC_UF894,1000_QL80_.jpg",
-        genre: "ficcion",
-        genreLabel: "Ciencia Ficción",
-        author: "amc",
-        authorName: "Alberto Martínez",
-        dateISO: "2025-11-10",
-        dateDisplay: "10 nov 2025",
-        locked: false
-    },
-    {
-        id: "laberinto-fauno",
-        title: "El laberinto del fauno",
-        url: "/pages/laberinto-fauno.html",
-        image: "https://image.tmdb.org/t/p/original/taa9P4xmywUufE41RYD88kE9g9X.jpg",
-        genre: "fantasia",
-        genreLabel: "Fantasía",
-        author: "amc",
-        authorName: "Alberto Martínez",
-        dateISO: "2025-11-11",
-        dateDisplay: "11 nov 2025",
+        dateISO: "2025-11-13",
+        dateDisplay: "13 nov 2025",
         locked: false
     },
     {
@@ -66,21 +41,61 @@ const realMovies = [
         locked: false
     },
     {
-        id: "furia-titanes",
-        title: "Furia de Titanes",
-        url: "/pages/furia-titanes.html",
-        image: "https://i.pinimg.com/736x/b8/61/59/b861593b15e6143c6763ae673a6513e0.jpg",
+        id: "laberinto-fauno",
+        title: "El laberinto del fauno",
+        url: "/pages/laberinto-fauno.html",
+        image: "https://image.tmdb.org/t/p/original/taa9P4xmywUufE41RYD88kE9g9X.jpg",
         genre: "fantasia",
         genreLabel: "Fantasía",
         author: "amc",
         authorName: "Alberto Martínez",
-        dateISO: "2025-11-13",
-        dateDisplay: "13 nov 2025",
+        dateISO: "2025-11-11",
+        dateDisplay: "11 nov 2025",
+        locked: false
+    },
+    {
+        id: "et",
+        title: "E.T., el extraterrestre",
+        url: "/pages/et.html",
+        image: "https://m.media-amazon.com/images/I/515EK8C6HEL._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-10",
+        dateDisplay: "10 nov 2025",
+        locked: false
+    },
+    {
+        id: "gremlins",
+        title: "Gremlins",
+        url: "/pages/gremlins.html",
+        image: "https://m.media-amazon.com/images/I/61yE11TL06L.jpg",
+        genre: "fantasia",
+        genreLabel: "Fantasía",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-09",
+        dateDisplay: "09 nov 2025",
+        locked: false
+    },
+    {
+        id: "star-wars",
+        title: "Star Wars: Episodio IV - Una Nueva Esperanza",
+        url: "/pages/star-wars.html",
+        image: "https://m.media-amazon.com/images/I/91uddP3RA5L._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-08",
+        dateDisplay: "08 nov 2025",
         locked: false
     }
 ];
 
 // --- 2. IMÁGENES PARA PLACEHOLDERS ---
+// (Estas son las imágenes que se usarán para rellenar)
 const placeholderImages = [
     "https://www.originalfilmart.com/cdn/shop/products/avatar_2009_advance_styleC_original_film_art_5000x.webp?v=1671134076",
     "https://www.originalfilmart.com/cdn/shop/products/alien_1979_german_a1_original_film_art_5000x.jpg?v=1613719562",
@@ -89,7 +104,6 @@ const placeholderImages = [
     "https://moviepostermexico.com/cdn/shop/products/shrek_ver3_xxlg_1024x1024@2x.jpg?v=1581215574",
     "https://m.media-amazon.com/images/I/6143TqGItiL._AC_UF894,1000_QL80_.jpg",
     "https://www.originalfilmart.com/cdn/shop/products/gravity_2013_advance_original_film_art_30d74323-6a3b-4901-a3a4-bd946e9c0c45_5000x.jpg?v=1589238161",
-    "https://www.originalfilmart.com/cdn/shop/files/a_clockwork_orange_1972_linen_x_rated_original_film_art_f_1600x.webp?v=1746466043",
     "https://m.media-amazon.com/images/I/A1sc22tugbL._AC_UF894,1000_QL80_.jpg",
     "https://m.media-amazon.com/images/I/71O4PY10pTL._AC_UF894,1000_QL80_.jpg",
     "https://m.media-amazon.com/images/I/91mjR0cmayL.jpg",
@@ -121,25 +135,39 @@ const authorsData = {
     }
 };
 
-// --- 4. GENERACIÓN DE DATOS GLOBALES ---
-const moviesData = [...realMovies]; // Empezamos con las películas reales
-const numberOfPlaceholders = 19; // Total de películas - reales
+// --- 4. GENERACIÓN DE DATOS GLOBALES (¡AUTOMÁTICO!) ---
+// ¡ESTA ES LA CORRECCIÓN!
+// Define el número total de tarjetas que quieres en la página de inicio
+const TOTAL_CARDS_DESIRED = 25;
 
-for (let i = 0; i < numberOfPlaceholders; i++) {
-    const imgUrl = placeholderImages[i % placeholderImages.length];
-    moviesData.push({
-        id: `locked-${i}`,
-        title: "Próximamente",
-        url: "#",
-        image: imgUrl,
-        genre: "1",
-        genreLabel: "🔒",
-        author: "1",
-        authorName: "🔒",
-        dateISO: "2025-10-01", // Fecha vieja para que queden al final
-        dateDisplay: "**",
-        locked: true
-    });
+// 1. Empezamos con las películas que ya tienes
+const moviesData = [...realMovies];
+
+// 2. El script calcula cuántos placeholders faltan para llegar a 25
+// (Si ya tienes 25 o más películas reales, esto será 0 o negativo)
+const numberOfPlaceholders = TOTAL_CARDS_DESIRED - realMovies.length;
+
+// 3. Genera automáticamente solo los placeholders necesarios
+if (numberOfPlaceholders > 0) {
+    for (let i = 0; i < numberOfPlaceholders; i++) {
+        
+        // Usamos módulo para rotar las imágenes si hay más placeholders que imágenes
+        const imgUrl = placeholderImages[i % placeholderImages.length];
+        
+        moviesData.push({
+            id: `locked-${i}`,
+            title: "Próximamente",
+            url: "#",
+            image: imgUrl,
+            genre: "1",
+            genreLabel: "🔒",
+            author: "1",
+            authorName: "🔒",
+            dateISO: "2025-10-01", // Fecha vieja para que queden al final
+            dateDisplay: "**",
+            locked: true
+        });
+    }
 }
 
 // --- 5. FUNCIÓN PARA GENERAR HTML DE 1 TARJETA ---
