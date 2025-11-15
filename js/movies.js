@@ -1,7 +1,20 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 // (Aquí es el único lugar donde agregas/editas películas)
 const realMovies = [
-        {
+    {
+        id: "narnia",
+        title: "Las Crónicas de Narnia: El león, la bruja y el ropero",
+        url: "/pages/narnia.html",
+        image: "https://m.media-amazon.com/images/I/71jDHbS3I6L._AC_UF894,1000_QL80_.jpg",
+        genre: "fantasia",
+        genreLabel: "Fantasía",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-15",
+        dateDisplay: "15 nov 2025",
+        locked: false
+    },
+    {
         id: "naranja-mecanica",
         title: "La naranja mecánica",
         url: "/pages/naranja-mecanica.html",
@@ -150,10 +163,10 @@ const numberOfPlaceholders = TOTAL_CARDS_DESIRED - realMovies.length;
 // 3. Genera automáticamente solo los placeholders necesarios
 if (numberOfPlaceholders > 0) {
     for (let i = 0; i < numberOfPlaceholders; i++) {
-        
+
         // Usamos módulo para rotar las imágenes si hay más placeholders que imágenes
         const imgUrl = placeholderImages[i % placeholderImages.length];
-        
+
         moviesData.push({
             id: `locked-${i}`,
             title: "Próximamente",
@@ -238,7 +251,7 @@ function renderMovies(containerId, isSuggestionMode = false) {
         }
         container.innerHTML += generateMovieHTML(movie);
     });
-    
+
     // Avisa a script.js que las películas ya se dibujaron
     document.dispatchEvent(new Event('moviesRendered'));
 }

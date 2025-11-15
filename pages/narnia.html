@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CinePost - Las Crónicas de Narnia: El león, la bruja y el ropero</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo">CinePost</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="https://m.media-amazon.com/images/I/71jDHbS3I6L._AC_UF894,1000_QL80_.jpg"
+                    alt="Poster de Las Crónicas de Narnia: El león, la bruja y el ropero" class="detail-poster">
+
+                <div class="star-rating" data-movie-id="narnia-leon-bruja-ropero">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=[URL_ENCODED_DE_SOUNDCLOUD_TRACK]&color=%236224c9&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                </div>
+
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel" id="suggestions-container">
+                    </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Las Crónicas de Narnia: El león, la bruja y el ropero</h1>
+                <span class="original-title">The Chronicles of Narnia: The Lion, the Witch and the Wardrobe
+                    (2005)</span>
+
+                <div class="detail-meta" id="movie-meta-container" data-id="narnia">
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>2005</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=fantasia" class="data-sheet-link">Fantasía</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Andrew Adamson</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>Buena Vista Pictures (Disney)</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Georgie Henley, Skandar Keynes, William Moseley, Anna Popplewell, Tilda Swinton, James
+                            McAvoy.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://www.disneyplus.com/" title="Disney+" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg"
+                                    alt="Disney+"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/usEkWtuNn-w?si=anaSc0vV7m4qXf78"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        Durante los bombardeos de la Segunda Guerra Mundial, cuatro hermanos ingleses (Lucy, Edmund,
+                        Susan y Peter Pevensie) son enviados a la casa de campo de un anciano profesor. Allí, la hermana
+                        menor, Lucy, descubre un ropero mágico que sirve como portal a la tierra de Narnia. Este mundo
+                        está habitado por bestias parlantes, faunos y centauros, pero se encuentra bajo la maldición de
+                        la Bruja Blanca (Jadis), quien lo ha condenado a un invierno eterno sin Navidad. Los cuatro
+                        hermanos Pevensie, ayudados por el sabio y magnífico león Aslan, deberán cumplir una antigua
+                        profecía y liderar a las fuerzas del bien en una batalla espectacular para liberar a Narnia de
+                        la tiranía de la Bruja.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://aihkcdnstoragep01.blob.core.windows.net/pgl-release/Images/ArticleImages/25/25520.jpg"
+                                alt="Random 1" class="carousel-item">
+                            <img src="https://assets.mubicdn.net/images/film/34700/image-w1280.jpg?1745490092"
+                                alt="Random 2" class="carousel-item">
+                            <img src="https://www.cnet.com/a/img/resize/c16297128eee8f5062ec842cc5c6ad7fd6bd8d2b/hub/2018/10/03/acbbcb8f-ef46-4a85-8603-65a764f37e9b/chroniclesofnarnia.jpg?auto=webp&fit=crop&height=675&width=1200"
+                                alt="Random 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora de 1 Premio Oscar (Mejor Maquillaje).</li>
+                        <li>Nominada a 2 Premios Oscar (Mejores Efectos Visuales, Mejor Sonido).</li>
+                        <li>Ganadora de 2 Premios BAFTA (Mejor Maquillaje, Premio Infantil a la Mejor Película).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>Fidelidad al Clásico Literario:</strong> La película logra capturar de manera muy
+                            fiel la esencia, la maravilla y la profunda alegoría de la amada novela de C.S. Lewis.</li>
+                        <li><strong>Mundo de Fantasía Inmersivo:</strong> El diseño de producción y los efectos visuales
+                            (especialmente la creación por CGI de Aslan) establecieron un estándar para las películas de
+                            fantasía de la época.</li>
+                        <li><strong>Tono Épico y Emocional:</strong> Combina una aventura infantil con temas maduros
+                            como el sacrificio, la traición y la redención, en una escala épica y con una memorable
+                            banda sonora.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/narnia.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/movies.js"></script>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- ¡¡CORRECCIÓN!! ---
+    // Preparamos el "oyente" de los botones de compartir ANTES de que
+    // cualquier script de renderizado se llame.
+    document.addEventListener('metadataRendered', setupShareButtons);
+
+
     // =========================================================================
     // --- 1. LLAMADAS DE RENDERIZADO (AL CARGAR) ---
     // =========================================================================
@@ -8,28 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasRenderFunction = typeof renderMovies === 'function';
     const hasMetaRenderFunction = typeof renderMovieMetadata === 'function';
 
-    // CASO A: Estamos en el Index
+    // Identifica en qué página estamos
     const mainList = document.getElementById('movie-list');
-    if (mainList && hasRenderFunction) {
-        renderMovies('movie-list', false); // false = modo normal (todas)
-    }
+    const metaContainer = document.getElementById('movie-meta-container');
+    const suggestions = document.querySelector('.suggestions-carousel');
 
     // CASO B: Estamos en una página de Detalle (Sugerencias)
-    const suggestions = document.querySelector('.suggestions-carousel');
     if (suggestions && hasRenderFunction) {
         if (!suggestions.id) suggestions.id = 'suggestions-container-gen';
         renderMovies(suggestions.id, true); // true = modo sugerencias
     }
 
     // CASO C: Estamos en página de Detalle (Info de Autor/Fecha)
-    const metaContainer = document.getElementById('movie-meta-container');
     if (metaContainer && hasMetaRenderFunction) {
         const movieId = metaContainer.dataset.id;
         renderMovieMetadata('movie-meta-container', movieId);
     }
 
     // =========================================================================
-    // --- 2. SELECCIÓN DE ELEMENTOS (POST-RENDERIZADO) ---
+    // --- 2. LÓGICA DE CLICS (SE APLICA DESPUÉS DE RENDERIZAR) ---
     // =========================================================================
     
     // Espera a que el evento 'moviesRendered' se dispare para activar clics
@@ -45,15 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. LÓGICA DE DETALLE.HTML (ESTRELLAS, CARRUSEL, SHARE) ---
     // =========================================================================
     
+    // Esta lógica solo se ejecuta si encuentra estos elementos (en pág. de detalle)
     const carousels = document.querySelectorAll('.carousel');
     const starRatingContainer = document.querySelector('.star-rating');
     
+    // Definimos la función que se llamará cuando el evento 'metadataRendered' ocurra
     function setupShareButtons() {
         const shareFb = document.getElementById('share-fb');
         const shareX = document.getElementById('share-x');
         const shareInsta = document.getElementById('share-insta'); 
         
-        if (!shareFb) return; 
+        if (!shareFb) return; // Si no hay botones, no hace nada
         
         const url = encodeURIComponent(window.location.href);
         const title = encodeURIComponent(document.title);
@@ -63,8 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         shareInsta.href = 'https://www.instagram.com/cine.post.tis/'; // Enlace a tu perfil
     }
 
-    // Escucha el evento que disparamos en movies.js
-    document.addEventListener('metadataRendered', setupShareButtons);
+    // (La línea que estaba aquí, ahora está al inicio del script)
 
     if (carousels.length > 0) {
         carousels.forEach(carousel => {
@@ -110,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (starRatingContainer) {
-        // ... (Tu lógica de estrellas va aquí, no necesita cambios) ...
         const stars = starRatingContainer.querySelectorAll('.stars i');
         const movieId = starRatingContainer.dataset.movieId;
         const avgDisplay = document.getElementById('star-avg-display');
@@ -214,8 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5. LÓGICA PRINCIPAL DE INDEX (FILTROS Y RULETA) ---
     // =========================================================================
     
+    // Esta es la lógica MÁS IMPORTANTE, solo se ejecuta si estamos en index.html
     if (mainList) {
         
+        // --- Declaración de variables ---
         const searchBar = document.getElementById('search-bar');
         const genreFilter = document.getElementById('genre-filter');
         const authorFilter = document.getElementById('author-filter');
@@ -228,8 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const rouletteResult = document.getElementById('roulette-result');
         
         window.selectedLetter = 'all'; 
-        let calendarInstance = null; 
+        let calendarInstance = null; // Se inicializa después
 
+        // --- Función para resetear filtros ---
         function resetAllFilters(exceptThisElement) {
             if (exceptThisElement !== searchBar) searchBar.value = '';
             if (exceptThisElement !== genreFilter) genreFilter.value = 'all';
@@ -247,13 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // --- Función principal de filtrado ---
         window.filterAndSearchMovies = function() {
             const searchTerm = searchBar.value.toLowerCase();
             const selectedGenre = decodeURIComponent(genreFilter.value);
             const selectedAuthor = decodeURIComponent(authorFilter.value);
             const selectedDate = dateFilterInput.value; 
             
-            // Re-selecciona las tarjetas por si acaso
             const allMovieLinks = document.querySelectorAll('#movie-list .movie-card-link');
 
             allMovieLinks.forEach(link => {
@@ -280,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
+        // --- Lógica de la Ruleta ---
         function setupRoulette() {
             if(!openRouletteBtn) return;
             openRouletteBtn.addEventListener('click', () => rouletteModal.classList.add('visible'));
@@ -300,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.filterAndSearchMovies(); 
                 
                 const visibleMovies = Array.from(document.querySelectorAll('#movie-list .movie-card-link')).filter(
-                    movie => !movie.classList.contains('is-locked')
+                    movie => !movie.classList.contains('is-locked') && movie.style.display !== 'none'
                 );
 
                 setTimeout(() => {
@@ -324,6 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // --- Función para leer la URL al cargar ---
         function checkURLForParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const dateFromURL = urlParams.get('date');
@@ -331,42 +339,38 @@ document.addEventListener('DOMContentLoaded', () => {
             const letterFromURL = urlParams.get('letter');
             const genreFromURL = decodeURIComponent(urlParams.get('genre') || ''); 
             
+            let needsFiltering = false;
+
             if (letterFromURL) {
                 resetAllFilters(azNav.querySelector(`[data-letter="${letterFromURL.toUpperCase()}"]`));
                 window.selectedLetter = letterFromURL.toLowerCase();
                 if (azNav.querySelector('a.active')) azNav.querySelector('a.active').classList.remove('active');
                 const newActiveLetter = azNav.querySelector(`[data-letter="${letterFromURL.toUpperCase()}"]`);
                 if (newActiveLetter) newActiveLetter.classList.add('active');
-            } else if (authorFromURL) {
+                needsFiltering = true;
+            } else if (authorFromURL) { 
                 resetAllFilters(authorFilter);
                 authorFilter.value = authorFromURL;
+                needsFiltering = true;
             } else if (genreFromURL) { 
                 resetAllFilters(genreFilter);
                 genreFilter.value = genreFromURL;
+                needsFiltering = true;
             } else if (dateFromURL) {
                 resetAllFilters(dateFilterInput);
                 if(calendarInstance) calendarInstance.setDate(dateFromURL, false); 
+                dateFilterInput.value = dateFromURL; 
+                needsFiltering = true;
             }
             
-            window.filterAndSearchMovies();
+            if (needsFiltering) {
+                window.filterAndSearchMovies();
+            }
         }
         
-        // Inicializar componentes del Index
-        setupRoulette();
-        
-        searchBar.addEventListener('input', () => {
-            resetAllFilters(searchBar);
-            window.filterAndSearchMovies();
-        });
-        genreFilter.addEventListener('change', () => {
-            resetAllFilters(genreFilter);
-            window.filterAndSearchMovies();
-        });
-        authorFilter.addEventListener('change', () => {
-            resetAllFilters(authorFilter);
-            window.filterAndSearchMovies();
-        });
+        // --- Orden de inicialización ---
 
+        // 1. Inicializa el calendario
         calendarInstance = flatpickr(dateFilterInput, {
             dateFormat: "Y-m-d",
             onChange: (selectedDates, dateStr) => {
@@ -380,9 +384,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-        
-        // Espera a que las películas se dibujen antes de checar la URL
+
+        // 2. Añade el listener que ESPERARÁ a que las películas se dibujen
         document.addEventListener('moviesRendered', checkURLForParams);
+
+        // 3. Manda a dibujar las películas
+        if (hasRenderFunction) {
+            renderMovies('movie-list', false);
+        }
+
+        // 4. Añade el resto de listeners (Ruleta y filtros manuales)
+        setupRoulette();
+        searchBar.addEventListener('input', () => {
+            resetAllFilters(searchBar);
+            window.filterAndSearchMovies();
+        });
+        genreFilter.addEventListener('change', () => {
+            resetAllFilters(genreFilter);
+            window.filterAndSearchMovies();
+        });
+        authorFilter.addEventListener('change', () => {
+            resetAllFilters(authorFilter);
+            window.filterAndSearchMovies();
+        });
     }
     
     // =========================================================================
@@ -414,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dFilter = headerFilters.querySelector('#date-filter');
             if(dFilter) flatpickr(dFilter, {
                 dateFormat: "Y-m-d",
-                onChange: (selectedDates, dateStr) => redirectToIndex('date', dateStr)
+                onChange: (selectedDates, dateStr) => redirectToIndex('date', str)
             });
         }
     }
@@ -433,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const mensaje = document.getElementById('mensaje').value;
             
             let texto = `¡Hola! Soy ${nombre}.\n\n*Motivo:* ${motivo}\n*Mensaje:*\n${mensaje}`;
-            window.open(`https://wa.me/${tuNumeroDeWhatsApp}?text=${encodeURIComponent(texto)}`, '_blank');
+            window.open(`https_wa.me/${tuNumeroDeWhatsApp}?text=${encodeURIComponent(texto)}`, '_blank');
         });
     }
 
