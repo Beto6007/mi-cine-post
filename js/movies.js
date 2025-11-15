@@ -2,12 +2,12 @@
 // (Aquí es el único lugar donde agregas/editas películas)
 const realMovies = [
     {
-        id: "narnia",
-        title: "Las Crónicas de Narnia: El león, la bruja y el ropero",
-        url: "/pages/narnia.html",
-        image: "https://m.media-amazon.com/images/I/71jDHbS3I6L._AC_UF894,1000_QL80_.jpg",
-        genre: "fantasia",
-        genreLabel: "Fantasía",
+        id: "red-social",
+        title: "La Red Social",
+        url: "/pages/red-social.html",
+        image: "https://m.media-amazon.com/images/M/MV5BY2FjYzQxNmQtOWZiNy00MTZjLWFjNDktMDA0Y2E5YWM0N2UwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "tech",
+        genreLabel: "Tecnología",
         author: "amc",
         authorName: "Alberto Martínez",
         dateISO: "2025-11-15",
@@ -133,7 +133,7 @@ const placeholderImages = [
 const authorsData = {
     "amc": {
         name: "Alberto Martínez Cruz",
-        photo: "https.scontent.fpbc2-4.fna.fbcdn.net/v/t39.30808-6/503295232_3979233205740140_5703252013657337713_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=FcQMcvfcYxoQ7kNvwGoE_Rq&_nc_oc=Adk0ehJ_BJT56_IbHWOcVJRvsFZ7nlepQCpBQ-EJ6AfImZ4FXqIqt0EAPxtBcPqK_URS7xrQAytvkCGcFY8flgS7&_nc_zt=23&_nc_ht=scontent.fpbc2-4.fna&_nc_gid=k6Uf56IQMdm-6Wi5WXVS9g&oh=00_AfgT13Uk5cuxRogtwS9A3xDBo7OGl7lCfTpGvkKDR8bxrw&oe=691868B0",
+        photo: "https://scontent.fpbc2-4.fna.fbcdn.net/v/t39.30808-6/503295232_3979233205740140_5703252013657337713_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=FcQMcvfcYxoQ7kNvwGoE_Rq&_nc_oc=Adk0ehJ_BJT56_IbHWOcVJRvsFZ7nlepQCpBQ-EJ6AfImZ4FXqIqt0EAPxtBcPqK_URS7xrQAytvkCGcFY8flgS7&_nc_zt=23&_nc_ht=scontent.fpbc2-4.fna&_nc_gid=k6Uf56IQMdm-6Wi5WXVS9g&oh=00_AfgT13Uk5cuxRogtwS9A3xDBo7OGl7lCfTpGvkKDR8bxrw&oe=691868B0",
         profileUrl: "/index.html?author=amc"
     },
     "one": {

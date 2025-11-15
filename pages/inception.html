@@ -21,13 +21,13 @@
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
         nonce="[VALOR_NONCE_ALEATORIO]"></script>
 
-    <header class="main-header">
+   <header class="main-header">
         <div class="header-content">
             <div class="header-top">
                 <a href="/index.html" class="logo">CinePost</a>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/index.html" class="active">Inicio</a></li>
                         <li><a href="/release-notes.html">Release Notes</a></li>
                         <li><a href="/autores.html">Autores</a></li>
                         <li><a href="/contacto.html">Contacto</a></li>
@@ -41,6 +41,7 @@
                     <option value="all">Género</option>
                     <option value="fantasia">Fantasía</option>
                     <option value="ficcion">Ciencia Ficción</option>
+                    <option value="tech">Tecnología</option>
                 </select>
                 <select id="author-filter">
                     <option value="all">Autor</option>
@@ -52,7 +53,7 @@
         </div>
 
         <nav class="az-filter" id="az-filter-nav">
-            <a href="/index.html?letter=all" data-letter="all" class="active">#</a>
+            <a href="#" data-letter="all" class="active">#</a>
         </nav>
     </header>
 
