@@ -54,9 +54,15 @@
 #movie-list .movie-card {
     animation: card-float 5s ease-in-out infinite;
 }
-#movie-list .movie-card-link:nth-child(2n) .movie-card { animation-delay: -2.5s; }
-#movie-list .movie-card-link:nth-child(3n) .movie-card { animation-delay: -1s; }
-#movie-list .movie-card-link:nth-child(5n) .movie-card { animation-delay: -4s; }
+/* Animación para los elementos PARES (2, 4, 6...) */
+#movie-list .movie-card-link:nth-child(even) .movie-card { 
+    animation-delay: -2.5s; 
+}
+
+/* Animación para los elementos IMPARES (1, 3, 5...) */
+#movie-list .movie-card-link:nth-child(odd) .movie-card { 
+    animation-delay: -1s; 
+}
 
 @keyframes card-float {
     0%, 100% { transform: translateY(0); }
