@@ -327,6 +327,23 @@ h1, h2, h3 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+/* --- CAMBIO AQUÍ: AÑADIDO ESTE BLOQUE --- */
+.card-badge-new {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Se alinea a la derecha */
+    background-color: #e74c3c; /* Un color rojo para que destaque */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 700; /* Un poco más grueso */
+    z-index: 3; /* Por si acaso, encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+/* --- FIN DEL CAMBIO --- */
+
+
 .movie-card-content {
     padding: 15px; 
     box-sizing: border-box;

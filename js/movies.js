@@ -133,7 +133,7 @@ const placeholderImages = [
 const authorsData = {
     "amc": {
         name: "Alberto Martínez Cruz",
-        photo: "https://scontent.fpbc2-4.fna.fbcdn.net/v/t39.30808-6/503295232_3979233205740140_5703252013657337713_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=FcQMcvfcYxoQ7kNvwGoE_Rq&_nc_oc=Adk0ehJ_BJT56_IbHWOcVJRvsFZ7nlepQCpBQ-EJ6AfImZ4FXqIqt0EAPxtBcPqK_URS7xrQAytvkCGcFY8flgS7&_nc_zt=23&_nc_ht=scontent.fpbc2-4.fna&_nc_gid=k6Uf56IQMdm-6Wi5WXVS9g&oh=00_AfgT13Uk5cuxRogtwS9A3xDBo7OGl7lCfTpGvkKDR8bxrw&oe=691868B0",
+        photo: "https.scontent.fpbc2-4.fna.fbcdn.net/v/t39.30808-6/503295232_3979233205740140_5703252013657337713_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=FcQMcvfcYxoQ7kNvwGoE_Rq&_nc_oc=Adk0ehJ_BJT56_IbHWOcVJRvsFZ7nlepQCpBQ-EJ6AfImZ4FXqIqt0EAPxtBcPqK_URS7xrQAytvkCGcFY8flgS7&_nc_zt=23&_nc_ht=scontent.fpbc2-4.fna&_nc_gid=k6Uf56IQMdm-6Wi5WXVS9g&oh=00_AfgT13Uk5cuxRogtwS9A3xDBo7OGl7lCfTpGvkKDR8bxrw&oe=691868B0",
         profileUrl: "/index.html?author=amc"
     },
     "one": {
@@ -184,7 +184,8 @@ if (numberOfPlaceholders > 0) {
 }
 
 // --- 5. FUNCIÓN PARA GENERAR HTML DE 1 TARJETA ---
-function generateMovieHTML(movie) {
+// CAMBIO AQUÍ: Se añadió 'isNew = false' como parámetro
+function generateMovieHTML(movie, isNew = false) {
     if (movie.locked) {
         return `
         <a class="movie-card-link is-locked" data-title="z" data-genre="${movie.genre}" data-author="${movie.author}" data-date="${movie.dateISO}">
@@ -214,6 +215,9 @@ function generateMovieHTML(movie) {
        data-author="${movie.author}" 
        data-date="${movie.dateISO}">
         <article class="movie-card">
+            
+            ${isNew ? '<span class="card-badge-new">NUEVO</span>' : ''} 
+
             <span class="card-badge">${movie.genreLabel}</span>
             <img src="${movie.image}" alt="Poster ${movie.title}" class="movie-poster">
             <div class="movie-card-content">
@@ -244,12 +248,19 @@ function renderMovies(containerId, isSuggestionMode = false) {
         return 0;
     });
 
-    sortedMovies.forEach(movie => {
+    // CAMBIO AQUÍ: Se añadió 'index' al forEach
+    sortedMovies.forEach((movie, index) => {
         if (isSuggestionMode) {
             if (movie.url.includes(currentPath)) return; // No sugerir la peli actual
             if (movie.locked) return; // No sugerir "Próximamente"
         }
-        container.innerHTML += generateMovieHTML(movie);
+        
+        // CAMBIO AQUÍ: Estas 2 líneas son nuevas
+        // Define si es la tarjeta "nueva" (la primera, no bloqueada, no sugerencia)
+        const isNew = (index === 0 && !movie.locked && !isSuggestionMode);
+
+        // CAMBIO AQUÍ: Se pasa 'isNew' a la función
+        container.innerHTML += generateMovieHTML(movie, isNew);
     });
 
     // Avisa a script.js que las películas ya se dibujaron
