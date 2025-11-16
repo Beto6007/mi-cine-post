@@ -1,6 +1,20 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 // (Aquí es el único lugar donde agregas/editas películas)
 const realMovies = [
+
+        {
+        id: "mad-max",
+        title: "Mad Max",
+        url: "/pages/mad-max.html",
+        image: "https://m.media-amazon.com/images/I/81JnqdgWM4L._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-16",
+        dateDisplay: "16 nov 2025",
+        locked: false
+    },
     {
         id: "red-social",
         title: "La Red Social",
