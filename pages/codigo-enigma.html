@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CinePost - El código Enigma</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html" class="active">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    <option value="tech">Tecnología</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="#" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="https://diamondfilms.com/img/poster/5c754ec430c316e507f64e4da.jpg"
+                    alt="Poster de El código Enigma" class="detail-poster">
+
+                <div class="star-rating" data-movie-id="codigo-enigma">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2214402161&color=%236714ce&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="https://soundcloud.com/alberto-martinez-700091428/el-co-digo-enigma-resumen"
+                            title="El- código-Enigma-resumen" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">El- código-Enigma-resumen</a></div>ƒ
+                </div>
+
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel" id="suggestions-container">
+                    </div>
+                </div>ƒ
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>El código Enigma</h1>
+                <span class="original-title">The Imitation Game (2014)</span>
+
+                <div class="detail-meta" id="movie-meta-container" data-id="codigo-enigma">
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>2014</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=tech" class="data-sheet-link">Tecnología</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Morten Tyldum</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>The Weinstein Company</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Benedict Cumberbatch, Keira Knightley, Matthew Goode, Mark Strong, Charles Dance.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://www.netflix.com/" title="Netflix" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
+                                    alt="Netflix"></a>
+                            <a href="https://www.primevideo.com/" title="Prime Video" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png"
+                                    alt="Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/nuPZUUED5uk?si=DoTGU8jfHUwvjii8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>ƒ
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        Durante el invierno de 1952, las autoridades británicas entran en el hogar del matemático,
+                        analista y héroe de guerra Alan Turing, con la intención de investigar una denuncia de robo. Sin
+                        embargo, terminan arrestando a Turing por "indecencia grave", un cargo que llevaría a su
+                        devastadora condena penal por homosexualidad. Lo que las autoridades desconocían es que estaban
+                        incriminando al pionero de la informática moderna. La película retrocede en el tiempo para
+                        narrar cómo Turing lideró a un heterogéneo grupo de académicos, lingüistas y campeones de
+                        ajedrez en Bletchley Park durante la Segunda Guerra Mundial. Juntos, bajo una presión inmensa,
+                        trabajaron para descifrar los códigos supuestamente irrompibles de la máquina "Enigma" de
+                        Alemania, una hazaña que se estima acortó la guerra en dos años y salvó millones de vidas.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://aperiodical.com/wp-content/uploads/2014/07/6.png" alt="Random 1"
+                                class="carousel-item">
+                            <img src="https://cdn.theatlantic.com/thumbor/ic519XVpqW1L4oVdciS-Uxv5QrA=/0x113:1600x1013/1600x900/media/img/mt/2014/12/theimitationgame/original.jpg"
+                                alt="Random2" class="carousel-item">
+                            <img src="https://www.indiewire.com/wp-content/uploads/2015/02/the-imitation-game-1.jpeg"
+                                alt="Random 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora del Oscar al Mejor Guion Adaptado.</li>
+                        <li>Nominada a 8 Premios Oscar (incluyendo Mejor Película, Mejor Director y Mejor Actor para
+                            Benedict Cumberbatch).</li>
+                        <li>Ganadora del Premio del Público en el Festival Internacional de Cine de Toronto (TIFF).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>El Padre de la Computación:</strong> La película retrata la creación de la "Máquina
+                            de Turing" (bautizada "Christopher" en el filme), precursora directa de las computadoras
+                            modernas y la inteligencia artificial.</li>
+                        <li><strong>Drama Humano vs. Thriller Bélico:</strong> Equilibra magistralmente la tensión de
+                            alto riesgo de descifrar códigos nazis contra reloj con la tragedia personal y la
+                            persecución injusta que sufrió Turing por su sexualidad.</li>
+                        <li><strong>Actuación Magistral:</strong> Benedict Cumberbatch ofrece una interpretación
+                            matizada y emotiva, capturando tanto la genialidad arrogante como la profunda vulnerabilidad
+                            y soledad de Alan Turing.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/codigo-enigma.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/movies.js"></script>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

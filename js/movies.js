@@ -3,6 +3,19 @@
 const realMovies = [
 
         {
+        id: "codigo-enigma",
+        title: "El código Enigma",
+        url: "/pages/codigo-enigma.html",
+        image: "https://diamondfilms.com/img/poster/5c754ec430c316e507f64e4da.jpg",
+        genre: "tech",
+        genreLabel: "Tecnología",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-17",
+        dateDisplay: "17 nov 2025",
+        locked: false
+    },
+        {
         id: "mad-max",
         title: "Mad Max",
         url: "/pages/mad-max.html",
