@@ -462,3 +462,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    let lastScrollTop = 0;
+    const header = document.querySelector('.main-header');
+    const body = document.body;
+    const movieList = document.getElementById('movie-list');
+
+    window.addEventListener('scroll', function() {
+        // Obtenemos la posición actual del scroll
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Solo activamos esto en pantallas móbiles (coincidiendo con el CSS 768px)
+        if (window.innerWidth <= 768) {
+            
+            // Lógica:
+            // 1. Si scrollTop > lastScrollTop -> Estamos bajando
+            // 2. Si scrollTop > 50 -> Para no activarlo inmediatamente al inicio
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+                // SCROLL HACIA ABAJO: Ocultar filtros (Modo Compacto)
+                header.classList.add('compact');
+                body.classList.add('scroll-down-state'); // Opcional para ajustar padding del contenido
+            } else {
+                // SCROLL HACIA ARRIBA: Mostrar todo
+                header.classList.remove('compact');
+                body.classList.remove('scroll-down-state');
+            }
+        } else {
+            // En escritorio siempre mostramos todo limpio por si acaso se redimensiona la ventana
+            header.classList.remove('compact');
+            body.classList.remove('scroll-down-state');
+        }
+
+        // Actualizamos la última posición conocida, evitando números negativos
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+    });
+});

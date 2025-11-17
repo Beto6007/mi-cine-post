@@ -4,8 +4,10 @@
 .content-page,
 .form-container,
 .author-list {
-    max-width: 900px; /* Ancho estándar para contenido */
-    margin: 0 auto 20px auto; /* Sin espacio superior */
+    max-width: 900px;
+    /* Ancho estándar para contenido */
+    margin: -10px auto 20px auto !important;
+    /* Sin espacio superior */
     padding: 30px;
     background-color: var(--card-bg);
     border-radius: 12px;
@@ -16,7 +18,7 @@
 .content-page h1,
 .form-container h1,
 .author-list h1 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 /* --- Release Notes --- */
@@ -62,7 +64,8 @@
     font-size: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-sizing: border-box; /* Evita desbordes */
+    box-sizing: border-box;
+    /* Evita desbordes */
 }
 
 .form-group textarea {
@@ -108,7 +111,8 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    flex-shrink: 0;
+    /* Evita que la imagen se reduzca */
 }
 
 .author-info h2 {
@@ -121,11 +125,17 @@
 }
 
 /* --- Responsive (móvil) --- */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+
+    .header-content {
+        padding-bottom: 10px;
+    }
+
     .content-page,
     .form-container,
     .author-list {
-        padding: 15px; /* Reducido */
+        margin: 15px !important;
+        /* Reducido */
     }
 
     .content-page h1,

@@ -68,7 +68,7 @@ h1, h2, h3 {
 
 /* --- 1. Header y Navegación --- */
 .main-header {
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: var(--primary-color);
     color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -83,7 +83,8 @@ h1, h2, h3 {
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 30px; 
+    padding: 15px 30px; 
+    align-items: center;
 }
 
 .header-top {
@@ -98,6 +99,14 @@ h1, h2, h3 {
     font-weight: 700;
     color: white;
     margin-right: 20px; 
+    position: relative;
+}
+
+.logo img{
+    width: 30px;
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
 }
 
 .main-nav ul {
@@ -163,7 +172,7 @@ h1, h2, h3 {
     padding: 8px 30px;
     max-width: 100%; 
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.1); 
+    background-color: rgba(0, 0, 0, 0.2); 
 }
 .az-filter a {
     color: white;
@@ -490,48 +499,88 @@ h1, h2, h3 {
     fill: var(--secondary-color);
 }
 
-/* --- 11. ESTILOS RESPONSIVE (GLOBALES) --- */
+/* --- 11. ESTILOS RESPONSIVE (GLOBALES Y COMPORTAMIENTO SCROLL) --- */
 @media (max-width: 768px) {
-                
+
+    /* =========================================
+       1. ESTILOS BASE MÓVIL (Estado Inicial)
+       ========================================= */
+    
     body {
-        padding-top: 240px; 
-    }
-    body.page-simple-header {
-        padding-top: 90px; 
+        padding-top: 0;
     }
 
-    /* --- Header --- */
+    #movie-list {
+        /* Padding inicial grande para que quepa el header completo */
+        padding-top: 250px !important; 
+        padding-bottom: 20px !important;
+        flex: 0 !important;
+        box-sizing: border-box;
+        margin-bottom: 0 !important;
+        transition: padding-top 0.3s ease; /* Transición suave del contenido */
+    }
+
+    /* --- Header Base --- */
     .header-content {
-        padding: 5px 15px auto 5px;
+        padding: 5px 10px 1px;
+        transition: padding 0.3s ease;
     }
+
+
+    /* Contenedor superior (Logo + Nav) */
     .header-top {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column; /* Inicialmente uno debajo del otro */
         justify-content: center;
-        gap: 0 10px;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease; /* Para animar el cambio de posición */
+        width: 100%;
     }
+
+    /* Logo Base */
     .logo {
-        font-size: 1.5rem;
-        margin-bottom: 5px; 
-        margin-right: 0;
         width: auto;
-        text-align: center;
+        transition: all 0.3s ease;
+        margin-bottom: 0;
+        line-height: 0;
     }
+    
+    .logo img {
+        position: static;
+        transform: none;
+        max-height: 60px; /* Tamaño normal del logo en móvil */
+        transition: max-height 0.3s ease;
+        margin-top: 5px;
+    }
+
+    /* Navegación Base */
     .main-nav {
         display: block; 
         width: 100%;
-        margin-top: 0;
     }
     .main-nav ul {
+        display: flex;
         justify-content: center;
         gap: 15px;
+        margin: 0;
+        padding-bottom: 5px;
     }
     .main-nav a {
         font-size: 0.85rem;
         padding: 2px 0;
     }
-    .header-filters {
-        margin-top: 10px; 
+
+    /* Filtros y Barra A-Z (Elementos que se ocultarán) */
+    .header-filters,
+    .az-filter {
+        margin-top: 10px;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin 0.3s ease;
+        max-height: 200px; /* Altura suficiente para verse */
+        opacity: 1;
+        overflow: hidden;
     }
+
     .header-filters input,
     .header-filters select {
         padding: 5px 8px;
@@ -541,22 +590,84 @@ h1, h2, h3 {
         display: flex;
         padding: 4px 15px;
     }
-    .az-filter a {
-        font-size: 0.8rem;
-    }
 
-
-    /* --- Footer --- */
+    /* Footer (Sin cambios) */
     .main-footer {
         padding: 20px 15px;
-    }
-    .main-footer p {
-        font-size: 0.9rem;
     }
     .social-links {
         gap: 10px;
     }
-    .social-links a {
-        font-size: 1.3rem;
+
+
+   /* =========================================
+       2. ESTADO COMPACTO (Al hacer Scroll)
+       ========================================= */
+
+    /* A. Ocultar filtros y barra A-Z */
+    .main-header.compact .header-filters,
+    .main-header.compact .az-filter {
+        max-height: 0;
+        opacity: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        pointer-events: none;
+    }
+
+    /* B. Transformar la cabecera a una fila horizontal */
+    .main-header.compact .header-top {
+        flex-direction: row;            /* Fila horizontal */
+        justify-content: space-between; /* Extremos opuestos */
+        align-items: center;            /* ESTO ES CLAVE: Centrado vertical perfecto */
+        padding-bottom: 0;
+        width: 100%;
+        height: 100%;                   /* Asegura que use toda la altura disponible */
+    }
+
+    /* C. Ajustar el Logo (SOLUCIÓN AL PROBLEMA) */
+    .main-header.compact .logo {
+        margin-right: auto;
+        text-align: left;
+        flex-shrink: 0;
+        display: flex;          /* Usamos flex en el link para centrar la img dentro */
+        align-items: center;    /* Centra la imagen dentro del contenedor del link */
+        height: 100%;           
+    }
+
+    .main-header.compact .logo img {
+        max-height: 35px;       /* Tamaño del logo */
+        width: auto;
+        display: block;         /* Elimina espacios extraños debajo de la imagen */
+        margin-top: 2px;        /* TRUCO VISUAL: Un pequeño empujón hacia abajo si sientes que "flota" mucho */
+    }
+
+    /* D. Ajustar el Menú */
+    .main-header.compact .main-nav {
+        width: auto;
+        margin-top: 0;
+        display: flex;          /* Asegura que el contenedor del nav se comporte bien */
+        align-items: center;
+    }
+
+    .main-header.compact .main-nav ul {
+        gap: 12px;
+        justify-content: flex-end; 
+        margin: 0;
+    }
+
+    /* E. Ajustar el padding del contenedor principal (AQUÍ ESTABA EL DETALLE) */
+    .main-header.compact .header-content {
+        /* Aumentamos el padding a 10px arriba y abajo para que haya simetría */
+        padding: 10px 15px;  
+        
+        /* Opcional: Si visualmente aún lo ves muy arriba, usa este en su lugar: */
+        /* padding: 12px 15px 8px 15px; (Más arriba, menos abajo para empujar el contenido) */
+        
+        transition: padding 0.3s ease;
+    }
+
+    /* F. Ajustar el cuerpo de la página */
+    body.scroll-down-state #movie-list {
+        padding-top: 100px !important; /* Ajustado para el nuevo tamaño del header */
     }
 }

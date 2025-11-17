@@ -82,8 +82,7 @@ audio,
 .share-buttons {
     display: flex;
     gap: 10px;
-    align-items: center;
-    margin-top: 15px; /* Espacio desde el autor/fecha */
+    margin-top: 15px; /* Espacio desde el autor/fecha */ 
 }
 .share-buttons span {
     font-size: 0.9rem;
@@ -181,6 +180,14 @@ audio,
 .suggestions-section { 
     margin-bottom: 30px;
 }
+.data-sheet{
+    text-align:left;
+}
+.summary p,
+.awards-section li,
+.characteristics-section li{
+    text-align: justify;
+}
 .summary h2,
 .carousel-section h2,
 .awards-section h2,
@@ -240,6 +247,9 @@ audio,
     .detail-media-col {
         max-width: 300px;
         margin: 0 auto;
+    }
+    .movie-detail-container{
+        margin: 235px 10px 10px 10px;
     }
 }
 
@@ -469,4 +479,16 @@ audio,
 .suggestions-carousel .card-badge {
     font-size: 0.7rem; /* Etiqueta más pequeña */
     padding: 3px 6px;
+}
+
+/* --- Responsive (móvil) --- */
+@media (max-width: 800px) {
+
+    .share-buttons{
+        align-content: center;
+        justify-content: center;
+    }
+.movie-detail-container{
+    text-align: center;
+}
 }
