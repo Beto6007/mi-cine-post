@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('scroll-down-state'); 
 
             // Misma lógica: solo se oculta si bajamos
-            if (scrollTop > 100) {
+            if (scrollTop > 0) {
                 header.classList.add('desktop-scroll-active');
             } else {
                 header.classList.remove('desktop-scroll-active');
