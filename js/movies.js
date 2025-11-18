@@ -1,8 +1,20 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
-// (Aquí es el único lugar donde agregas/editas películas)
 const realMovies = [
 
         {
+        id: "avatar",
+        title: "Avatar",
+        url: "/pages/avatar.html",
+        image: "https://www.originalfilmart.com/cdn/shop/products/avatar_2009_advance_styleC_original_film_art_5000x.webp?v=1671134076",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-18",
+        dateDisplay: "18 nov 2025",
+        locked: false
+    },
+    {
         id: "codigo-enigma",
         title: "El código Enigma",
         url: "/pages/codigo-enigma.html",
@@ -15,7 +27,7 @@ const realMovies = [
         dateDisplay: "17 nov 2025",
         locked: false
     },
-        {
+    {
         id: "mad-max",
         title: "Mad Max",
         url: "/pages/mad-max.html",
@@ -135,7 +147,6 @@ const realMovies = [
 ];
 
 // --- 2. IMÁGENES PARA PLACEHOLDERS ---
-// (Estas son las imágenes que se usarán para rellenar)
 const placeholderImages = [
     "https://www.originalfilmart.com/cdn/shop/products/avatar_2009_advance_styleC_original_film_art_5000x.webp?v=1671134076",
     "https://www.originalfilmart.com/cdn/shop/products/alien_1979_german_a1_original_film_art_5000x.jpg?v=1613719562",
@@ -165,7 +176,7 @@ const authorsData = {
     },
     "one": {
         name: "4lb One",
-        photo: "/img/autores/one-placeholder.jpg", // Asegúrate de tener esta imagen
+        photo: "/img/autores/one-placeholder.jpg", 
         profileUrl: "/index.html?author=one"
     },
     "1": { // Autor para 'locked'
@@ -175,25 +186,14 @@ const authorsData = {
     }
 };
 
-// --- 4. GENERACIÓN DE DATOS GLOBALES (¡AUTOMÁTICO!) ---
-// ¡ESTA ES LA CORRECCIÓN!
-// Define el número total de tarjetas que quieres en la página de inicio
+// --- 4. GENERACIÓN DE DATOS GLOBALES ---
 const TOTAL_CARDS_DESIRED = 25;
-
-// 1. Empezamos con las películas que ya tienes
 const moviesData = [...realMovies];
-
-// 2. El script calcula cuántos placeholders faltan para llegar a 25
-// (Si ya tienes 25 o más películas reales, esto será 0 o negativo)
 const numberOfPlaceholders = TOTAL_CARDS_DESIRED - realMovies.length;
 
-// 3. Genera automáticamente solo los placeholders necesarios
 if (numberOfPlaceholders > 0) {
     for (let i = 0; i < numberOfPlaceholders; i++) {
-
-        // Usamos módulo para rotar las imágenes si hay más placeholders que imágenes
         const imgUrl = placeholderImages[i % placeholderImages.length];
-
         moviesData.push({
             id: `locked-${i}`,
             title: "Próximamente",
@@ -203,7 +203,7 @@ if (numberOfPlaceholders > 0) {
             genreLabel: "🔒",
             author: "1",
             authorName: "🔒",
-            dateISO: "2025-10-01", // Fecha vieja para que queden al final
+            dateISO: "2025-10-01", 
             dateDisplay: "**",
             locked: true
         });
@@ -211,7 +211,6 @@ if (numberOfPlaceholders > 0) {
 }
 
 // --- 5. FUNCIÓN PARA GENERAR HTML DE 1 TARJETA ---
-// CAMBIO AQUÍ: Se añadió 'isNew = false' como parámetro
 function generateMovieHTML(movie, isNew = false) {
     if (movie.locked) {
         return `
@@ -257,7 +256,7 @@ function generateMovieHTML(movie, isNew = false) {
     </a>`;
 }
 
-// --- 6. FUNCIÓN PARA DIBUJAR TODAS LAS TARJETAS (INDEX O SUGERENCIAS) ---
+// --- 6. FUNCIÓN PARA DIBUJAR TODAS LAS TARJETAS ---
 function renderMovies(containerId, isSuggestionMode = false) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -265,36 +264,28 @@ function renderMovies(containerId, isSuggestionMode = false) {
     container.innerHTML = '';
     const currentPath = window.location.pathname;
 
-    // Ordenamiento: Reales primero (por fecha más reciente), Bloqueadas al final
     const sortedMovies = [...moviesData].sort((a, b) => {
         if (!a.locked && b.locked) return -1;
         if (a.locked && !b.locked) return 1;
         if (!a.locked && !b.locked) {
-            return b.dateISO.localeCompare(a.dateISO); // b vs a = Más reciente primero
+            return b.dateISO.localeCompare(a.dateISO); 
         }
         return 0;
     });
 
-    // CAMBIO AQUÍ: Se añadió 'index' al forEach
     sortedMovies.forEach((movie, index) => {
         if (isSuggestionMode) {
-            if (movie.url.includes(currentPath)) return; // No sugerir la peli actual
-            if (movie.locked) return; // No sugerir "Próximamente"
+            if (movie.url.includes(currentPath)) return; 
+            if (movie.locked) return; 
         }
-        
-        // CAMBIO AQUÍ: Estas 2 líneas son nuevas
-        // Define si es la tarjeta "nueva" (la primera, no bloqueada, no sugerencia)
         const isNew = (index === 0 && !movie.locked && !isSuggestionMode);
-
-        // CAMBIO AQUÍ: Se pasa 'isNew' a la función
         container.innerHTML += generateMovieHTML(movie, isNew);
     });
 
-    // Avisa a script.js que las películas ya se dibujaron
     document.dispatchEvent(new Event('moviesRendered'));
 }
 
-// --- 7. FUNCIÓN PARA DIBUJAR INFO DE AUTOR/FECHA (PÁGINAS DE DETALLE) ---
+// --- 7. FUNCIÓN PARA DIBUJAR INFO DE AUTOR/FECHA ---
 function renderMovieMetadata(containerId, movieId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -302,9 +293,7 @@ function renderMovieMetadata(containerId, movieId) {
     const movie = moviesData.find(m => m.id === movieId);
     if (!movie) return;
 
-    const author = authorsData[movie.author] || authorsData["amc"]; // Fallback
-
-    // Asegúrate de que la URL base es la correcta
+    const author = authorsData[movie.author] || authorsData["amc"]; 
     const pageUrlEncoded = encodeURIComponent("https://mi-cine-post.vercel.app" + movie.url);
 
     container.innerHTML = `
@@ -326,12 +315,59 @@ function renderMovieMetadata(containerId, movieId) {
         </div>
 
         <div class="share-buttons">
-            <a href="#" id="share-fb" target="_blank" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" id="share-x" target="_blank" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" id="share-fb" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="share-x" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" id="share-insta" target="_blank" title="Compartir en Instagram"><i class="fab fa-instagram"></i></a>
         </div>
     `;
 
-    // Avisa a script.js que la metadata ya se dibujó
     document.dispatchEvent(new Event('metadataRendered'));
 }
+
+// --- 8. FUNCIÓN DE AUTOMATIZACIÓN PARA PÁGINAS DE DETALLE ---
+function autoInitDetailPage() {
+    const currentPath = window.location.pathname;
+    
+    // Busca la película cuya URL coincida con la ruta actual
+    const movie = moviesData.find(m => currentPath.endsWith(m.url) || m.url === currentPath);
+
+    if (movie) {
+        console.log("Película detectada:", movie.title);
+
+        // A. INYECTAR DATA-ID
+        const metaContainer = document.getElementById('movie-meta-container');
+        if (metaContainer) {
+            metaContainer.setAttribute('data-id', movie.id);
+            // Dibuja la metadata (autor, fecha, botones share)
+            renderMovieMetadata('movie-meta-container', movie.id);
+        }
+
+        // B. INYECTAR POSTER
+        const posterImg = document.querySelector('.detail-poster');
+        if (posterImg) {
+            posterImg.src = movie.image;
+            posterImg.alt = `Poster de ${movie.title}`;
+        }
+
+        // C. INYECTAR META TAG (Solo visual, para scrappers ver nota html)
+        const metaOgImage = document.querySelector('meta[property="og:image"]');
+        if (metaOgImage) {
+            metaOgImage.setAttribute('content', movie.image);
+        }
+        
+        // Actualizar Título Pestaña
+        document.title = `CinePost - ${movie.title}`;
+
+        // D. ACTUALIZAR RATING
+        const ratingContainer = document.querySelector('.star-rating');
+        if (ratingContainer) {
+            ratingContainer.setAttribute('data-movie-id', movie.id);
+        }
+
+    } else {
+        // Si no encuentra película, no hace nada (para no romper index)
+    }
+}
+
+// Ejecutar auto-rellenado al cargar
+document.addEventListener('DOMContentLoaded', autoInitDetailPage);
