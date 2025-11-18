@@ -517,13 +517,13 @@ h1, h2, h3 {
         flex: 0 !important;
         box-sizing: border-box;
         margin-bottom: 0 !important;
-        transition: padding-top 0.3s ease; /* Transición suave del contenido */
+        transition: padding-top 0.35s ease; /* Transición suave del contenido */
     }
 
     /* --- Header Base --- */
     .header-content {
         padding: 5px 10px 1px;
-        transition: padding 0.3s ease;
+        transition: padding 0.35s ease;
     }
 
 
@@ -534,14 +534,14 @@ h1, h2, h3 {
         justify-content: center;
         align-items: center;
         gap: 5px;
-        transition: all 0.3s ease; /* Para animar el cambio de posición */
+        transition: all 0.35s ease; /* Para animar el cambio de posición */
         width: 100%;
     }
 
     /* Logo Base */
     .logo {
         width: auto;
-        transition: all 0.3s ease;
+        transition: all 0.35s ease;
         margin-bottom: 0;
         line-height: 0;
     }
@@ -550,7 +550,7 @@ h1, h2, h3 {
         position: static;
         transform: none;
         max-height: 60px; /* Tamaño normal del logo en móvil */
-        transition: max-height 0.3s ease;
+        transition: max-height 0.35s ease;
         margin-top: 5px;
     }
 
@@ -575,7 +575,7 @@ h1, h2, h3 {
     .header-filters,
     .az-filter {
         margin-top: 10px;
-        transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin 0.3s ease;
+        transition: max-height 0.35 ease-out, opacity 0.3s ease-out, margin 0.2s ease;
         max-height: 200px; /* Altura suficiente para verse */
         opacity: 1;
         overflow: hidden;
