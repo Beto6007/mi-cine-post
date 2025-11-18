@@ -1,7 +1,6 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
-
-        {
+         {
         id: "avatar",
         title: "Avatar",
         url: "/pages/avatar.html",
@@ -285,7 +284,7 @@ function renderMovies(containerId, isSuggestionMode = false) {
     document.dispatchEvent(new Event('moviesRendered'));
 }
 
-// --- 7. FUNCIÓN PARA DIBUJAR INFO DE AUTOR/FECHA ---
+// --- 7. FUNCIÓN PARA DIBUJAR INFO DE AUTOR/FECHA (DETALLE) ---
 function renderMovieMetadata(containerId, movieId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -296,6 +295,7 @@ function renderMovieMetadata(containerId, movieId) {
     const author = authorsData[movie.author] || authorsData["amc"]; 
     const pageUrlEncoded = encodeURIComponent("https://mi-cine-post.vercel.app" + movie.url);
 
+    // --- CAMBIO AQUÍ: Usamos el icono 'fa-share-nodes' en vez de texto ---
     container.innerHTML = `
         Subido por
         <a href="${author.profileUrl}" class="author-tooltip-trigger"
@@ -314,10 +314,14 @@ function renderMovieMetadata(containerId, movieId) {
             <img src="https://api.visitorbadge.io/api/visitors?path=${pageUrlEncoded}&countColor=%236a11cb" alt="Contador de visitas" />
         </div>
 
-        <div class="share-buttons">
-            <a href="#" id="share-fb" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" id="share-x" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" id="share-insta" target="_blank" title="Compartir en Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="share-container" style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+            <i class="fa-solid fa-share-nodes" title="Compartir" style="font-size: 1.4rem; color: #6a11cb; margin-right: 5px;"></i>
+            
+            <div class="share-buttons">
+                <a href="#" id="share-fb" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" id="share-x" title="Compartir en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" id="share-insta" target="_blank" title="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     `;
 
@@ -328,7 +332,6 @@ function renderMovieMetadata(containerId, movieId) {
 function autoInitDetailPage() {
     const currentPath = window.location.pathname;
     
-    // Busca la película cuya URL coincida con la ruta actual
     const movie = moviesData.find(m => currentPath.endsWith(m.url) || m.url === currentPath);
 
     if (movie) {
@@ -338,7 +341,6 @@ function autoInitDetailPage() {
         const metaContainer = document.getElementById('movie-meta-container');
         if (metaContainer) {
             metaContainer.setAttribute('data-id', movie.id);
-            // Dibuja la metadata (autor, fecha, botones share)
             renderMovieMetadata('movie-meta-container', movie.id);
         }
 
@@ -349,13 +351,12 @@ function autoInitDetailPage() {
             posterImg.alt = `Poster de ${movie.title}`;
         }
 
-        // C. INYECTAR META TAG (Solo visual, para scrappers ver nota html)
+        // C. INYECTAR META TAG
         const metaOgImage = document.querySelector('meta[property="og:image"]');
         if (metaOgImage) {
             metaOgImage.setAttribute('content', movie.image);
         }
         
-        // Actualizar Título Pestaña
         document.title = `CinePost - ${movie.title}`;
 
         // D. ACTUALIZAR RATING
@@ -364,10 +365,7 @@ function autoInitDetailPage() {
             ratingContainer.setAttribute('data-movie-id', movie.id);
         }
 
-    } else {
-        // Si no encuentra película, no hace nada (para no romper index)
     }
 }
 
-// Ejecutar auto-rellenado al cargar
 document.addEventListener('DOMContentLoaded', autoInitDetailPage);

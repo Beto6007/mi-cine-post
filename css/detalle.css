@@ -1,6 +1,6 @@
-/* --- 7. ESTILOS PARA DETALLE.HTML (NUEVO DISEÑO) --- */
+/* --- 7. ESTILOS PARA DETALLE.HTML (RESTAURADO AL ORIGINAL) --- */
 .movie-detail-container {
-    max-width: 1000px; /* Un poco más ancho para el grid */
+    max-width: 1000px; 
     margin: 0 auto 30px auto; 
     padding: 30px;
     background-color: var(--card-bg);
@@ -11,7 +11,7 @@
 /* Contenedor Grid de 2 Columnas */
 .detail-grid-container {
     display: grid;
-    grid-template-columns: 280px 1fr; /* Columna fija para media, flexible para info */
+    grid-template-columns: 280px 1fr; 
     gap: 30px;
 }
 
@@ -73,46 +73,57 @@ audio,
 .detail-meta {
     font-size: 1.1rem;
     color: var(--text-light);
-    margin-bottom: 0; /* ¡CAMBIO! Espacio controlado por los hijos */
+    margin-bottom: 0; 
     font-style: italic;
     line-height: 1.6; 
 }
 
-/* ¡CAMBIO! Espaciado simétrico para compartir y contador */
+/* --- MODIFICACIÓN ÚNICA: BOTONES DE COMPARTIR --- */
+/* Ajustado para el nuevo HTML generado por JS */
+.share-container {
+    display: flex;
+    align-items: center; /* Centrado vertical perfecto */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.share-container i.fa-share-nodes {
+    font-size: 1.4rem;
+    color: #333; /* Color oscuro sólido (no tenue) */
+}
+
 .share-buttons {
     display: flex;
     gap: 10px;
-    margin-top: 15px; /* Espacio desde el autor/fecha */ 
 }
-.share-buttons span {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-light);
-    font-style: normal;
-    margin-right: 5px;
-}
+
 .share-buttons a {
     font-size: 1rem; 
     color: white;
-    background-color: var(--text-light);
     width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s;
+    text-decoration: none;
 }
+
+/* Colores de marca (Siempre activos) */
+#share-fb { background-color: #1877F2; }
+#share-x { background-color: #000000; }
+#share-insta { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+/* Hover: Solo elevación, SIN cambio a morado */
 .share-buttons a:hover {
     transform: scale(1.1);
+    opacity: 0.9;
 }
-/* Colores de marca */
-#share-fb:hover { background-color: #1877F2; }
-#share-x:hover { background-color: #000000; }
-#share-insta:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+/* ------------------------------------------------ */
 
 .visit-counter-page {
-    margin-top: 15px; /* ¡CAMBIO! Espacio desde los botones de compartir */
+    margin-top: 15px; 
     opacity: 0.8;
 }
 
@@ -121,7 +132,7 @@ audio,
     color: var(--text-dark);
     font-style: normal;
 }
-/* ¡CAMBIO! Se quitan los puntos */
+
 .detail-meta .date-link,
 .detail-meta .author-tooltip-trigger strong {
     text-decoration: none;
@@ -139,7 +150,7 @@ audio,
     background: var(--light-bg);
     border-radius: 8px;
     padding: 20px;
-    margin-top: 25px; /* ¡CAMBIO! Espacio desde el bloque meta */
+    margin-top: 25px; 
     margin-bottom: 25px;
 }
 .data-sheet dl {
@@ -156,7 +167,7 @@ audio,
     margin: 0;
     color: var(--text-light);
 }
-/* ¡NUEVO! Estilo para el enlace de género */
+
 .data-sheet dd a.data-sheet-link {
     color: var(--text-light);
     text-decoration: none;
@@ -238,6 +249,23 @@ audio,
     color: green;
 }
 
+/* Caja de contenido (Restaurada a tu versión original) */
+.content-box {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 0;
+}
+.content-box p, .content-box ul {
+    margin: 0; 
+}
+.content-box p {
+    text-align: justify;
+}
+.content-box ul {
+    text-align: left;
+}
+
 
 /* Responsive para la página de detalles */
 @media (max-width: 800px) {
@@ -250,6 +278,11 @@ audio,
     }
     .movie-detail-container{
         margin: 235px 10px 10px 10px;
+    }
+    
+    /* Ajuste responsivo para compartir */
+    .share-container {
+        justify-content: center;
     }
 }
 
@@ -266,7 +299,7 @@ audio,
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    width: auto; /* Se ajusta a la imagen */
+    width: auto; 
     background-color: transparent;
     border: none;
     box-shadow: none;
@@ -288,13 +321,12 @@ audio,
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 8px;
-    border: 3px solid var(--primary-color); /* Énfasis púrpura */
+    border: 3px solid var(--primary-color); 
     box-shadow: 0 4px 15px var(--primary-color-shadow);
 }
 .author-tooltip-card .tooltip-name {
-    display: none; /* Ocultamos el nombre como pediste */
+    display: none; 
 }
-/* Fin de Estilos de Autor */
 
 
 /* Carrusel (en pág. de detalles) */
@@ -315,7 +347,7 @@ audio,
     box-sizing: border-box;
     object-fit: cover;
     width: 100%; 
-    max-height: 450px; /* Límite de altura */
+    max-height: 450px; 
 }
 .carousel-control {
     position: absolute;
@@ -346,7 +378,7 @@ audio,
     right: 15px;
 }
 
-/* Ranking de Estrellas (ACTUALIZADO) */
+/* Ranking de Estrellas */
 .star-rating {
     background-color: var(--light-bg);
     padding: 20px;
@@ -367,7 +399,6 @@ audio,
 .star-rating .stars i:hover {
     transform: scale(1.15);
 }
-/* Estilo para cuando ya votó */
 .star-rating.voted .stars i {
     cursor: not-allowed;
     opacity: 0.7;
@@ -401,31 +432,13 @@ audio,
     width: 100% !important;
 }
 
-/* ¡NUEVO! Estilo para cajas de contenido en detalle */
-.content-box {
-    background: var(--light-bg);
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 0;
-}
-.content-box p, .content-box ul {
-    margin: 0; /* Quita márgenes por defecto */
-}
-.content-box p {
-    text-align: justify;
-}
-.content-box ul {
-    text-align: left;
-}
-
-/* ¡NUEVO! Carrusel de Sugerencias */
+/* Carrusel de Sugerencias */
 .suggestions-carousel {
     display: flex;
-    overflow-x: auto; /* Scroll horizontal */
+    overflow-x: auto; 
     padding: 10px 0 20px 0;
-    gap: 15px; /* Menos espacio entre tarjetas */
+    gap: 15px; 
 }
-/* Estilo para que el scroll sea más sutil (opcional) */
 .suggestions-carousel::-webkit-scrollbar {
     height: 8px;
 }
@@ -437,23 +450,20 @@ audio,
     background: var(--text-light);
 }
 
-/* ¡NUEVO! Sobrescribir el tamaño de las tarjetas de sugerencia */
 .suggestions-carousel .movie-card {
-    width: 150px; /* ¡MÁS PEQUEÑAS! */
-    flex-shrink: 0; /* Evita que se encojan */
-    animation: none; /* Quitamos la animación de salto */
+    width: 150px; 
+    flex-shrink: 0; 
+    animation: none; 
 }
 
-/* ¡NUEVO! Ajustar contenido de tarjetas pequeñas */
 .suggestions-carousel .movie-card-content {
-    padding: 12px; /* Menos padding */
-    /* ¡CAMBIO! Altura mínima para evitar deformación */
+    padding: 12px; 
     min-height: 5em;
 }
 
 .suggestions-carousel .movie-card-content h3 {
-    font-size: 0.9rem; /* Fuente más pequeña */
-    height: 2.6em; /* Mantiene 2 líneas */
+    font-size: 0.9rem; 
+    height: 2.6em; 
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -462,33 +472,27 @@ audio,
     white-space: normal;
 }
 
-/* Desactivamos la animación marquee en las tarjetas pequeñas (demasiado ruidosa) */
 .suggestions-carousel .movie-card:hover .movie-card-content h3 span {
     animation: none;
     padding-left: 0;
     transform: none;
     transition: none;
-    -webkit-line-clamp: 2; /* Mantiene el corte de 2 líneas */
+    -webkit-line-clamp: 2; 
     white-space: normal;
 }
 
 .suggestions-carousel .movie-card-meta {
-    font-size: 0.8rem; /* Fuente de meta más pequeña */
+    font-size: 0.8rem; 
 }
 
 .suggestions-carousel .card-badge {
-    font-size: 0.7rem; /* Etiqueta más pequeña */
+    font-size: 0.7rem; 
     padding: 3px 6px;
 }
 
 /* --- Responsive (móvil) --- */
 @media (max-width: 800px) {
-
-    .share-buttons{
-        align-content: center;
-        justify-content: center;
+    .movie-detail-container{
+        text-align: center;
     }
-.movie-detail-container{
-    text-align: center;
-}
 }

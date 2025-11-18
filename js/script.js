@@ -419,18 +419,42 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(`https://wa.me/${tuNumeroDeWhatsApp}?text=${encodeURIComponent(texto)}`, '_blank');
         });
     }
+});
 
-    // --- 5.6 Scroll Header ---
-    let lastScrollTop = 0;
+// --- 5.6 Scroll Header (Lógica Unificada por Posición) ---
     const header = document.querySelector('.main-header');
     const body = document.body;
+
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (window.innerWidth <= 768) {
-            if (scrollTop > lastScrollTop && scrollTop > 50) { header.classList.add('compact'); body.classList.add('scroll-down-state'); } 
-            else { header.classList.remove('compact'); body.classList.remove('scroll-down-state'); }
-        } else { header.classList.remove('compact'); body.classList.remove('scroll-down-state'); }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-    });
 
-});
+        // 1. LÓGICA MÓVIL (Adaptativa)
+        if (window.innerWidth <= 768) {
+            header.classList.remove('desktop-scroll-active'); // Limpieza
+
+            // CAMBIO: Ya no importa si subes o bajas. 
+            // Solo si estás abajo (+50px) se ocultan los filtros.
+            // Tienes que subir hasta el tope (<50px) para verlos de nuevo.
+            if (scrollTop > 0) { 
+                header.classList.add('compact'); 
+                body.classList.add('scroll-down-state'); 
+            } else { 
+                // Solo aquí, al principio de la página, se muestran
+                header.classList.remove('compact'); 
+                body.classList.remove('scroll-down-state'); 
+            }
+        } 
+        // 2. LÓGICA ESCRITORIO
+        else {
+            header.classList.remove('compact'); 
+            body.classList.remove('scroll-down-state'); 
+
+            // Misma lógica: solo se oculta si bajamos
+            if (scrollTop > 100) {
+                header.classList.add('desktop-scroll-active');
+            } else {
+                header.classList.remove('desktop-scroll-active');
+            }
+        }
+        // Ya no necesitamos lastScrollTop para esta lógica
+    });

@@ -593,7 +593,8 @@ h1, h2, h3 {
 
     /* Footer (Sin cambios) */
     .main-footer {
-        padding: 20px 15px;
+        padding-top: 20px;
+        padding-bottom: 50px;
     }
     .social-links {
         gap: 10px;
@@ -669,5 +670,27 @@ h1, h2, h3 {
     /* F. Ajustar el cuerpo de la página */
     body.scroll-down-state #movie-list {
         padding-top: 100px !important; /* Ajustado para el nuevo tamaño del header */
+    }
+}
+
+/* --- AGREGAR AL FINAL DE TU CSS --- */
+
+/* Solo aplica en escritorio (mayor a 768px) */
+@media (min-width: 769px) {
+    .az-filter {
+        /* Preparamos el elemento para la animación */
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+        max-height: 60px; /* Altura suficiente para que se vea por defecto */
+        opacity: 1;
+        overflow: hidden; /* OBLIGATORIO: Corta el contenido cuando se encoge */
+    }
+
+    /* Estado cuando hacemos scroll */
+    .main-header.desktop-scroll-active .az-filter {
+        max-height: 0;      /* Se contrae a 0 */
+        opacity: 0;         /* Se vuelve transparente */
+        padding-top: 0;     /* Eliminamos relleno vertical temporalmente */
+        padding-bottom: 0;
+        pointer-events: none; /* Evita clicks fantasma */
     }
 }
