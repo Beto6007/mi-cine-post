@@ -80,7 +80,7 @@ audio,
 }
 
 .detail-meta {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--text-light);
     margin-bottom: 0;
     font-style: italic;
@@ -326,13 +326,25 @@ audio,
 
     .movie-detail-container {
         margin: 235px 10px 10px 10px;
-        transition: margin-top 0.35s ease;
+        transition: margin-top 0.3s ease;
     }
 
     /* Ajuste responsivo para compartir */
     .share-container {
         justify-content: center;
     }
+    /* NUEVA REGLA: Cuando se hace scroll hacia abajo */
+    body.scroll-down-state .movie-detail-container {
+        /* Reducimos el margen superior para pegarlo al header compacto */
+        /* Usamos 100px o 110px para igualar el comportamiento del index */
+        margin-top: 105px !important; 
+    }
+    
+    /* Ajuste responsivo para compartir */
+    .share-container {
+        justify-content: center;
+    }
+
 }
 
 
@@ -572,14 +584,3 @@ audio,
 }
 
 
-/* NUEVA REGLA: Cuando se hace scroll hacia abajo */
-    body.scroll-down-state .movie-detail-container {
-        /* Reducimos el margen superior para pegarlo al header compacto */
-        /* Usamos 100px o 110px para igualar el comportamiento del index */
-        margin-top: 110px !important; 
-    }
-    
-    /* Ajuste responsivo para compartir */
-    .share-container {
-        justify-content: center;
-    }

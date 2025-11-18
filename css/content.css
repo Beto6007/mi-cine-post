@@ -148,4 +148,8 @@
         padding-bottom: 15px;
         margin-bottom: 15px;
     }
+    .main-footer{
+        padding-top: 20px !important;
+        padding-bottom:  20px !important;
+    }
 }
