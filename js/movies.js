@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
          {
+        id: "wall-e",
+        title: "WALL-E",
+        url: "/pages/wall-e.html",
+        image: "https://moviepostermexico.com/cdn/shop/products/wall-e_1701x.png?v=1611548098",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-19",
+        dateDisplay: "19 nov 2025",
+        locked: false
+    },
+    {
         id: "avatar",
         title: "Avatar",
         url: "/pages/avatar.html",
