@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
-         {
+    {
+        id: "her",
+        title: "Her",
+        url: "/pages/her.html",
+        image: "https://moviepostermexico.com/cdn/shop/products/her-2013-filmplakat_2480x.jpg?v=1604468072",
+        genre: "tech",
+        genreLabel: "Tecnología",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-20",
+        dateDisplay: "20 nov 2025",
+        locked: false
+    },
+    {
         id: "wall-e",
         title: "WALL-E",
         url: "/pages/wall-e.html",
@@ -188,7 +201,7 @@ const authorsData = {
     },
     "one": {
         name: "4lb One",
-        photo: "/img/autores/one-placeholder.jpg", 
+        photo: "/img/autores/one-placeholder.jpg",
         profileUrl: "/index.html?author=one"
     },
     "1": { // Autor para 'locked'
@@ -215,7 +228,7 @@ if (numberOfPlaceholders > 0) {
             genreLabel: "🔒",
             author: "1",
             authorName: "🔒",
-            dateISO: "2025-10-01", 
+            dateISO: "2025-10-01",
             dateDisplay: "**",
             locked: true
         });
@@ -280,15 +293,15 @@ function renderMovies(containerId, isSuggestionMode = false) {
         if (!a.locked && b.locked) return -1;
         if (a.locked && !b.locked) return 1;
         if (!a.locked && !b.locked) {
-            return b.dateISO.localeCompare(a.dateISO); 
+            return b.dateISO.localeCompare(a.dateISO);
         }
         return 0;
     });
 
     sortedMovies.forEach((movie, index) => {
         if (isSuggestionMode) {
-            if (movie.url.includes(currentPath)) return; 
-            if (movie.locked) return; 
+            if (movie.url.includes(currentPath)) return;
+            if (movie.locked) return;
         }
         const isNew = (index === 0 && !movie.locked && !isSuggestionMode);
         container.innerHTML += generateMovieHTML(movie, isNew);
@@ -305,7 +318,7 @@ function renderMovieMetadata(containerId, movieId) {
     const movie = moviesData.find(m => m.id === movieId);
     if (!movie) return;
 
-    const author = authorsData[movie.author] || authorsData["amc"]; 
+    const author = authorsData[movie.author] || authorsData["amc"];
     const pageUrlEncoded = encodeURIComponent("https://mi-cine-post.vercel.app" + movie.url);
 
     // --- CAMBIO AQUÍ: Usamos el icono 'fa-share-nodes' en vez de texto ---
@@ -344,7 +357,7 @@ function renderMovieMetadata(containerId, movieId) {
 // --- 8. FUNCIÓN DE AUTOMATIZACIÓN PARA PÁGINAS DE DETALLE ---
 function autoInitDetailPage() {
     const currentPath = window.location.pathname;
-    
+
     const movie = moviesData.find(m => currentPath.endsWith(m.url) || m.url === currentPath);
 
     if (movie) {
@@ -369,7 +382,7 @@ function autoInitDetailPage() {
         if (metaOgImage) {
             metaOgImage.setAttribute('content', movie.image);
         }
-        
+
         document.title = `CinePost - ${movie.title}`;
 
         // D. ACTUALIZAR RATING
