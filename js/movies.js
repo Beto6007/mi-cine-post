@@ -1,5 +1,18 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
+        {
+        id: "blade-runner",
+        title: "Blade Runner",
+        url: "/pages/blade-runner.html",
+        image: "https://moviepostermexico.com/cdn/shop/products/blade_runner_xxlg_1940x.jpg?v=1592882225",
+        genre: "tech",
+        genreLabel: "Tecnología",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-21",
+        dateDisplay: "21 nov 2025",
+        locked: false
+    },
     {
         id: "her",
         title: "Her",
