@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
-        {
+    {
+        id: "planeta-simios",
+        title: "El Planeta de los Simios",
+        url: "/pages/planeta-simios.html",
+        image: "https://elcriticoabulico.wordpress.com/wp-content/uploads/2015/09/el-planeta-de-los-simios.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-22",
+        dateDisplay: "22 nov 2025",
+        locked: false
+    },
+    {
         id: "blade-runner",
         title: "Blade Runner",
         url: "/pages/blade-runner.html",
