@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "alien",
+        title: "Alien: El octavo pasajero",
+        url: "/pages/alien.html",
+        image: "https://m.media-amazon.com/images/I/41VReP3cJoL._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-24",
+        dateDisplay: "24 nov 2025",
+        locked: false
+    },
+    {
         id: "ex-machina",
         title: "Ex Machina",
         url: "/pages/ex-machina.html",

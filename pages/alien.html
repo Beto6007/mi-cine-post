@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="" />
+
+    <title>CinePost - Alien</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html" class="active">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    <option value="tech">Tecnología</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="#" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="" alt="Cargando poster..." class="detail-poster">
+
+                <div class="star-rating" data-movie-id="">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2218254458&color=%236714ce&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="https://soundcloud.com/alberto-martinez-700091428/alien-resumen" title="Alien-resumen"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alien-resumen</a></div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel" id="suggestions-container">
+                    </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Alien: El octavo pasajero</h1>
+                <span class="original-title">Alien (1979)</span>
+
+                <div class="detail-meta" id="movie-meta-container" data-id="">
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>1979</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=ficcion" class="data-sheet-link">Ciencia Ficción / Terror</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Ridley Scott</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>20th Century Fox</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, Harry Dean Stanton, John Hurt.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://www.disneyplus.com/es-mx/browse/entity-27389b6b-bf27-45a6-afdf-cef0fe723cff?distributionPartner=google"
+                                title="Disney+" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg"
+                                    alt="Disney+"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jQ5lPt9edzQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        La tripulación de la nave comercial Nostromo, de regreso a la Tierra, intercepta una señal de
+                        socorro de un planeta cercano. Al investigar, encuentran una nave alienígena abandonada y huevos
+                        misteriosos. Una criatura se adhiere al rostro de uno de los tripulantes y, tras llevarlo a
+                        bordo, nace un organismo terrorífico que crece rápidamente. Atrapados en el espacio profundo, la
+                        tripulación debe luchar por sobrevivir contra una máquina de matar perfecta: el Xenomorfo.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://img.asmedia.epimg.net/resizer/v2/VITUFHBRGFEKVNGWSVYTSHMMX4.jpg?auth=af9bbf57845fbe5f9415347db8cf72f645279d179f48522b427232566cdf2cde&width=1472&height=828&smart=true"
+                                alt="Escena 1 - El huevo alienígena" class="carousel-item">
+                            <img src="https://images.squarespace-cdn.com/content/v1/5fbc4a62c2150e62cfcb09aa/4f5a401f-1095-4bec-adb3-9df0431de17d/TN.png"
+                                alt="Escena 2 - El Space Jockey" class="carousel-item">
+                            <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2024/01/alien-3256441.jpg?tf=3840x"
+                                alt="Escena 3 - Ripley y Jonesy" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora del Oscar a los Mejores Efectos Visuales.</li>
+                        <li>Ganadora de 3 Premios Saturn (Mejor Película de Ciencia Ficción, Mejor Dirección, Mejor
+                            Actriz de Reparto).</li>
+                        <li>Ganadora de 2 Premios BAFTA (Mejor Diseño de Producción, Mejor Sonido).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>Diseño de H.R. Giger:</strong> La estética biomecánica del Xenomorfo y la nave
+                            alienígena, creada por el artista suizo H.R. Giger, definió el aspecto del terror moderno.
+                        </li>
+                        <li><strong>Atmósfera Claustrofóbica:</strong> Ridley Scott utiliza los pasillos oscuros y
+                            estrechos de la nave Nostromo para crear una tensión inigualable de "casa embrujada en el
+                            espacio".</li>
+                        <li><strong>Ellen Ripley:</strong> Introdujo a una de las primeras y más icónicas heroínas de
+                            acción del cine, rompiendo los estereotipos de género de la época.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/alien.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/movies.js"></script>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
