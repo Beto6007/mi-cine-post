@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "ex-machina",
+        title: "Ex Machina",
+        url: "/pages/ex-machina.html",
+        image: "https://moviepostermexico.com/cdn/shop/products/ex_machina_ver4_xxlg_1024x1024@2x.jpg?v=1653594111",
+        genre: "tech",
+        genreLabel: "Tecnología",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-23",
+        dateDisplay: "23 nov 2025",
+        locked: false
+    },
+    {
         id: "planeta-simios",
         title: "El Planeta de los Simios",
         url: "/pages/planeta-simios.html",

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="" />
+
+    <title>CinePost - Ex Machina</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html" class="active">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    <option value="tech">Tecnología</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="#" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="" alt="Cargando poster..." class="detail-poster">
+
+                <div class="star-rating" data-movie-id="">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2217861281&color=%236714ce&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="https://soundcloud.com/alberto-martinez-700091428/ex-machina-resumen"
+                            title="Ex-Machina-resumen" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Ex-Machina-resumen</a></div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel" id="suggestions-container">
+                    </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Ex Machina</h1>
+                <span class="original-title">Ex Machina (2014)</span>
+
+                <div class="detail-meta" id="movie-meta-container" data-id="">
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>2014</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=tech" class="data-sheet-link">Tecnología</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Alex Garland</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>Universal Pictures / A24</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Domhnall Gleeson, Alicia Vikander, Oscar Isaac, Sonoya Mizuno.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://www.primevideo.com/dp/amzn1.dv.gti.e7333a78-cc38-42ae-8207-8b1543df34fc?autoplay=0&ref_=atv_cf_strg_wb"
+                                title="Prime Video" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png"
+                                    alt="Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/EoQuVnKhxaM?si=d8rn-OcUqQ8CWuKR"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        Caleb, un joven programador de la empresa de internet más grande del mundo, gana un concurso
+                        para pasar una semana en un retiro privado en las montañas perteneciente a Nathan, el recluso
+                        CEO de la compañía. Sin embargo, cuando Caleb llega, descubre que tendrá que participar en un
+                        experimento fascinante y extraño: interactuar con la primera inteligencia artificial verdadera
+                        del mundo, alojada en el cuerpo de una hermosa robot llamada Ava. Lo que comienza como una
+                        prueba de Turing convencional se convierte rápidamente en un oscuro juego psicológico de
+                        manipulación, donde las lealtades entre hombre y máquina se difuminan y nadie es quien parece
+                        ser.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://play-lh.googleusercontent.com/proxy/QcYmHYQ7X-UQFXpOdEYi_hLFoMCvIjICgQCx8jTiYbJxJhtfYuGG78fF51OTQ1WlocxgwmPDYUyaY7Leax8TCApK9KEnBFDLrzc71-uoeLwqVvSW3c7a-L-t=s3840-w3840-h2160"
+                                alt="Random 1" class="carousel-item">
+                            <img src="https://backseatdirecting.com/wp-content/uploads/2015/04/caleb-mirror.jpg"
+                                alt="Random. 2" class="carousel-item">
+                            <img src="https://inreviewonline.com/wp-content/uploads/2015/10/Ex-Machina-e1595464114679-1024x578.jpg"
+                                alt="Random 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora del Oscar a los Mejores Efectos Visuales (sorprendiendo al vencer a grandes
+                            superproducciones).</li>
+                        <li>Nominada al Oscar por Mejor Guion Original (Alex Garland).</li>
+                        <li>Ganadora del Premio del Cine Independiente Británico a la Mejor Película.</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>El Test de Turing:</strong> La película es una exploración tensa y claustrofóbica
+                            del famoso test para distinguir entre humanos y máquinas, invirtiendo los roles de quién
+                            está siendo probado.</li>
+                        <li><strong>Tensión Psicológica:</strong> Más que acción, la película se basa en diálogos
+                            afilados y manipulación emocional, creando un thriller cerebral inquietante.</li>
+                        <li><strong>Estética Minimalista:</strong> El contraste entre la naturaleza exuberante del
+                            exterior y la arquitectura tecnológica y fría del búnker de Nathan refleja el conflicto
+                            entre lo natural y lo artificial.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/ex-machina.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/movies.js"></script>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
