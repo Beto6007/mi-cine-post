@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "silicon",
+        title: "Piratas de Silicon Valley",
+        url: "/pages/piratas-silicon.html",
+        image: "https://m.media-amazon.com/images/M/MV5BNDc2NTE0NzE4N15BMl5BanBnXkFtZTgwMDQ5MzgwMzE@._V1_.jpg",
+        genre: "tech",
+        genreLabel: "Tecnología",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-25",
+        dateDisplay: "25 nov 2025",
+        locked: false
+    },
+    {
         id: "alien",
         title: "Alien: El octavo pasajero",
         url: "/pages/alien.html",
