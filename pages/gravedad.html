@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="https://m.media-amazon.com/images/I/51yzeIY5OcL._AC_UF894,1000_QL80_.jpg" />
+
+    <title>CinePost - Gravity</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html" class="active">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    <option value="tech">Tecnología</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="#" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="" alt="Cargando poster..." class="detail-poster">
+
+                <div class="star-rating" data-movie-id="">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=[URL_ENCODED_DE_SOUNDCLOUD_TRACK]&color=%236714ce&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="#" title="Gravity-resumen" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Gravity-resumen</a>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel" id="suggestions-container">
+                    </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Gravity</h1>
+                <span class="original-title">Gravity (2013)</span>
+
+                <div class="detail-meta" id="movie-meta-container" data-id="">
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>2013</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=ficcion" class="data-sheet-link">Ciencia Ficción / Thriller</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Alfonso Cuarón</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>Warner Bros. Pictures</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Sandra Bullock, George Clooney.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://play.hbomax.com/" title="Max" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/HBO_Max_Logo.svg/1280px-HBO_Max_Logo.svg.png"
+                                    alt="Max"></a>
+                            <a href="https://www.primevideo.com/" title="Prime Video" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png"
+                                    alt="Prime Video"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OiTiKOy59o4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        La Dra. Ryan Stone, una brillante ingeniera médica en su primera misión espacial, y el veterano
+                        astronauta Matt Kowalski, están en una caminata espacial de rutina cuando ocurre el desastre. Su
+                        transbordador es destruido por una lluvia de escombros satelitales, dejándolos completamente
+                        solos: atados el uno al otro y girando hacia la oscuridad. El silencio ensordecedor les dice que
+                        han perdido todo vínculo con la Tierra y cualquier posibilidad de rescate. A medida que el miedo
+                        se convierte en pánico y el oxígeno se agota, se dan cuenta de que la única forma de volver a
+                        casa puede ser adentrarse más en la inmensidad aterradora del espacio.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://static01.nyt.com/images/2013/10/04/arts/04GRAVITY/GRAVITY-superJumbo.jpg"
+                                alt="Escena 1 - Flotando en el espacio" class="carousel-item">
+                            <img src="https://www.fxguide.com/wp-content/uploads/2013/10/G_01050_C_0775_0078_v34.1065.jpg"
+                                alt="Escena 2 - La Estación Espacial" class="carousel-item">
+                            <img src="https://theasc.com/ac_magazine/November2013/Gravity/images/Gravity_08.jpg"
+                                alt="Escena 3 - Ryan Stone" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Ganadora de 7 Premios Oscar (incluyendo Mejor Director para Alfonso Cuarón, Mejores Efectos
+                            Visuales y Mejor Fotografía).</li>
+                        <li>Ganadora del Globo de Oro al Mejor Director.</li>
+                        <li>Ganadora de 6 Premios BAFTA (incluyendo Mejor Película Británica).</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>Inmersión Visual:</strong> El uso innovador del 3D y los efectos visuales crea una
+                            experiencia sensorial única, haciendo que el espectador sienta la ingravidez y el vacío del
+                            espacio.</li>
+                        <li><strong>Planos Secuencia:</strong> La película es famosa por sus largas tomas continuas y
+                            fluidas (marca de la casa de Cuarón y Lubezki) que aumentan la tensión y el realismo.</li>
+                        <li><strong>Diseño de Sonido:</strong> Respeta científicamente el silencio del espacio; la
+                            tensión se construye a través de la banda sonora de Steven Price y la respiración de los
+                            personajes, en lugar de explosiones ruidosas.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/gravity.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/movies.js"></script>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
