@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "hackers",
+        title: "Hackers",
+        url: "/pages/hackers.html",
+        image: "https://m.media-amazon.com/images/I/51eGN+IIt8L._AC_UF894,1000_QL80_.jpg",
+        genre: "tech",
+        genreLabel: "Tecnología",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-27",
+        dateDisplay: "27 nov 2025",
+        locked: false
+    },
+    {
         id: "gravedad",
         title: "Gravedad",
         url: "/pages/gravedad.html",

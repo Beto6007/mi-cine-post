@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="" />
+
+    <title>CinePost - Hackers</title>
+
+    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+        nonce="[VALOR_NONCE_ALEATORIO]"></script>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-top">
+                <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html" class="active">Inicio</a></li>
+                        <li><a href="/release-notes.html">Release Notes</a></li>
+                        <li><a href="/autores.html">Autores</a></li>
+                        <li><a href="/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-filters">
+                <input type="search" id="search-bar" placeholder="Buscar por título...">
+                <select id="genre-filter">
+                    <option value="all">Género</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ficcion">Ciencia Ficción</option>
+                    <option value="tech">Tecnología</option>
+                </select>
+                <select id="author-filter">
+                    <option value="all">Autor</option>
+                    <option value="amc">Alberto Martínez Cruz</option>
+                    <option value="one">4lb One</option>
+                </select>
+                <input type="text" id="date-filter" placeholder="Fecha...">
+            </div>
+        </div>
+
+        <nav class="az-filter" id="az-filter-nav">
+            <a href="#" data-letter="all" class="active">#</a>
+        </nav>
+    </header>
+
+    <main class="movie-detail-container">
+
+        <div class="detail-grid-container">
+
+            <aside class="detail-media-col">
+
+                <img src="" alt="Cargando poster..." class="detail-poster">
+
+                <div class="star-rating" data-movie-id="">
+                    <h3>¡Califica esta película!</h3>
+                    <div class="stars" id="stars-container">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span id="star-avg-display" class="rating-display"></span>
+                    <span id="rating-saved-msg" class="saved-msg"></span>
+                </div>
+
+                <div class="audio-player-section">
+                    <h3>Resumen en Audio</h3>
+                    <p>Escucha la reseña completa (solo voz).</p>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2220347801&color=%236714ce&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="https://soundcloud.com/alberto-martinez-700091428/hackers-resumen"
+                            title="Hackers-resumen" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Hackers-resumen</a>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h2>También te puede gustar...</h2>
+                    <div class="suggestions-carousel" id="suggestions-container">
+                    </div>
+                </div>
+
+            </aside>
+
+            <section class="detail-info-col">
+
+                <h1>Hackers</h1>
+                <span class="original-title">Hackers (1995)</span>
+
+                <div class="detail-meta" id="movie-meta-container" data-id="">
+                </div>
+
+                <div class="data-sheet">
+                    <dl>
+                        <dt>Año:</dt>
+                        <dd>1995</dd>
+
+                        <dt>Género:</dt>
+                        <dd>
+                            <a href="/index.html?genre=tech" class="data-sheet-link">Tecnología</a>
+                        </dd>
+
+                        <dt>Director:</dt>
+                        <dd>Iain Softley</dd>
+
+                        <dt>Distribuidora:</dt>
+                        <dd>United Artists</dd>
+
+                        <dt>Elenco:</dt>
+                        <dd>Jonny Lee Miller, Angelina Jolie, Matthew Lillard, Fisher Stevens.</dd>
+
+                        <dt>Ver en:</dt>
+                        <dd class="streaming-logos-inline">
+                            <a href="https://www.primevideo.com/dp/amzn1.dv.gti.c8a9f799-97f2-1733-5507-0f4f93572515?autoplay=0&ref_=atv_cf_strg_wb"
+                                title="Prime Video" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png"
+                                    alt="Prime Video"></a>
+                            <a href="https://tv.apple.com/mx/movie/hackers/umc.cmc.4ug4r0vwr7og0d35al431d6zc?action=play"
+                                title="Apple TV" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/1280px-Apple_TV_Plus_Logo.svg.png"
+                                    alt="Apple TV"></a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="trailer-section">
+                    <h2>Tráiler</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Rn2cf_wJ4f4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h2>Resumen</h2>
+                    <p class="content-box">
+                        Dade Murphy, un brillante hacker adolescente que fue vetado de usar computadoras por crear un
+                        virus capaz de bloquear Wall Street, se muda a Nueva York. Allí se une a un grupo de hackers
+                        escolares, incluyendo a la carismática Kate "Acid Burn". Juntos, descubren accidentalmente un
+                        plan nefasto orquestado por "The Plague", un experto en seguridad informática corrupto que
+                        intenta robar millones de dólares y liberar un peligroso virus marítimo. Injustamente acusados
+                        del crimen, los jóvenes hackers deben utilizar todas sus habilidades tecnológicas para "hackear
+                        el planeta", exponer la verdad y limpiar sus nombres antes de que el FBI los capture.
+                    </p>
+                </div>
+
+                <div class="carousel-section">
+                    <h2>Escenas Destacadas</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="https://i.ytimg.com/vi/ATlszssL-eI/maxresdefault.jpg" alt="Random 1"
+                                class="carousel-item">
+                            <img src="https://cdn.nerdist.com/wp-content/uploads/2020/09/13021324/Hackers-cast-Featured.jpg"
+                                alt="Random 2" class="carousel-item">
+                            <img src="https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fextras%2Fiva%2F379111%2F933ecae7f55242a1c70c1dddf19f5460.jpg"
+                                alt="Random 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h2>Premios Destacados</h2>
+                    <ul class="icon-list content-box">
+                        <li>Película de Culto: Aunque no ganó grandes premios en su estreno, se convirtió en un ícono de
+                            la cultura hacker y cyberpunk.</li>
+                        <li>Destacada por su influyente Banda Sonora (The Prodigy, Orbital, Underworld).</li>
+                        <li>Lanzó la carrera de Angelina Jolie al estrellato.</li>
+                    </ul>
+                </div>
+
+                <div class="characteristics-section">
+                    <h2>3 Características Clave</h2>
+                    <ul class="icon-list check content-box">
+                        <li><strong>Estética Cyberpunk:</strong> Define visualmente los años 90 con su moda excéntrica,
+                            luces de neón y una representación visual del ciberespacio totalmente fantasiosa pero
+                            icónica.</li>
+                        <li><strong>Cultura Hacker:</strong> A pesar de sus exageraciones técnicas, capturó el espíritu
+                            rebelde, la ética de la curiosidad y la camaradería de las comunidades de hacking tempranas.
+                        </li>
+                        <li><strong>"Hack the Planet":</strong> Popularizó frases y conceptos que se volvieron
+                            legendarios en la cultura pop tecnológica.</li>
+                    </ul>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comentarios</h2>
+                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/hackers.html"
+                        data-width="100%" data-numposts="5">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 CinePost. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/movies.js"></script>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
