@@ -21,236 +21,252 @@
 <body>
 
     <div id="intro-overlay" class="intro-overlay">
-        <div class="intro-content">
-            <div class="intro-logo">
-                <img src="/logo-cinepost-transparent.png" alt="CinePost">
-            </div>
-            <h1>CinePost</h1>
-            <p>Resúmenes y reseñas de cine.</p>
-            <div class="loading-bar-container">
-                <div class="loading-bar"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
-        nonce="[VALOR_NONCE_ALEATORIO]"></script>
-
-    <header class="main-header">
-        <div class="header-content">
-            <div class="header-top">
-                <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="/index.html" class="active">Inicio</a></li>
-                        <li><a href="/release-notes.html">Release Notes</a></li>
-                        <li><a href="/autores.html">Autores</a></li>
-                        <li><a href="/contacto.html">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="header-filters">
-                <input type="search" id="search-bar" placeholder="Buscar por título...">
-                <select id="genre-filter">
-                    <option value="all">Género</option>
-                    <option value="fantasia">Fantasía</option>
-                    <option value="ficcion">Ciencia Ficción</option>
-                    <option value="tech">Tecnología</option>
-                </select>
-                <select id="author-filter">
-                    <option value="all">Autor</option>
-                    <option value="amc">Alberto Martínez Cruz</option>
-                    <option value="one">4lb One</option>
-                </select>
-                <input type="text" id="date-filter" placeholder="Fecha...">
+        <div id="intro-overlay" class="intro-overlay">
+            <div class="intro-content">
+                <div class="intro-logo">
+                    <img src="/logo-cinepost-transparent.png" alt="CinePost">
+                </div>
+                <h1>CinePost</h1>
+                <p>Resúmenes de cine.</p>
+                <div class="loading-bar-container">
+                    <div class="loading-bar"></div>
+                </div>
             </div>
         </div>
 
-        <nav class="az-filter" id="az-filter-nav">
-            <a href="#" data-letter="all" class="active">#</a>
-        </nav>
-    </header>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
+            nonce="[VALOR_NONCE_ALEATORIO]"></script>
 
-    <main class="movie-detail-container">
-
-        <div class="detail-grid-container">
-
-            <aside class="detail-media-col">
-
-                <img src="" alt="Cargando poster..." class="detail-poster">
-
-                <div class="star-rating" data-movie-id="">
-                    <h3>¡Califica esta película!</h3>
-                    <div class="stars" id="stars-container">
-                        <i class="fa-regular fa-star" data-value="1"></i>
-                        <i class="fa-regular fa-star" data-value="2"></i>
-                        <i class="fa-regular fa-star" data-value="3"></i>
-                        <i class="fa-regular fa-star" data-value="4"></i>
-                        <i class="fa-regular fa-star" data-value="5"></i>
-                    </div>
-                    <span id="star-avg-display" class="rating-display"></span>
-                    <span id="rating-saved-msg" class="saved-msg"></span>
+        <header class="main-header">
+            <div class="header-content">
+                <div class="header-top">
+                    <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="/index.html" class="active">Inicio</a></li>
+                            <li><a href="/release-notes.html">Release Notes</a></li>
+                            <li><a href="/autores.html">Autores</a></li>
+                            <li><a href="/contacto.html">Contacto</a></li>
+                        </ul>
+                    </nav>
                 </div>
 
-                <div class="audio-player-section">
-                    <h3>Resumen en Audio</h3>
-                    <p>Escucha la reseña completa (solo voz).</p>
-                    <iframe scrolling="no" frameborder="no" allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2212574993&color=%236224c9&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                    <div
-                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
-                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
-                            href="https://soundcloud.com/alberto-martinez-700091428/la-naranja-mecanica-resumen"
-                            title="La-naranja-mecánica-resumen" target="_blank"
-                            style="color: #cccccc; text-decoration: none;">La-naranja-mecánica-resumen</a>
-                    </div>
+                <div class="header-filters">
+                    <input type="search" id="search-bar" placeholder="Buscar por título...">
+                    <select id="genre-filter">
+                        <option value="all">Género</option>
+                        <option value="fantasia">Fantasía</option>
+                        <option value="ficcion">Ciencia Ficción</option>
+                        <option value="tech">Tecnología</option>
+                    </select>
+                    <select id="author-filter">
+                        <option value="all">Autor</option>
+                        <option value="amc">Alberto Martínez Cruz</option>
+                        <option value="one">4lb One</option>
+                    </select>
+                    <input type="text" id="date-filter" placeholder="Fecha...">
                 </div>
+            </div>
 
-                <div class="suggestions-section">
-                    <h2>También te puede gustar...</h2>
-                    <div class="suggestions-carousel" id="suggestions-container">
-                    </div>
-                </div>
+            <nav class="az-filter" id="az-filter-nav">
+                <a href="#" data-letter="all" class="active">#</a>
+            </nav>
+        </header>
 
-            </aside>
+        <main class="movie-detail-container">
 
-            <section class="detail-info-col">
+            <div class="detail-grid-container">
 
-                <h1>La naranja mecánica</h1>
-                <span class="original-title">A Clockwork Orange (1971)</span>
+                <aside class="detail-media-col">
 
-                <div class="detail-meta" id="movie-meta-container" data-id="">
-                </div>
+                    <img src="" alt="Cargando poster..." class="detail-poster">
 
-                <div class="data-sheet">
-                    <dl>
-                        <dt>Año:</dt>
-                        <dd>1971</dd>
-
-                        <dt>Género:</dt>
-                        <dd>
-                            <a href="/index.html?genre=ciencia-ficcion" class="data-sheet-link">Ciencia Ficción</a>
-                        </dd>
-
-                        <dt>Director:</dt>
-                        <dd>Stanley Kubrick</dd>
-
-                        <dt>Distribuidora:</dt>
-                        <dd>Warner Bros.</dd>
-
-                        <dt>Elenco:</dt>
-                        <dd>Malcolm McDowell, Patrick Magee, Michael Bates, Warren Clarke, Adrienne Corri.</dd>
-
-                        <dt>Ver en:</dt>
-                        <dd class="streaming-logos-inline">
-                            <a href="http://hbomax.com/mx/es/movies/la-naranja-mecanica/52251185-23d4-4942-8d37-aa8dad2d8d32?utm_source=universal_search"
-                                title="Max" target="_blank"><img
-                                    src="https://upload.wikimedia.org/wikipedia/commons/b/b3/HBO_Max_%282025%29.svg"
-                                    alt="Max"></a>
-                        </dd>
-                    </dl>
-                </div>
-
-                <div class="trailer-section">
-                    <h2>Tráiler</h2>
-                    <div class="video-container">
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/T54uZPI4Z8A?si=rGITGEbq7bzTq5xD"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div class="summary">
-                    <h2>Resumen</h2>
-                    <p class="content-box">
-                        En una Gran Bretaña futurista y distópica, Alex DeLarge es el carismático y sociópata líder de
-                        una banda de "droogs" que se entrega a la "ultraviolencia" como principal diversión. Sus
-                        crímenes van desde robos y palizas hasta asaltos brutales, todo orquestado con una inquietante
-                        pasión por la música clásica de Beethoven. Tras ser traicionado por su banda y capturado por la
-                        policía, Alex es condenado a una larga sentencia. Para acortarla, se ofrece como voluntario para
-                        la "Técnica Ludovico", un tratamiento experimental de aversión que lo condiciona a sentir una
-                        enfermedad paralizante ante la violencia y el sexo. Al ser liberado, "curado" y despojado de su
-                        libre albedrío, Alex se vuelve incapaz de defenderse en un mundo que ahora busca vengarse de él.
-                    </p>
-                </div>
-
-                <div class="carousel-section">
-                    <h2>Escenas Destacadas</h2>
-                    <div class="carousel">
-                        <div class="carousel-inner">
-                            <img src="https://media.gq.com.mx/photos/60f9a4ac3b54691d4e5cbc12/16:9/w_2560%2Cc_limit/Naranja%2520meca%25CC%2581nica%2520-%2520GQ%25203.jpg"
-                                alt="Escena 1 - El Korova Milk Bar" class="carousel-item">
-                            <img src="https://resizer.glanacion.com/resizer/v2/la-naranja-mecanica-el-film-maldito-de-stanley-ZLLFR57TPJAP5CNU3IJVBQRDCA.JPG?auth=8bedebacc18256bd747f22f1a14d20791bb450eafb187f1fd1bbfa9f34dc2934&width=1280&height=854&quality=70&smart=true"
-                                alt="Escena 2 - La Técnica Ludovico" class="carousel-item">
-                            <img src="https://www.cineciutat.org/storage/app/uploads/public/63a/d6b/e69/63ad6be699d20436905389.webp"
-                                alt="Escena 3 - Alex DeLarge" class="carousel-item">
+                    <div class="star-rating" data-movie-id="">
+                        <h3>¡Califica esta película!</h3>
+                        <div class="stars" id="stars-container">
+                            <i class="fa-regular fa-star" data-value="1"></i>
+                            <i class="fa-regular fa-star" data-value="2"></i>
+                            <i class="fa-regular fa-star" data-value="3"></i>
+                            <i class="fa-regular fa-star" data-value="4"></i>
+                            <i class="fa-regular fa-star" data-value="5"></i>
                         </div>
-                        <button class="carousel-control prev">&lt;</button>
-                        <button class="carousel-control next">&gt;</button>
+                        <span id="star-avg-display" class="rating-display"></span>
+                        <span id="rating-saved-msg" class="saved-msg"></span>
                     </div>
-                </div>
 
-                <div class="awards-section">
-                    <h2>Premios Destacados</h2>
-                    <ul class="icon-list content-box">
-                        <li>4 nominaciones a los Premios Oscar (Mejor Película, Mejor Director, Mejor Guion Adaptado).
-                        </li>
-                        <li>Ganadora del Premio Hugo a la Mejor Presentación Dramática.</li>
-                        <li>Ganadora del Premio del Círculo de Críticos de Nueva York a Mejor Película y Mejor Director.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="characteristics-section">
-                    <h2>3 Características Clave</h2>
-                    <ul class="icon-list check content-box">
-                        <li><strong>Alegoría sobre el Libre Albedrío:</strong> La película plantea una pregunta moral
-                            fundamental: ¿es preferible un ser humano que elige ser malvado a uno que es obligado a ser
-                            "bueno"?</li>
-                        <li><strong>Estética Inquietante:</strong> El diseño de producción (desde el "Korova Milk Bar")
-                            y la cinematografía de Kubrick crean una atmósfera visualmente impactante y perturbadora.
-                        </li>
-                        <li><strong>El Lenguaje "Nadsat":</strong> El uso de esta jerga adolescente (una mezcla de
-                            inglés y ruso) crea una subcultura única y refuerza el sentimiento de alienación del mundo
-                            de Alex.</li>
-                    </ul>
-                </div>
-
-                <div class="comments-section">
-                    <h2>Comentarios</h2>
-                    <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/naranja-mecanica.html"
-                        data-width="100%" data-numposts="5">
+                    <div class="audio-player-section">
+                        <h3>Resumen en Audio</h3>
+                        <p>Escucha la reseña completa (solo voz).</p>
+                        <iframe scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2212574993&color=%236224c9&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                        <div
+                            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                            <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                                target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                                href="https://soundcloud.com/alberto-martinez-700091428/la-naranja-mecanica-resumen"
+                                title="La-naranja-mecánica-resumen" target="_blank"
+                                style="color: #cccccc; text-decoration: none;">La-naranja-mecánica-resumen</a>
+                        </div>
                     </div>
-                </div>
 
-            </section>
-        </div>
-    </main>
+                    <div class="suggestions-section">
+                        <h2>También te puede gustar...</h2>
+                        <div class="suggestions-carousel" id="suggestions-container">
+                        </div>
+                    </div>
 
-    <footer class="main-footer">
-        <p>© 2025 CinePost. Todos los derechos reservados.</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
-                    class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        </div>
-    </footer>
+                </aside>
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                <section class="detail-info-col">
 
-    <script src="/js/movies.js"></script>
+                    <h1>La naranja mecánica</h1>
+                    <span class="original-title">A Clockwork Orange (1971)</span>
 
-    <script src="/js/script.js"></script>
+                    <div class="detail-meta" id="movie-meta-container" data-id="">
+                    </div>
+
+                    <div class="data-sheet">
+                        <dl>
+                            <dt>Año:</dt>
+                            <dd>1971</dd>
+
+                            <dt>Género:</dt>
+                            <dd>
+                                <a href="/index.html?genre=ciencia-ficcion" class="data-sheet-link">Ciencia Ficción</a>
+                            </dd>
+
+                            <dt>Director:</dt>
+                            <dd>Stanley Kubrick</dd>
+
+                            <dt>Distribuidora:</dt>
+                            <dd>Warner Bros.</dd>
+
+                            <dt>Elenco:</dt>
+                            <dd>Malcolm McDowell, Patrick Magee, Michael Bates, Warren Clarke, Adrienne Corri.</dd>
+
+                            <dt>Ver en:</dt>
+                            <dd class="streaming-logos-inline">
+                                <a href="http://hbomax.com/mx/es/movies/la-naranja-mecanica/52251185-23d4-4942-8d37-aa8dad2d8d32?utm_source=universal_search"
+                                    title="Max" target="_blank"><img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/b/b3/HBO_Max_%282025%29.svg"
+                                        alt="Max"></a>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="trailer-section">
+                        <h2>Tráiler</h2>
+                        <div class="video-container">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/T54uZPI4Z8A?si=rGITGEbq7bzTq5xD"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="summary">
+                        <h2>Resumen</h2>
+                        <p class="content-box">
+                            En una Gran Bretaña futurista y distópica, Alex DeLarge es el carismático y sociópata líder
+                            de
+                            una banda de "droogs" que se entrega a la "ultraviolencia" como principal diversión. Sus
+                            crímenes van desde robos y palizas hasta asaltos brutales, todo orquestado con una
+                            inquietante
+                            pasión por la música clásica de Beethoven. Tras ser traicionado por su banda y capturado por
+                            la
+                            policía, Alex es condenado a una larga sentencia. Para acortarla, se ofrece como voluntario
+                            para
+                            la "Técnica Ludovico", un tratamiento experimental de aversión que lo condiciona a sentir
+                            una
+                            enfermedad paralizante ante la violencia y el sexo. Al ser liberado, "curado" y despojado de
+                            su
+                            libre albedrío, Alex se vuelve incapaz de defenderse en un mundo que ahora busca vengarse de
+                            él.
+                        </p>
+                    </div>
+
+                    <div class="carousel-section">
+                        <h2>Escenas Destacadas</h2>
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img src="https://media.gq.com.mx/photos/60f9a4ac3b54691d4e5cbc12/16:9/w_2560%2Cc_limit/Naranja%2520meca%25CC%2581nica%2520-%2520GQ%25203.jpg"
+                                    alt="Escena 1 - El Korova Milk Bar" class="carousel-item">
+                                <img src="https://resizer.glanacion.com/resizer/v2/la-naranja-mecanica-el-film-maldito-de-stanley-ZLLFR57TPJAP5CNU3IJVBQRDCA.JPG?auth=8bedebacc18256bd747f22f1a14d20791bb450eafb187f1fd1bbfa9f34dc2934&width=1280&height=854&quality=70&smart=true"
+                                    alt="Escena 2 - La Técnica Ludovico" class="carousel-item">
+                                <img src="https://www.cineciutat.org/storage/app/uploads/public/63a/d6b/e69/63ad6be699d20436905389.webp"
+                                    alt="Escena 3 - Alex DeLarge" class="carousel-item">
+                            </div>
+                            <button class="carousel-control prev">&lt;</button>
+                            <button class="carousel-control next">&gt;</button>
+                        </div>
+                    </div>
+
+                    <div class="awards-section">
+                        <h2>Premios Destacados</h2>
+                        <ul class="icon-list content-box">
+                            <li>4 nominaciones a los Premios Oscar (Mejor Película, Mejor Director, Mejor Guion
+                                Adaptado).
+                            </li>
+                            <li>Ganadora del Premio Hugo a la Mejor Presentación Dramática.</li>
+                            <li>Ganadora del Premio del Círculo de Críticos de Nueva York a Mejor Película y Mejor
+                                Director.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="characteristics-section">
+                        <h2>3 Características Clave</h2>
+                        <ul class="icon-list check content-box">
+                            <li><strong>Alegoría sobre el Libre Albedrío:</strong> La película plantea una pregunta
+                                moral
+                                fundamental: ¿es preferible un ser humano que elige ser malvado a uno que es obligado a
+                                ser
+                                "bueno"?</li>
+                            <li><strong>Estética Inquietante:</strong> El diseño de producción (desde el "Korova Milk
+                                Bar")
+                                y la cinematografía de Kubrick crean una atmósfera visualmente impactante y
+                                perturbadora.
+                            </li>
+                            <li><strong>El Lenguaje "Nadsat":</strong> El uso de esta jerga adolescente (una mezcla de
+                                inglés y ruso) crea una subcultura única y refuerza el sentimiento de alienación del
+                                mundo
+                                de Alex.</li>
+                        </ul>
+                    </div>
+
+                    <div class="comments-section">
+                        <h2>Comentarios</h2>
+                        <div class="fb-comments" data-href="https://mi-cine-post.vercel.app/pages/naranja-mecanica.html"
+                            data-width="100%" data-numposts="5">
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>© 2025 CinePost. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <script src="/js/movies.js"></script>
+
+        <script src="/js/script.js"></script>
 </body>
 
 </html>
