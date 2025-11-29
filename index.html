@@ -7,7 +7,7 @@
     <title>CinePost - Inicio</title>
 
     <link rel="icon" type="image/png" href="/logo-cinepost.png">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -16,6 +16,19 @@
 </head>
 
 <body>
+
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">
+                <img src="/logo-cinepost-transparent.png" alt="CinePost">
+            </div>
+            <h1>CinePost</h1>
+            <p>Tu sitio de resúmenes y reseñas de películas.</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
 
     <header class="main-header">
         <div class="header-content">
@@ -89,10 +102,11 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
-    <script src="/js/movies.js"></script> 
-    
+
+    <script src="/js/movies.js"></script>
+
     <script src="/js/script.js"></script>
 
 </body>
+
 </html>

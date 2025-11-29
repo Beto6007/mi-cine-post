@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <meta property="og:image" content="ttps://image.tmdb.org/t/p/original/taa9P4xmywUufE41RYD88kE9g9X.jpg" />
 
     <title>CinePost - El Laberinto del Fauno</title>
@@ -18,12 +18,26 @@
 </head>
 
 <body>
+
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">
+                <img src="/logo-cinepost-transparent.png" alt="CinePost">
+            </div>
+            <h1>CinePost</h1>
+            <p>Resúmenes y reseñas de cine.</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
         nonce="[VALOR_NONCE_ALEATORIO]"></script>
 
-       <header class="main-header">
+    <header class="main-header">
         <div class="header-content">
             <div class="header-top">
                 <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
@@ -83,13 +97,21 @@
                 <div class="audio-player-section">
                     <h3>Resumen en Audio</h3>
                     <p>Escucha la reseña completa (solo voz).</p>
-                    <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2210494097&color=%236224c9&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez" target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a href="https://soundcloud.com/alberto-martinez-700091428/laberinto-del-fauno-resumen" title="Laberinto-del-Fauno-resumen" target="_blank" style="color: #cccccc; text-decoration: none;">Laberinto-del-Fauno-resumen</a></div>
+                    <iframe scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2210494097&color=%236224c9&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/alberto-martinez-700091428" title="Alberto Martínez"
+                            target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
+                            href="https://soundcloud.com/alberto-martinez-700091428/laberinto-del-fauno-resumen"
+                            title="Laberinto-del-Fauno-resumen" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Laberinto-del-Fauno-resumen</a></div>
                 </div>
-                
+
                 <div class="suggestions-section">
                     <h2>También te puede gustar...</h2>
                     <div class="suggestions-carousel" id="suggestions-container">
-                        </div>
+                    </div>
                 </div>
 
             </aside>
@@ -123,8 +145,13 @@
 
                         <dt>Ver en:</dt>
                         <dd class="streaming-logos-inline">
-                            <a href="https://www.netflix.com/mx/title/70050507" title="Netflix" target="_blank" ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="Netflix"></a>
-                            <a href="https://www.primevideo.com/-/es/detail/El-laberinto-del-fauno/0RQUV71NTU48IRE1BGKOL29335" title="Amazon Prime Video" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png" alt="Amazon Prime Video"></a>
+                            <a href="https://www.netflix.com/mx/title/70050507" title="Netflix" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
+                                    alt="Netflix"></a>
+                            <a href="https://www.primevideo.com/-/es/detail/El-laberinto-del-fauno/0RQUV71NTU48IRE1BGKOL29335"
+                                title="Amazon Prime Video" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png"
+                                    alt="Amazon Prime Video"></a>
                         </dd>
                     </dl>
                 </div>
@@ -132,14 +159,26 @@
                 <div class="trailer-section">
                     <h2>Tráiler</h2>
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AcHasH-nLhU?si=oCU8zSm6OMmFyfQS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/AcHasH-nLhU?si=oCU8zSm6OMmFyfQS"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <div class="summary">
                     <h2>Resumen</h2>
                     <p class="content-box">
-                        Ambientada en España en 1944, durante la posguerra civil. Ofelia, una niña soñadora, se muda con su madre embarazada a un campamento militar en las montañas, dirigido por su nuevo y cruel padrastro, el Capitán Vidal, obsesionado con cazar a los maquis (guerrilleros) escondidos en el bosque. Para escapar de la brutalidad de la guerra y de la tiránica figura de Vidal, Ofelia se adentra en un antiguo laberinto de piedra. Allí conoce a un Fauno, una criatura mítica que le revela que ella es, en realidad, Moanna, una princesa perdida de un reino subterráneo. Para regresar a su mundo, el Fauno le encomienda tres peligrosas tareas que pondrán a prueba su valor e inocencia, desdibujando la línea entre la cruda realidad y el mágico mundo de los cuentos de hadas.
+                        Ambientada en España en 1944, durante la posguerra civil. Ofelia, una niña soñadora, se muda con
+                        su madre embarazada a un campamento militar en las montañas, dirigido por su nuevo y cruel
+                        padrastro, el Capitán Vidal, obsesionado con cazar a los maquis (guerrilleros) escondidos en el
+                        bosque. Para escapar de la brutalidad de la guerra y de la tiránica figura de Vidal, Ofelia se
+                        adentra en un antiguo laberinto de piedra. Allí conoce a un Fauno, una criatura mítica que le
+                        revela que ella es, en realidad, Moanna, una princesa perdida de un reino subterráneo. Para
+                        regresar a su mundo, el Fauno le encomienda tres peligrosas tareas que pondrán a prueba su valor
+                        e inocencia, desdibujando la línea entre la cruda realidad y el mágico mundo de los cuentos de
+                        hadas.
                     </p>
                 </div>
 
@@ -147,10 +186,13 @@
                     <h2>Escenas Destacadas</h2>
                     <div class="carousel">
                         <div class="carousel-inner">
-                            <img src="https://www.fheargentina.com.ar/wp-content/uploads/2023/05/Foto-5-REDES.jpg" alt="Random 1" class="carousel-item">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD_FXEmtenyrK3L9gRYGj7jkQwpkV5ayuQoTgntsDUjbP3e_2Sa5uXFmoP6KMBkEB3OaeAXIyfJuqS6PcQaI9-WIgw7rXAx-xXrOKtUCbQQ9bX_MrddFoDJ2hLmpNLww-JwN1nn0Gk3rk/s1600/PM.Lab_.jpg" alt="Random 2" class="carousel-item">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTRP0YmHwSwtGZxJQ0-XHdIvbQChjOqkcuyTbcLyx7eEFnOWQDIHWMAZ_kK_GBFIauGYaz3s83S3e4UvPBPRzk4ViBaIr8PPeb3U8x8YdzoNLPmTXLQkfBw7zlzRUjniq6lsYejjPoquE/w1200-h630-p-k-no-nu/127d08a4-04e8-4601-8dc0-61ec362bd074.jpg" alt="Random 3" class="carousel-item">
-                            </div>
+                            <img src="https://www.fheargentina.com.ar/wp-content/uploads/2023/05/Foto-5-REDES.jpg"
+                                alt="Random 1" class="carousel-item">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD_FXEmtenyrK3L9gRYGj7jkQwpkV5ayuQoTgntsDUjbP3e_2Sa5uXFmoP6KMBkEB3OaeAXIyfJuqS6PcQaI9-WIgw7rXAx-xXrOKtUCbQQ9bX_MrddFoDJ2hLmpNLww-JwN1nn0Gk3rk/s1600/PM.Lab_.jpg"
+                                alt="Random 2" class="carousel-item">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTRP0YmHwSwtGZxJQ0-XHdIvbQChjOqkcuyTbcLyx7eEFnOWQDIHWMAZ_kK_GBFIauGYaz3s83S3e4UvPBPRzk4ViBaIr8PPeb3U8x8YdzoNLPmTXLQkfBw7zlzRUjniq6lsYejjPoquE/w1200-h630-p-k-no-nu/127d08a4-04e8-4601-8dc0-61ec362bd074.jpg"
+                                alt="Random 3" class="carousel-item">
+                        </div>
                         <button class="carousel-control prev">&lt;</button>
                         <button class="carousel-control next">&gt;</button>
                     </div>
@@ -159,18 +201,25 @@
                 <div class="awards-section">
                     <h2>Premios Destacados</h2>
                     <ul class="icon-list content-box">
-                        <li>Ganadora de 3 Premios Oscar (Mejor Fotografía, Mejor Diseño de Producción, Mejor Maquillaje).</li>
+                        <li>Ganadora de 3 Premios Oscar (Mejor Fotografía, Mejor Diseño de Producción, Mejor
+                            Maquillaje).</li>
                         <li>Ganadora de 7 Premios Goya (incluyendo Mejor Guion Original y Mejor Actriz Revelación).</li>
-                        <li>Ganadora de 3 Premios BAFTA (Mejor Película de Habla No Inglesa, Mejor Diseño de Vestuario).</li>
+                        <li>Ganadora de 3 Premios BAFTA (Mejor Película de Habla No Inglesa, Mejor Diseño de Vestuario).
+                        </li>
                     </ul>
                 </div>
 
                 <div class="characteristics-section">
                     <h2>3 Características Clave</h2>
                     <ul class="icon-list check content-box">
-                        <li><strong>Fusión de Realidad y Fantasía:</strong> Entrelaza de forma magistral el brutal realismo de la posguerra española con un oscuro y melancólico mundo de cuento de hadas.</li>
-                        <li><strong>Estética Visual Inconfundible:</strong> La dirección de arte, el diseño de criaturas (especialmente el Fauno y el Hombre Pálido) y la cinematografía crean un universo visualmente impactante y único.</li>
-                        <li><strong>Metáfora de la Desobediencia:</strong> La película funciona como una poderosa alegoría sobre la inocencia, la crueldad y la importancia de la desobediencia frente a la tiranía y el fascismo.</li>
+                        <li><strong>Fusión de Realidad y Fantasía:</strong> Entrelaza de forma magistral el brutal
+                            realismo de la posguerra española con un oscuro y melancólico mundo de cuento de hadas.</li>
+                        <li><strong>Estética Visual Inconfundible:</strong> La dirección de arte, el diseño de criaturas
+                            (especialmente el Fauno y el Hombre Pálido) y la cinematografía crean un universo
+                            visualmente impactante y único.</li>
+                        <li><strong>Metáfora de la Desobediencia:</strong> La película funciona como una poderosa
+                            alegoría sobre la inocencia, la crueldad y la importancia de la desobediencia frente a la
+                            tiranía y el fascismo.</li>
                     </ul>
                 </div>
 
@@ -188,15 +237,18 @@
     <footer class="main-footer">
         <p>© 2025 CinePost. Todos los derechos reservados.</p>
         <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61583294770056" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cine.post.tis/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AlbertoMar86128" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-x-twitter"></i></a>
             <a href="https://github.com/Beto6007" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
+
     <script src="/js/movies.js"></script>
 
     <script src="/js/script.js"></script>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <meta property="og:image" content="https://m.media-amazon.com/images/I/81JnqdgWM4L._AC_UF894,1000_QL80_.jpg" />
 
     <title>CinePost - Mad Max</title>
@@ -18,6 +18,20 @@
 </head>
 
 <body>
+
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">
+                <img src="/logo-cinepost-transparent.png" alt="CinePost">
+            </div>
+            <h1>CinePost</h1>
+            <p>Resúmenes y reseñas de cine.</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
@@ -98,7 +112,7 @@
                 <div class="suggestions-section">
                     <h2>También te puede gustar...</h2>
                     <div class="suggestions-carousel" id="suggestions-container">
-                        </div>
+                    </div>
                 </div>
 
             </aside>

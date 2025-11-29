@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <meta property="og:image" content="https://diamondfilms.com/img/poster/5c754ec430c316e507f64e4da.jpg"" />
 
     <title>CinePost - Cargando...</title>
 
-    <link rel="icon" type="image/png" href="/logo-cinepost.png">
+    <link rel=" icon" type="image/png" href="/logo-cinepost.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -18,6 +18,20 @@
 </head>
 
 <body>
+
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">
+                <img src="/logo-cinepost-transparent.png" alt="CinePost">
+            </div>
+            <h1>CinePost</h1>
+            <p>Resúmenes y reseñas de cine.</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
@@ -91,13 +105,14 @@
                             target="_blank" style="color: #cccccc; text-decoration: none;">Alberto Martínez</a> · <a
                             href="https://soundcloud.com/alberto-martinez-700091428/el-co-digo-enigma-resumen"
                             title="El- código-Enigma-resumen" target="_blank"
-                            style="color: #cccccc; text-decoration: none;">El- código-Enigma-resumen</a></div>
+                            style="color: #cccccc; text-decoration: none;">El- código-Enigma-resumen</a>
+                    </div>
                 </div>
 
                 <div class="suggestions-section">
                     <h2>También te puede gustar...</h2>
                     <div class="suggestions-carousel" id="suggestions-container">
-                        </div>
+                    </div>
                 </div>
 
             </aside>
@@ -131,10 +146,12 @@
 
                         <dt>Ver en:</dt>
                         <dd class="streaming-logos-inline">
-                            <a href="https://www.hbomax.com/mx/es/movies/el-codigo-enigma/83e518fa-7f76-47d0-a607-227b53bf3e6c?utm_source=universal_search" title="Max" target="_blank"><img
+                            <a href="https://www.hbomax.com/mx/es/movies/el-codigo-enigma/83e518fa-7f76-47d0-a607-227b53bf3e6c?utm_source=universal_search"
+                                title="Max" target="_blank"><img
                                     src="https://upload.wikimedia.org/wikipedia/commons/b/b3/HBO_Max_%282025%29.svg"
                                     alt="Max"></a>
-                            <a href="https://www.primevideo.com/dp/amzn1.dv.gti.922538ef-cb23-4023-9696-7483f4c005c5?autoplay=0&ref_=atv_cf_strg_wb" title="Prime Video" target="_blank"><img
+                            <a href="https://www.primevideo.com/dp/amzn1.dv.gti.922538ef-cb23-4023-9696-7483f4c005c5?autoplay=0&ref_=atv_cf_strg_wb"
+                                title="Prime Video" target="_blank"><img
                                     src="https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg"
                                     alt="Prime Video"></a>
                         </dd>

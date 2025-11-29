@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <meta property="og:image" content="ttps://m.media-amazon.com/images/I/61yE11TL06L.jpg" />
 
     <title>CinePost - Gremlins</title>
@@ -18,12 +18,26 @@
 </head>
 
 <body>
+
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">
+                <img src="/logo-cinepost-transparent.png" alt="CinePost">
+            </div>
+            <h1>CinePost</h1>
+            <p>Resúmenes y reseñas de cine.</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=[TU_APP_ID_DE_FACEBOOK]&autoLogAppEvents=1"
         nonce="[VALOR_NONCE_ALEATORIO]"></script>
 
-     <header class="main-header">
+    <header class="main-header">
         <div class="header-content">
             <div class="header-top">
                 <a href="/index.html" class="logo"><img src="/logo-cinepost-transparent.png" alt="logo"></a>
@@ -98,7 +112,7 @@
                 <div class="suggestions-section">
                     <h2>También te puede gustar...</h2>
                     <div class="suggestions-carousel" id="suggestions-container">
-                        </div>
+                    </div>
                 </div>
 
             </aside>
@@ -205,7 +219,7 @@
                         <li><strong>Crítica al Consumo:</strong> Subyace una sátira y crítica al consumismo navideño y
                             la cultura de los "productos" fáciles de conseguir, a través de la adquisición de Gizmo y
                             las consecuencias de no seguir las instrucciones.</li>
-                    </ul>   
+                    </ul>
                 </div>
 
                 <div class="comments-section">
@@ -232,7 +246,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
+
     <script src="/js/movies.js"></script>
 
     <script src="/js/script.js"></script>
