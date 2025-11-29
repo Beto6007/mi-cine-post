@@ -897,7 +897,7 @@ h3 {
     height: 100%;
     background: var(--secondary-color);
     box-shadow: 0 0 10px var(--secondary-color);
-    animation: loadBar 2s linear forwards;
+    animation: loadBar 1s linear forwards;
     /* Coincide con el tiempo de espera */
 }
 

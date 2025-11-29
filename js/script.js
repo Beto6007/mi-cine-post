@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Tiempo en milisegundos (3500ms = 3.5 segundos)
         setTimeout(() => {
             introOverlay.classList.add('hidden');
-        }, 2000);
+        }, 1000);
     }
 
     const mainList = document.getElementById('movie-list'); // Solo existe en index
