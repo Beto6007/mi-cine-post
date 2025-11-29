@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "terminator",
+        title: "Terminator",
+        url: "/pages/terminator.html",
+        image: "https://m.media-amazon.com/images/I/61qCgQZyhOL.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-29",
+        dateDisplay: "29 nov 2025",
+        locked: false
+    },
+    {
         id: "volver-al-futuro",
         title: "Volver al Futuro",
         url: "/pages/volver-al-futuro.html",
