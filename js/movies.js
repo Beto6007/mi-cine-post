@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "volver-al-futuro",
+        title: "Volver al Futuro",
+        url: "/pages/volver-al-futuro.html",
+        image: "https://m.media-amazon.com/images/I/71pwYomGC1L._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-28",
+        dateDisplay: "28 nov 2025",
+        locked: false
+    },
+    {
         id: "hackers",
         title: "Hackers",
         url: "/pages/hackers.html",
