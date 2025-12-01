@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "matrix",
+        title: "Matrix",
+        url: "/pages/matrix.html",
+        image: "https://m.media-amazon.com/images/I/71PfZFFz9yL._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-12-01",
+        dateDisplay: "01 dic 2025",
+        locked: false
+    },
+    {
         id: "señales",
         title: "Señales",
         url: "/pages/señales.html",
