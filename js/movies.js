@@ -1,6 +1,19 @@
 // --- 1. DATOS DE PELÍCULAS REALES ---
 const realMovies = [
     {
+        id: "señales",
+        title: "Señales",
+        url: "/pages/señales.html",
+        image: "https://m.media-amazon.com/images/M/MV5BNTJiZGZkODAtYWVkMi00MGM4LTkzODEtZDU3YjEzYTRmYjAxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-11-30",
+        dateDisplay: "30 nov 2025",
+        locked: false
+    },
+    {
         id: "terminator",
         title: "Terminator",
         url: "/pages/terminator.html",
@@ -473,7 +486,7 @@ function renderMovieMetadata(containerId, movieId) {
 
 // --- 8. FUNCIÓN DE AUTOMATIZACIÓN PARA PÁGINAS DE DETALLE ---
 function autoInitDetailPage() {
-    const currentPath = window.location.pathname;
+    const currentPath = decodeURIComponent(window.location.pathname);
 
     const movie = moviesData.find(m => currentPath.endsWith(m.url) || m.url === currentPath);
 
