@@ -1,5 +1,18 @@
-// --- 1. DATOS DE PELÍCULAS REALES ---
+// --- 1. Cards de Películas ---
 const realMovies = [
+    {
+        id: "interestellar",
+        title: "Interestellar",
+        url: "/pages/interestellar.html",
+        image: "https://m.media-amazon.com/images/I/81kz06oSUeL._AC_UF894,1000_QL80_.jpg",
+        genre: "ficcion",
+        genreLabel: "Ciencia Ficción",
+        author: "amc",
+        authorName: "Alberto Martínez",
+        dateISO: "2025-12-02",
+        dateDisplay: "02 dic 2025",
+        locked: false
+    },
     {
         id: "matrix",
         title: "Matrix",
